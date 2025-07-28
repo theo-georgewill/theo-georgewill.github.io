@@ -1,5 +1,5 @@
 /* =================================================================== 
- * Luther Main Stylesheet
+ Main Theme Stylesheet
  * Template Ver. 1.0.0
  * 02-15-2021
  * ------------------------------------------------------------------
@@ -654,104 +654,6 @@ textarea {
 }
 
 /* --------------------------------------------------------------------
- * ## large screen devices 
- * -------------------------------------------------------------------- */
-.lg-1 {
-    flex  : none;
-    width : 8.33333%;
-}
-
-.lg-2 {
-    flex  : none;
-    width : 16.66667%;
-}
-
-.lg-3 {
-    flex  : none;
-    width : 25%;
-}
-
-.lg-4 {
-    flex  : none;
-    width : 33.33333%;
-}
-
-.lg-5 {
-    flex  : none;
-    width : 41.66667%;
-}
-
-.lg-6 {
-    flex  : none;
-    width : 50%;
-}
-
-.lg-7 {
-    flex  : none;
-    width : 58.33333%;
-}
-
-.lg-8 {
-    flex  : none;
-    width : 66.66667%;
-}
-
-.lg-9 {
-    flex  : none;
-    width : 75%;
-}
-
-.lg-10 {
-    flex  : none;
-    width : 83.33333%;
-}
-
-.lg-11 {
-    flex  : none;
-    width : 91.66667%;
-}
-
-.lg-12 {
-    flex  : none;
-    width : 100%;
-}
-
-.block-lg-one-eight>.column {
-    flex  : none;
-    width : 12.5%;
-}
-
-.block-lg-one-sixth>.column {
-    flex  : none;
-    width : 16.66667%;
-}
-
-.block-lg-one-fifth>.column {
-    flex  : none;
-    width : 20%;
-}
-
-.block-lg-one-fourth>.column {
-    flex  : none;
-    width : 25%;
-}
-
-.block-lg-one-third>.column {
-    flex  : none;
-    width : 33.33333%;
-}
-
-.block-lg-one-half>.column {
-    flex  : none;
-    width : 50%;
-}
-
-.block-lg-whole>.column {
-    flex  : none;
-    width : 100%;
-}
-
-/* --------------------------------------------------------------------
  * ## medium screen devices 
  * -------------------------------------------------------------------- */
 @media screen and (max-width: 1200px) {
@@ -853,6 +755,104 @@ textarea {
     .hide-on-md {
         display : none;
     }
+}
+
+/* --------------------------------------------------------------------
+ * ## large screen devices 
+ * -------------------------------------------------------------------- */
+.lg-1 {
+    flex  : none;
+    width : 8.33333%;
+}
+
+.lg-2 {
+    flex  : none;
+    width : 16.66667%;
+}
+
+.lg-3 {
+    flex  : none;
+    width : 25%;
+}
+
+.lg-4 {
+    flex  : none;
+    width : 33.33333%;
+}
+
+.lg-5 {
+    flex  : none;
+    width : 41.66667%;
+}
+
+.lg-6 {
+    flex  : none;
+    width : 50%;
+}
+
+.lg-7 {
+    flex  : none;
+    width : 58.33333%;
+}
+
+.lg-8 {
+    flex  : none;
+    width : 66.66667%;
+}
+
+.lg-9 {
+    flex  : none;
+    width : 75%;
+}
+
+.lg-10 {
+    flex  : none;
+    width : 83.33333%;
+}
+
+.lg-11 {
+    flex  : none;
+    width : 91.66667%;
+}
+
+.lg-12 {
+    flex  : none;
+    width : 100%;
+}
+
+.block-lg-one-eight>.column {
+    flex  : none;
+    width : 12.5%;
+}
+
+.block-lg-one-sixth>.column {
+    flex  : none;
+    width : 16.66667%;
+}
+
+.block-lg-one-fifth>.column {
+    flex  : none;
+    width : 20%;
+}
+
+.block-lg-one-fourth>.column {
+    flex  : none;
+    width : 25%;
+}
+
+.block-lg-one-third>.column {
+    flex  : none;
+    width : 33.33333%;
+}
+
+.block-lg-one-half>.column {
+    flex  : none;
+    width : 50%;
+}
+
+.block-lg-whole>.column {
+    flex  : none;
+    width : 100%;
 }
 
 /* --------------------------------------------------------------------
@@ -2975,6 +2975,8 @@ img.u-pull-left {
 
 .main-nav {
     padding : 0;
+    display: flex;
+    background-color : var(--color-body);
 }
 
 .main-nav a {
@@ -2991,16 +2993,12 @@ img.u-pull-left {
     flex-flow        : row nowrap;
     margin           : 0;
     padding          : 0;
-    background-color : var(--color-body);
-    border-width     : 1px;
-    border-color     : var(--color-border);
-    border-style     : none solid solid solid;
+    position: absolute;
+    right: 0;
 }
 
 .main-nav li {
-    flex         : 1 1 0%;
     padding-left : 0;
-    border-right : 1px solid var(--color-border);
 }
 
 .main-nav li:last-child {

@@ -1,0 +1,10 @@
+.logo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    transform: translate(50%, 20%);
+}
+
+.mobile-home-link .logo{
+    transform: translate(10%, 10%);
+}
