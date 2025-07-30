@@ -3733,6 +3733,13 @@ img.u-pull-left {
     margin-left : .2rem;
 }
 
+.folio-list__item-details{
+    font-family: var(--font-2);
+    font-size: var(--text-md);
+    font-weight: 200;
+    padding-top: 20px;
+}
+
 .folio-list__proj-link {
     display  : block;
     height   : var(--vspace-1);
