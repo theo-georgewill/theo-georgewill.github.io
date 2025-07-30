@@ -8,3 +8,17 @@
 .mobile-home-link .logo{
     transform: translate(10%, 10%);
 }
+
+.tech-stack{
+    padding-top: 75px;
+    padding-bottom: 45px;
+    }
+.tech-stack i{
+    font-size: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.tech-stack i::before{
+    padding: 10px;
+}
