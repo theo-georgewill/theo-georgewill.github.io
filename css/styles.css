@@ -3735,9 +3735,9 @@ img.u-pull-left {
 
 .folio-list__item-details{
     font-family: var(--font-2);
-    font-size: var(--text-md);
-    font-weight: 200;
-    padding-top: 20px;
+    font-size: var(--text-sm);
+    font-weight: 100;
+    padding-top: 10px;
 }
 
 .folio-list__proj-link {
