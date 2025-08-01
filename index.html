@@ -18,10 +18,9 @@
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/custom.css">
-    <link
-  rel="stylesheet"
-  href="fontawesome-free-7.0.0-web/css/all.min.css"
-/>
+    <link rel="stylesheet" href="fontawesome-free-7.0.0-web/css/all.min.css"/>  
+    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.theme.default.min.css">
 
     <!-- favicons
     ================================================== -->
@@ -311,7 +310,16 @@
                     <div id="modal-01" hidden>
                         <div class="modal-popup">
                             <img src="images/portfolio/gallery/g-fuji.jpg" alt="">
-                
+                <!-- Set up your HTML -->
+                            <div class="owl-carousel">
+                                <div> Your Content </div>
+                                <div> Your Content </div>
+                                <div> Your Content </div>
+                                <div> Your Content </div>
+                                <div> Your Content </div>
+                                <div> Your Content </div>
+                                <div> Your Content </div>
+                            </div>
                             <div class="modal-popup__desc">
                                 <h5>Retro Camera</h5>
                                 <p>Odio soluta enim quos sit asperiores rerum rerum repudiandae cum. Vel voluptatem alias qui assumenda iure et expedita voluptatem. Ratione officiis quae.</p>
@@ -557,7 +565,13 @@
     <!-- Java Script
     ================================================== -->
     <script src="js/plugins.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="owlcarousel/dist/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel();
+        });
+    </script>
 </body>
 </html>
