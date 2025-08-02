@@ -17,6 +17,10 @@
     ================================================== -->
     <link rel="stylesheet" href="../css/vendor.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../fontawesome-free-7.0.0-web/css/all.min.css"/>  
+    <link rel="stylesheet" href="../owlcarousel/dist/assets/owl.carousel.css">
+    <link rel="stylesheet" href="../owlcarousel/dist/assets/owl.theme.default.css">
 
     <style type="text/css" media="screen">
         .s-styles {
@@ -97,18 +101,19 @@
 
                 <div class="row intro-content wide">
 
-                    <div class="column">
-                        <div class="text-pretitle with-line">
-                            Project
-                        </div>
-
-                        <h1 class="text-huge-title">
-                            Clientsync is <br>
-                            a CRM built <br>
-                            on top of hubspot<br> 
-                            to simplify <br>
-                            leads management
-                        </h1>
+                    <div class="column lg-12">
+                        <!-- Set up your HTML -->
+                            <div class="hero-carousel owl-theme owl-carousel">
+                                <div class="item"> 
+                                    <img src="../images/portfolio/gallery/g-fuji.jpg" alt=""> 
+                                </div>
+                                <div class="item"> 
+                                    <img src="../images/portfolio/gallery/g-lamp.jpg" alt=""> 
+                                </div>
+                                <div class="item"> 
+                                    <img src="../images/portfolio/gallery/g-rucksack.jpg" alt=""> 
+                                </div>
+                            </div>
                     </div>
 
                     <ul class="intro-social">
@@ -788,8 +793,26 @@
 
     <!-- Java Script
     ================================================== -->
+    <script src="../js/jquery.js"></script>
+    <script src="../owlcarousel/dist/owl.carousel.js"></script>
     <script src="../js/plugins.js"></script>
     <script src="../js/main.js"></script>
+<script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: { items: 1 },
+                600: { items: 2 },
+                1000: { items: 3 }
+            }
+            });
 
+        });
+
+        
+    </script>
 </body>
 </html>

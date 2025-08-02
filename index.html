@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="fontawesome-free-7.0.0-web/css/all.min.css"/>  
-    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.css">
+    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.theme.default.css">
 
     <!-- favicons
     ================================================== -->
@@ -29,6 +29,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/ttg.png">
     <link rel="manifest" href="site.webmanifest">
 
+    
 </head>
 
 <body id="top">
@@ -309,16 +310,17 @@
                     -------------------------------------------- -->
                     <div id="modal-01" hidden>
                         <div class="modal-popup">
-                            <img src="images/portfolio/gallery/g-fuji.jpg" alt="">
-                <!-- Set up your HTML -->
-                            <div class="owl-carousel">
-                                <div> Your Content </div>
-                                <div> Your Content </div>
-                                <div> Your Content </div>
-                                <div> Your Content </div>
-                                <div> Your Content </div>
-                                <div> Your Content </div>
-                                <div> Your Content </div>
+                            <!-- Set up your HTML -->
+                            <div class="owl-theme owl-carousel">
+                                <div> 
+                                    <img src="images/portfolio/gallery/g-fuji.jpg" alt=""> 
+                                </div>
+                                <div> 
+                                    <img src="images/portfolio/gallery/g-fuji.jpg" alt=""> 
+                                </div>
+                                <div> 
+                                    <img src="images/portfolio/gallery/g-fuji.jpg" alt=""> 
+                                </div>
                             </div>
                             <div class="modal-popup__desc">
                                 <h5>Retro Camera</h5>
@@ -564,14 +566,31 @@
 
     <!-- Java Script
     ================================================== -->
-    <script src="js/plugins.js"></script>
     <script src="js/jquery.js"></script>
-    <script src="owlcarousel/dist/owl.carousel.min.js"></script>
+    <script src="owlcarousel/dist/owl.carousel.js"></script>
+    <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script>
         $(document).ready(function(){
-            $(".owl-carousel").owlCarousel();
+            $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: { items: 1 },
+                600: { items: 2 },
+                1000: { items: 3 }
+            }
+            });
+
+            
+  // Refresh carousel when modal is shown
+  $('#modal-01').on('shown.bs.modal', function () {
+    $('.owl-carousel').trigger('refresh.owl.carousel');
+  });
         });
+
+        
     </script>
 </body>
 </html>
