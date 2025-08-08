@@ -1215,6 +1215,10 @@ textarea {
     margin-top : 0;
 }
 
+.u-add-top-padding{
+    padding-top: var(--vspace-5);
+}
+
 .u-remove-bottom {
     margin-bottom : 0;
 }

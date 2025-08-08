@@ -62,3 +62,18 @@
   content: "→";
   margin-left: 5px;
 }
+
+/* -- project content area -- */
+.s-styles {
+    position: relative;
+}
+
+.s-styles .intro h1 {
+    margin-top: 0;
+}
+
+.pgn ul{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
