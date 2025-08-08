@@ -3003,7 +3003,7 @@ img.u-pull-left {
     margin           : 0;
     padding          : 0;
     position: absolute;
-    right: 0;
+    right: var(--vspace-2);
 }
 
 .main-nav li {

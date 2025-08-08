@@ -66,11 +66,11 @@
 
 			<div class="row wide main-nav-wrap">
 				<nav class="column lg-12 main-nav">
-					<a href="index.html" class="home-link"><img src="../images/avatars/ser-theo.png" alt="" class="logo"></a>
+					<a href="../index.html" class="home-link"><img src="../images/avatars/ser-theo.png" alt="" class="logo"></a>
 					<ul>
-						<li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
-						<li><a href="#works" class="smoothscroll">Works</a></li>
-						<li><a href="#contact" class="smoothscroll">Say Hello</a></li>
+						<li><a href="../index.html" class="smoothscroll">Home</a></li>
+						<li><a href="#contact" class="btn btn--primary smoothscroll">Say Hello</a></li>
+						<li class="smoothscroll"><a id="toggle-mode"><i class="fas fa-sun"></i></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -116,12 +116,12 @@
 			</section> <!-- end s-intro -->
 
 
-			<!-- ### styles
+			<!-- ### content
 			================================================== -->
-			<div id="styles" class="s-styles u-remove-padding-top">
+			<div id="styles" class="s-details s-styles u-remove-padding-top">
 
 				<div class="row">
-					<div class="column lg-8 intro">
+					<div class="column lg-8 tab-12 mob-12 intro">
 						<h1>ClientSync</h1>
 
 						<p class="lead">A SaaS platform that integrates businesses with HubSpot CRM, enabling real-time lead synchronization, pipeline tracking, and automation without switching tools.
@@ -173,7 +173,7 @@
 						</div>
 					</div>
 
-					<div class="column lg-12 tab-12">
+					<div class="column lg-12 mob-12 tab-12">
 						<a class="btn btn--stroke u-halfwidth" href="#0">View Code</a>
 						<a class="btn btn--primary u-halfwidth" href="#0">View Demo</a>
 					</div>
@@ -191,21 +191,21 @@
 						<h2>More Projects</h2>
 					</div>
 
-					<div class="column recommendations-item lg-4">
+					<div class="column recommendations-item lg-4 tab-12 mob-12 ">
                         <img src="../images/wheel-500.jpg"  alt="">
 						<h3>SolarCalculator</h3>
 						<p>A solar cost-savings calculator that estimates energy savings and ROI for users installing solar panels. Users input their location, energy usage, and roof size to get instant insights into installation costs, payback period, and monthly savings.</p>
 						<a href="projects/solarcalculator.html">View Project</a>
 					</div>
 
-					<div class="column recommendations-item lg-4">
+					<div class="column recommendations-item lg-4 tab-12 mob-12 ">
                         <img src="../images/wheel-500.jpg"  alt="">
 						<h3>FitnessQuest</h3>
 						<p>A Duolingo-style fitness app that guides users through structured daily workout programs. Tracks progress, awards XP and levels, and adapts to the user’s fitness journey — making consistency fun and measurable.</p>
 						<a href="projects/fitnessquest.html">View Project</a>
 					</div>
 
-					<div class="column recommendations-item lg-4">
+					<div class="column recommendations-item lg-4 tab-12 mob-12">
                         <img src="../images/wheel-500.jpg"  alt="">
 						<h3>SocialScheduler</h3>
 						<p>A social media content scheduler for creators and businesses. Lets users plan, organize, and auto-post across Instagram, LinkedIn, TikTok, and more — complete with a calendar view and post templates.</p>
@@ -284,6 +284,7 @@
 	<script src="../js/main.js"></script>
 	<script>
 		$(document).ready(function(){
+			//Owl Carousel Config
 			$('.owl-carousel').owlCarousel({
 				loop: true,
 				nav: true,
@@ -297,6 +298,35 @@
 					1000: { items: 1 }
 				}
 			});
+
+			// Theme toggle
+			$("#toggle-mode").click(function(e){
+				e.preventDefault();
+				$(".s-content").toggleClass("light-mode");
+				$(".s-header").toggleClass("light-mode");
+				$(".s-intro").toggleClass("light-mode");
+				$(".s-details").toggleClass("light-mode");
+				$(".s-contact").toggleClass("light-mode");
+				$(".s-footer").toggleClass("light-mode");
+
+
+				// Change icon between sun and moon
+				$(this).find("i").toggleClass("fa-sun fa-moon");
+
+				// Remember choice
+				if ($("body").hasClass("light-mode")) {
+					localStorage.setItem("theme", "light");
+				} else {
+					localStorage.setItem("theme", "dark");
+				}
+			});
+
+			// Load saved theme
+			if (localStorage.getItem("theme") === "light") {
+				$("body").addClass("light-mode");
+				$("#toggle-mode i").removeClass("fa-sun").addClass("fa-moon");
+			}
+
 		});
 	</script>
 </body>

@@ -1,3 +1,6 @@
+#toggle-mode{
+    font-size: larger;
+}
 .logo{
     height: 50px;
     width: 50px;
@@ -9,10 +12,15 @@
     transform: translate(10%, 10%);
 }
 
+.s-header .main-nav-wrap{
+    background-color: var(--color-black);
+}
+
 .tech-stack{
     padding-top: 75px;
     padding-bottom: 45px;
-    }
+}
+
 .tech-stack i{
     font-size: 40px;
     padding-top: 40px;
@@ -51,16 +59,6 @@
     object-fit: cover;
     object-position: center;
 }
-/*
-.hero-carousel.owl-carousel .owl-nav .owl-next,
-.hero-carousel.owl-carousel .owl-nav .owl-prev{
-    width: 50px;
-    height: 50px;
-    color: black;
-    background-color: purple;
-    font-size: 40px;
-    display: block;
-}*/
 
 .hero-carousel.owl-carousel .owl-nav button{
     margin: 0px;
@@ -114,9 +112,9 @@
     display: none;
 }
 
-/* -- project content area -- */
+/* -- project details area -- */
 
-.s-styles {
+.s-details {
     position: relative;
 }
 
@@ -147,4 +145,53 @@
 
 .recommendations .recommendations-item a:hover{
     color: var(--color-btn-primary-hover);
+}
+
+/*===================== Dark Mode ==================*/
+.s-content.light-mode{
+    color: var(--color-black);
+    background-color: var(--color-gray-1);
+
+}
+.s-header.light-mode .main-nav-wrap .main-nav{
+    color: var(--color-black);
+    background-color: var(--color-gray-1);
+}
+
+.s-header.light-mode .mobile-home-link a,
+.s-header.light-mode .main-nav a{
+    color: var(--color-black);
+}
+
+.s-intro.light-mode{
+    color: var(--color-black);
+    background-color: var(--color-gray-1);
+}
+
+.s-details.light-mode,
+.s-details.light-mode h1,
+.s-details.light-mode h2,
+.s-details.light-mode h3,
+.s-details.light-mode li strong,
+.s-details.light-mode .lead,
+.s-details.light-mode .btn--stroke{
+    color: var(--color-black);
+    background-color: var(--color-gray-1);
+}
+
+.s-details.light-mode .btn--stroke{
+    border: 1px solid var(--color-black)
+}
+
+.s-contact.light-mode,
+.s-contact.light-mode p,
+.s-contact.light-mode h2,
+.s-contact.light-mode h3{
+    color: var(--color-black);
+    background-color: var(--color-gray-1);
+}
+
+.s-footer.light-mode{
+    color: var(--color-black);
+    background-color: var(--color-gray-1);
 }
