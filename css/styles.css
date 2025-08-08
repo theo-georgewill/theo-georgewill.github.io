@@ -1216,7 +1216,11 @@ textarea {
 }
 
 .u-add-top-padding{
-    padding-top: var(--vspace-5);
+    padding-top: var(--vspace-0_125);
+}
+
+.u-add-top {
+    margin-bottom : var(--vspace-1);
 }
 
 .u-remove-bottom {
@@ -1230,6 +1234,7 @@ textarea {
 .u-add-bottom {
     margin-bottom : var(--vspace-1);
 }
+
 
 .u-no-border {
     border : none;

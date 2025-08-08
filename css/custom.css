@@ -36,34 +36,86 @@
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+    pointer-events: none;
 }
-
-.owl-nav span{
+.owl-carousel .owl-item{
+    width: 100%;
+    height: 100%;
+    max-height: 80vh;
+   /* overflow: hidden;*/
+}
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+/*
+.hero-carousel.owl-carousel .owl-nav .owl-next,
+.hero-carousel.owl-carousel .owl-nav .owl-prev{
     width: 50px;
     height: 50px;
     color: black;
     background-color: purple;
     font-size: 40px;
     display: block;
+}*/
+
+.hero-carousel.owl-carousel .owl-nav button{
+    margin: 0px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-btn-primary);
+    border: none;
+    font-size: 20px;
+    color: var(--color-black);
+    cursor: pointer;
+    pointer-events: all; /* re-enable click for buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Hover effect */
-.owl-prev:hover,
-.owl-next:hover {
-  background-color: #555;
+.hero-carousel.owl-carousel .owl-nav button:hover{
+    background-color: var(--color-btn-primary-hover);
+}
+/* Each dot *//* Container for dots */
+.owl-dots {
+  text-align: center;       /* Center them */
+  margin-top: 20px;
 }
 
-.owl-prev{
-  content: "←";
-  margin-right: 5px;
+.owl-dot {
+  display: inline-block;
+  margin: 0 5px;
 }
 
-.owl-next {
-  content: "→";
-  margin-left: 5px;
+/* The inner span is the visible dot */
+.owl-dot span {
+  width: 12px;
+  height: 12px;
+  background: var(--color-gray-7);         /* Default color */
+  display: block;
+  border-radius: 50%;       /* Makes it round */
+  transition: background 0.3s ease;
+}
+
+/* Active dot */
+.owl-dot.active span {
+  background: var(--color-1);       /* Highlight color */
+}
+
+
+/* -- tech skills --*/
+
+.tech.skill-bars li .progress span::after{
+    display: none;
 }
 
 /* -- project content area -- */
+
 .s-styles {
     position: relative;
 }
@@ -72,8 +124,27 @@
     margin-top: 0;
 }
 
-.pgn ul{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.recommendations {
+    margin-bottom: var(--vspace-5);
+}
+
+.recommendations img{
+    margin-bottom: 0;
+}
+.recommendations h3{
+    padding-top: var(--vspace-0_125);
+    margin-top: 0;
+}
+
+.recommendations .recommendations-item p{
+    margin-bottom: var(--vspace-0_5);
+}
+
+.recommendations .recommendations-item a{
+    margin-top: var(--vspace-0_25);
+    color: var(--color-btn-primary);
+}
+
+.recommendations .recommendations-item a:hover{
+    color: var(--color-btn-primary-hover);
 }

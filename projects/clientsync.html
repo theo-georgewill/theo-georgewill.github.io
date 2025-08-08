@@ -19,7 +19,6 @@
 	<link rel="stylesheet" href="../css/styles.css">
 	<link rel="stylesheet" href="../fontawesome-free-7.0.0-web/css/all.min.css"/>  
 	<link rel="stylesheet" href="../owlcarousel/dist/assets/owl.carousel.css">
-	<link rel="stylesheet" href="../owlcarousel/dist/assets/owl.theme.default.css">
 	<link rel="stylesheet" href="../css/custom.css">
 
 
@@ -135,28 +134,28 @@
 
 						<h3>Solution</h3>
 						<p>
-							ClientSync Alpha acts as a bridge between internal tools and HubSpot, offering a unified dashboard for managing contacts, deals, and pipelines. Real-time webhooks ensure CRM data stays updated across platforms.
+							ClientSync acts as a bridge between internal tools and HubSpot, offering a unified dashboard for managing contacts, deals, and pipelines. Real-time webhooks ensure CRM data stays updated across platforms.
 						</p>
 					</div>
 
 					<div class="column lg-4 tab-12">
 						<div class="">
-							<h3 class="u-add-bottom">Technologies Used</h3>
-							<ul class="skill-bars">
+							<h3 class="u-add-bottom">Tech Stack</h3>
+							<ul class="tech skill-bars">
 								<li>
-									<div class="progress percent100"><span>100%</span></div>
+									<div class="progress percent100"><span>Backend</span></div>
 									<strong>Laravel</strong>
 								</li>
 								<li>
-									<div class="progress percent100"><span>100%</span></div>
-									<strong>Vue 3</strong>
+									<div class="progress percent100"><span>Frontend</span></div>
+									<strong>Vue.js</strong>
 								</li>
 								<li>
-									<div class="progress percent100"><span>100%</span></div>
+									<div class="progress percent100"><span>State Management</span></div>
 									<strong>Pinia</strong>
 								</li>
 								<li>
-									<div class="progress percent100"><span>100%</span></div>
+									<div class="progress percent100"><span>Database</span></div>
 									<strong>MySQL</strong>
 								</li>
 							</ul>
@@ -179,31 +178,38 @@
 						<a class="btn btn--primary u-halfwidth" href="#0">View Demo</a>
 					</div>
 
+					<div class="lg-12">
+						<hr>
+					</div>
 
 					   
 				</div> <!-- end row -->
 
-				<div class="row">
+				<div class="row recommendations">
 
-					<div class="column u-add-top-padding lg-12">
+					<div class="column lg-12 u-add-bottom">
+						<h2>More Projects</h2>
+					</div>
 
-						<nav class="pgn">
-							<ul>
-								<li>
-									<a class="pgn__prev" href="#0">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.707 17.293L8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"/></svg>
-										Previous
-									</a>
-								</li>
-								
-								<li>
-									<a class="pgn__next" href="#0">
-										Next 
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"/></svg>
-									</a>
-								</li>
-							</ul>
-						</nav>
+					<div class="column recommendations-item lg-4">
+                        <img src="../images/wheel-500.jpg"  alt="">
+						<h3>SolarCalculator</h3>
+						<p>A solar cost-savings calculator that estimates energy savings and ROI for users installing solar panels. Users input their location, energy usage, and roof size to get instant insights into installation costs, payback period, and monthly savings.</p>
+						<a href="projects/solarcalculator.html">View Project</a>
+					</div>
+
+					<div class="column recommendations-item lg-4">
+                        <img src="../images/wheel-500.jpg"  alt="">
+						<h3>FitnessQuest</h3>
+						<p>A Duolingo-style fitness app that guides users through structured daily workout programs. Tracks progress, awards XP and levels, and adapts to the user’s fitness journey — making consistency fun and measurable.</p>
+						<a href="projects/fitnessquest.html">View Project</a>
+					</div>
+
+					<div class="column recommendations-item lg-4">
+                        <img src="../images/wheel-500.jpg"  alt="">
+						<h3>SocialScheduler</h3>
+						<p>A social media content scheduler for creators and businesses. Lets users plan, organize, and auto-post across Instagram, LinkedIn, TikTok, and more — complete with a calendar view and post templates.</p>
+						<a href="projects/socialscheduler.html">View Project</a>
 					</div>
 
 				</div> <!-- end row -->
@@ -224,9 +230,7 @@
 						</h2>
 
 						<p class="h1">
-							I love to hear from you.
-							Whether you have a question or just 
-							want to chat about design, tech & art — shoot me a message.
+							Want to chat about design, tech & art — shoot me a message.
 						</p>
 					</div>
 				</div> <!-- end contact-top -->
@@ -235,17 +239,13 @@
 					<div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
 						<h3 class="text-pretitle">Reach me at</h3>
 						<p class="contact-links">
-							<a href="mailto:sayhello@luther.com" class="mailtoui">sayhello@luther.com</a> <br>
-							<a href="tel:+1975432345">+197 543 2345</a>
+							<a href="mailto:ttggwll@gmail.com" class="mailtoui">ttggwll@gmail.com</a>
 						</p>
 					</div>
 					<div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
 						<h3 class="text-pretitle">Social</h3>
 						<ul class="contact-social">
-							<li><a href="#0">Behance</a></li>
-							<li><a href="#0">Dribble</a></li>
-							<li><a href="#0">Twitter</a></li>
-							<li><a href="#0">Instagram</a></li>
+							<li><a href="#0">LinkedIn</a></li>
 							<li><a href="#0">Github</a></li>
 						</ul>
 					</div>
@@ -286,8 +286,11 @@
 		$(document).ready(function(){
 			$('.owl-carousel').owlCarousel({
 				loop: true,
-			  //  margin: 10,
 				nav: true,
+				navText: [
+					'<i class="fas fa-chevron-left"></i>',
+					'<i class="fas fa-chevron-right"></i>'
+				],
 				responsive: {
 					0: { items: 1 },
 					600: { items: 1 },
