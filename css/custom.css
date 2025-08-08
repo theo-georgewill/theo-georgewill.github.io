@@ -1,5 +1,5 @@
 #toggle-mode{
-    font-size: larger;
+    font-size: large;
 }
 .logo{
     height: 50px;
@@ -148,6 +148,23 @@
 }
 
 /*===================== Dark Mode ==================*/
+s-pagewrap .circles.light-mode span:nth-child(1) {
+    height: 100%;
+    width: 100%;
+}
+.s-pagewrap .circles.light-mode span{
+    display: block;
+    border: 1px solid var(--color-black);
+    border-radius: 50%;
+    opacity: .1;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+
+}
+.s-header.light-mode .main-nav .current a.smoothscroll{
+    background-color: var(--color-1);
+}
 .s-content.light-mode{
     color: var(--color-black);
     background-color: var(--color-gray-1);
@@ -163,9 +180,48 @@
     color: var(--color-black);
 }
 
-.s-intro.light-mode{
+.s-intro.light-mode,
+.s-intro.light-mode .text-pretitle.with-line,
+.s-about.light-mode .text-pretitle.with-line,
+.s-intro.light-mode h1{
+    color: var(--color-black);
+    background-color: transparent;
+}
+
+.s-intro.light-mode .intro-scrolldown svg path{
+    fill: var(--color-black);
+}
+
+.s-intro.light-mode .text-pretitle.with-line::before,
+.s-about.light-mode .text-pretitle.with-line::before{
+
+    color: var(--color-black);
+    background-color: var(--color-black);
+}
+
+.s-intro.light-mode a:hover,
+.s-about.light-mode a:hover{
+    background-color: var(--color-btn-primary-hover);
+}
+
+.s-about.light-mode,
+.s-about.light-mode p{
     color: var(--color-black);
     background-color: var(--color-gray-1);
+
+}
+
+.s-works.light-mode .folio-list__proj-link svg path{
+    fill: var(--color-black);
+}
+
+.s-works.light-mode h2,
+.s-works.light-mode p,
+.s-works.light-mode .folio-list__item-title,
+.s-works.light-mode .folio-list__item-details{
+    color: var(--color-black);
+    background-color: var(--color-gray-1);
+
 }
 
 .s-details.light-mode,

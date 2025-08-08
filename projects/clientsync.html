@@ -68,8 +68,8 @@
 				<nav class="column lg-12 main-nav">
 					<a href="../index.html" class="home-link"><img src="../images/avatars/ser-theo.png" alt="" class="logo"></a>
 					<ul>
-						<li><a href="../index.html" class="smoothscroll">Home</a></li>
-						<li><a href="#contact" class="btn btn--primary smoothscroll">Say Hello</a></li>
+						<li><a href="../index.html" >Home</a></li>
+						<li><a href="#contact" class="smoothscroll">Say Hello</a></li>
 						<li class="smoothscroll"><a id="toggle-mode"><i class="fas fa-sun"></i></a></li>
 					</ul>
 				</nav>
@@ -282,52 +282,6 @@
 	<script src="../owlcarousel/dist/owl.carousel.js"></script>
 	<script src="../js/plugins.js"></script>
 	<script src="../js/main.js"></script>
-	<script>
-		$(document).ready(function(){
-			//Owl Carousel Config
-			$('.owl-carousel').owlCarousel({
-				loop: true,
-				nav: true,
-				navText: [
-					'<i class="fas fa-chevron-left"></i>',
-					'<i class="fas fa-chevron-right"></i>'
-				],
-				responsive: {
-					0: { items: 1 },
-					600: { items: 1 },
-					1000: { items: 1 }
-				}
-			});
-
-			// Theme toggle
-			$("#toggle-mode").click(function(e){
-				e.preventDefault();
-				$(".s-content").toggleClass("light-mode");
-				$(".s-header").toggleClass("light-mode");
-				$(".s-intro").toggleClass("light-mode");
-				$(".s-details").toggleClass("light-mode");
-				$(".s-contact").toggleClass("light-mode");
-				$(".s-footer").toggleClass("light-mode");
-
-
-				// Change icon between sun and moon
-				$(this).find("i").toggleClass("fa-sun fa-moon");
-
-				// Remember choice
-				if ($("body").hasClass("light-mode")) {
-					localStorage.setItem("theme", "light");
-				} else {
-					localStorage.setItem("theme", "dark");
-				}
-			});
-
-			// Load saved theme
-			if (localStorage.getItem("theme") === "light") {
-				$("body").addClass("light-mode");
-				$("#toggle-mode i").removeClass("fa-sun").addClass("fa-moon");
-			}
-
-		});
-	</script>
+	<script src="../js/custom.js"></script>
 </body>
 </html>
