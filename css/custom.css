@@ -1,6 +1,7 @@
 #toggle-mode{
     font-size: large;
 }
+
 .logo{
     height: 50px;
     width: 50px;
@@ -224,6 +225,14 @@ s-pagewrap .circles.light-mode span:nth-child(1) {
 
 }
 
+.s-details.light-mode hr {
+    border: solid var(--color-gray-2);
+    border-width: .1rem 0 0;
+    clear: both;
+    margin: var(--vspace-2) 0 calc(var(--vspace-2) - 1px);
+    height: 0;
+}
+
 .s-details.light-mode,
 .s-details.light-mode h1,
 .s-details.light-mode h2,
@@ -239,6 +248,12 @@ s-pagewrap .circles.light-mode span:nth-child(1) {
     border: 1px solid var(--color-black)
 }
 
+.s-about.light-mode .contact-top{
+    border-top: 1px solid var(--color-gray-2);
+}
+.s-contact.light-mode .contact-top{
+    border-top: 1px solid var(--color-gray-2);
+}
 .s-contact.light-mode,
 .s-contact.light-mode p,
 .s-contact.light-mode h2,
