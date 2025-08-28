@@ -1,7 +1,7 @@
 # Theo Georgewill
 
 Welcome to my developer portfolio!  
-This repository powers **[theo-georgewill.github.io](https://theo-georgewill.github.io)** – a showcase of my work as a **software engineer, indie hacker, and founder of [Tedtek Studios](#)**.
+This repository powers **[theo-georgewill.github.io](https://theo-georgewill.github.io)** – a showcase of my work as a **software engineer, and indie hacker.**
 
 ---
 
