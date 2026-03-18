@@ -1,454 +1,621 @@
 <!DOCTYPE html>
-<html class="no-js ss-preload" lang="en">
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theo Georgewill — Senior Fullstack Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #000; --surface: #0a0a0a; --surface2: #141414; --surface3: #1c1c1e;
+      --border: rgba(255,255,255,0.08); --border-hover: rgba(255,255,255,0.18);
+      --text: #f5f5f7; --text-secondary: #a1a1a6; --text-tertiary: #6e6e73;
+      --accent: #2997ff; --green: #30d158;
+      --radius: 18px; --radius-sm: 12px; --nav-h: 52px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-    <!--- basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <title>Theo Georgewill - Portfolio</title>
-    <meta name="description" content="">
-    <meta name="author" content="Theo Georgewill">
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; background: rgba(0,0,0,0.72); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-size: 17px; font-weight: 600; color: var(--text); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { font-size: 13px; font-weight: 500; background: var(--accent); color: #fff; padding: 7px 16px; border-radius: 980px; text-decoration: none; transition: opacity 0.2s; }
+    .nav-cta:hover { opacity: 0.85; }
 
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; }
+    .hero-glow { position: absolute; width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, rgba(41,151,255,0.12) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--accent); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 24px; padding: 6px 14px; border-radius: 980px; border: 1px solid rgba(41,151,255,0.3); background: rgba(41,151,255,0.06); animation: fadeUp 0.8s ease both; }
+    .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); display: inline-block; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .hero h1 { font-size: clamp(48px,8vw,96px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 24px; animation: fadeUp 0.8s 0.1s ease both; }
+    .hero h1 em { font-style: normal; background: linear-gradient(135deg, #2997ff 0%, #5ac8fa 50%, #2997ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% auto; animation: shimmer 4s linear infinite; }
+    @keyframes shimmer { to { background-position: 200% center; } }
+    .hero-sub { font-size: clamp(19px,2.5vw,24px); font-weight: 300; color: var(--text-secondary); max-width: 600px; line-height: 1.5; margin-bottom: 48px; animation: fadeUp 0.8s 0.2s ease both; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.8s 0.3s ease both; }
+    .btn-primary { font-size: 17px; font-weight: 500; background: var(--accent); color: #fff; padding: 14px 32px; border-radius: 980px; text-decoration: none; transition: all 0.2s; }
+    .btn-primary:hover { background: #0a84ff; transform: scale(1.02); }
+    .btn-secondary { font-size: 17px; font-weight: 500; color: var(--accent); padding: 14px 32px; border-radius: 980px; text-decoration: none; transition: all 0.2s; border: 1px solid rgba(41,151,255,0.4); }
+    .btn-secondary:hover { background: rgba(41,151,255,0.08); }
+    .hero-scroll { position: absolute; bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--text-tertiary); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; animation: fadeUp 1s 0.8s ease both; }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--text-tertiary), transparent); animation: scrollPulse 2s ease infinite; }
+    @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="fontawesome-free-7.0.0-web/css/all.min.css"/>  
-    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.css">
-    <link rel="stylesheet" href="css/custom.css">
+    /* STATS */
+    .stats-bar { background: var(--surface2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px 24px; }
+    .stats-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); }
+    .stat { background: var(--surface2); padding: 24px 32px; text-align: center; }
+    .stat-number { font-size: 42px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; margin-bottom: 6px; }
+    .stat-number span { color: var(--accent); }
+    .stat-label { font-size: 13px; color: var(--text-secondary); }
 
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
-    <link rel="manifest" href="site.webmanifest">
+    /* SECTIONS */
+    section { padding: 120px 24px; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-eyebrow { font-size: 13px; font-weight: 500; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .section-title { font-size: clamp(32px,5vw,52px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 20px; }
+    .section-desc { font-size: 19px; font-weight: 300; color: var(--text-secondary); line-height: 1.6; max-width: 600px; margin-bottom: 64px; }
 
-    
+    /* ABOUT */
+    #about { background: var(--surface); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-text p { font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; font-weight: 300; }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .tag { font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 980px; background: var(--surface3); border: 1px solid var(--border); color: var(--text-secondary); }
+    .about-card { background: var(--surface3); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; }
+    .about-card-title { font-size: 13px; font-weight: 500; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 24px; }
+    .award-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .award-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .award-icon { width: 36px; height: 36px; border-radius: 9px; background: linear-gradient(135deg,#f5a623,#f5813f); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .award-name { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+    .award-org { font-size: 12px; color: var(--text-tertiary); }
+
+    /* EXPERIENCE */
+    #experience { background: var(--bg); }
+    .exp-list { display: flex; flex-direction: column; gap: 2px; }
+    .exp-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s; cursor: pointer; }
+    .exp-item:hover { border-color: var(--border-hover); }
+    .exp-header { display: flex; align-items: center; gap: 20px; padding: 28px 32px; }
+    .exp-logo { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .exp-meta { flex: 1; }
+    .exp-company { font-size: 17px; font-weight: 600; margin-bottom: 2px; }
+    .exp-role { font-size: 14px; color: var(--accent); font-weight: 500; }
+    .exp-dates { font-size: 13px; color: var(--text-tertiary); margin-top: 2px; }
+    .exp-toggle { width: 28px; height: 28px; border-radius: 50%; background: var(--surface3); border: none; cursor: pointer; color: var(--text-tertiary); display: flex; align-items: center; justify-content: center; transition: all 0.2s; font-size: 14px; }
+    .exp-toggle:hover { background: var(--border-hover); color: var(--text); }
+    .exp-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; padding: 0 32px; }
+    .exp-body.open { max-height: 600px; padding: 0 32px 28px; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .exp-bullets li { font-size: 14px; color: var(--text-secondary); line-height: 1.6; padding-left: 20px; position: relative; }
+    .exp-bullets li::before { content:''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+    .exp-bullets li strong { color: var(--text); font-weight: 500; }
+    .exp-current { font-size: 11px; font-weight: 600; color: var(--green); padding: 3px 9px; border-radius: 980px; background: rgba(48,209,88,0.1); border: 1px solid rgba(48,209,88,0.25); margin-left: 10px; vertical-align: middle; }
+
+    /* PROJECTS */
+    #projects { background: var(--surface); }
+    .projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .project-card { background: var(--surface3); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .project-card::before { content:''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0; transition: opacity 0.3s; }
+    .project-card:hover { transform: translateY(-4px); border-color: var(--border-hover); }
+    .project-card:hover::before { opacity: 1; }
+    .project-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
+    .project-name { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
+    .project-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; flex: 1; margin-bottom: 24px; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+    .stack-tag { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 980px; background: var(--surface2); border: 1px solid var(--border); color: var(--text-tertiary); }
+    .project-card.featured { grid-column: span 2; background: linear-gradient(135deg,#0d1f38 0%,#0a1628 100%); border-color: rgba(41,151,255,0.2); }
+    .project-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 24px; }
+    .project-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; transition: gap 0.2s; }
+    .project-link:hover { gap: 10px; }
+    .project-link svg { width: 14px; height: 14px; }
+    .project-lang { font-size: 12px; color: var(--text-tertiary); display: flex; align-items: center; gap: 5px; }
+    .lang-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+    /* SKILLS */
+    #skills { background: var(--bg); }
+    .skills-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; }
+    .skill-group-title { font-size: 13px; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 18px; }
+    .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-chip { font-size: 13px; font-weight: 500; color: var(--text-secondary); padding: 7px 14px; border-radius: 980px; background: var(--surface3); border: 1px solid var(--border); transition: all 0.2s; }
+    .skill-chip:hover { color: var(--text); border-color: var(--border-hover); }
+    .skill-chip.highlight { color: var(--accent); border-color: rgba(41,151,255,0.3); background: rgba(41,151,255,0.06); }
+
+    /* CONTACT */
+    #contact { background: var(--surface); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
+    .contact-left h2 { font-size: clamp(28px,4vw,44px); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 16px; line-height: 1.1; }
+    .contact-left > p { font-size: 17px; color: var(--text-secondary); font-weight: 300; line-height: 1.6; margin-bottom: 36px; }
+    .contact-quick-links { display: flex; flex-direction: column; gap: 10px; }
+    .contact-link { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; color: var(--text); padding: 13px 18px; border-radius: var(--radius-sm); background: var(--surface3); border: 1px solid var(--border); text-decoration: none; transition: all 0.2s; }
+    .contact-link:hover { border-color: var(--border-hover); transform: translateX(4px); }
+    .contact-link svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
+    .contact-link .link-label { flex: 1; }
+
+    /* Form */
+    .contact-form-card { background: var(--surface3); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; position: relative; overflow: hidden; }
+    .contact-form-card::before { content:''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+    .form-title { font-size: 17px; font-weight: 600; margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 11px; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 7px; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 15px; font-size: 15px; color: var(--text); font-family: inherit; outline: none; transition: border-color 0.2s, box-shadow 0.2s; -webkit-appearance: none; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--text-tertiary); }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(41,151,255,0.1); }
+    .form-group textarea { resize: vertical; min-height: 110px; line-height: 1.5; }
+    .form-group select { cursor: pointer; }
+    .form-group select option { background: var(--surface3); color: var(--text); }
+    .form-submit { width: 100%; padding: 14px; background: var(--accent); color: #fff; border: none; border-radius: 980px; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .form-submit:hover { background: #0a84ff; transform: scale(1.01); }
+    .form-submit:active { transform: scale(0.99); }
+    .form-submit:disabled { opacity: 0.6; pointer-events: none; }
+    .form-note { font-size: 12px; color: var(--text-tertiary); text-align: center; margin-top: 12px; line-height: 1.5; }
+    .form-success { display: none; text-align: center; padding: 48px 16px; }
+    .success-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(48,209,88,0.12); border: 1px solid rgba(48,209,88,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 26px; }
+    .form-success h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+    .form-success p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* FOOTER */
+    footer { padding: 32px 24px; text-align: center; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-tertiary); }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-column: span 1; }
+      .skills-grid { grid-template-columns: 1fr; }
+      section { padding: 80px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+<body>
 
-<body id="top">
+  <nav>
+    <a href="#" class="nav-logo">TG</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </nav>
 
-
-    <!-- # preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader">
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-eyebrow"><span class="dot"></span> Available for new opportunities</div>
+    <h1>Building products<br>that <em>ship</em>.</h1>
+    <p class="hero-sub">Senior Fullstack Engineer with 6+ years delivering end-to-end web platforms — from pixel-perfect frontends to scalable APIs and everything in between.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">View my work</a>
+      <a href="#contact" class="btn-secondary">Let's talk</a>
     </div>
+    <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+  </section>
 
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat"><div class="stat-number">6<span>+</span></div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-number">10<span>+</span></div><div class="stat-label">Production Platforms</div></div>
+      <div class="stat"><div class="stat-number">2</div><div class="stat-label">Industry Awards</div></div>
+      <div class="stat"><div class="stat-number">5<span>+</span></div><div class="stat-label">Tech Stacks</div></div>
+    </div>
+  </div>
 
-    <!-- # page wrap
-    ================================================== -->
-    <div class="s-pagewrap">
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <div class="section-eyebrow">About</div>
+          <h2 class="section-title">Engineer.<br>Architect.<br>Maker.</h2>
+          <p>I'm Theo — a Senior Fullstack Engineer from Port Harcourt, Nigeria. I build <strong>end-to-end products</strong> that are fast, maintainable, and actually used by real people.</p>
+          <p>From architecting React + TypeScript frontends that cut delivery cycles by <strong>30–40%</strong>, to leading cross-functional engineering teams shipping apps for oil and gas clients — I own the full lifecycle.</p>
+          <p>I hold a <strong>BSc in Computer Science</strong> from Clifford University, where I graduated as the Department's Best Student.</p>
+          <div class="about-tags">
+            <span class="tag">React + TypeScript</span>
+            <span class="tag">Node.js + Laravel</span>
+            <span class="tag">System Architecture</span>
+            <span class="tag">Technical Leadership</span>
+            <span class="tag">REST APIs</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="about-card">
+            <div class="about-card-title">Awards & Recognition</div>
+            <div class="award-item">
+              <div class="award-icon">🏆</div>
+              <div><div class="award-name">Best Data-Driven SME Web Design</div><div class="award-org">Martech Awards 2024 · Innovation in Business</div></div>
+            </div>
+            <div class="award-item">
+              <div class="award-icon">🏆</div>
+              <div><div class="award-name">Digital Marketing Agency of the Year</div><div class="award-org">Corporate LiveWire Innovation & Excellence Award</div></div>
+            </div>
+            <div class="award-item">
+              <div class="award-icon">🎓</div>
+              <div><div class="award-name">Dean's Award — Best Graduating Student</div><div class="award-org">Clifford University · Computer Science</div></div>
+            </div>
+            <div class="award-item">
+              <div class="award-icon" style="background:linear-gradient(135deg,#5856d6,#007aff)">🌍</div>
+              <div><div class="award-name">4× Industry Nominations</div><div class="award-org">Media Innovator · Martech · Corporate Livewire · Global Recognition</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="circles">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-inner">
+      <div class="section-eyebrow reveal">Experience</div>
+      <h2 class="section-title reveal">Where I've built.</h2>
+      <p class="section-desc reveal">6+ years across event platforms, agencies, e-commerce, and enterprise — always owning end-to-end delivery.</p>
+      <div class="exp-list">
+
+        <div class="exp-item reveal" onclick="toggleExp(this)">
+          <div class="exp-header">
+            <div class="exp-logo" style="background:linear-gradient(135deg,#1c1c3a,#2c2c5e)">EP</div>
+            <div class="exp-meta">
+              <div class="exp-company">EventPark Africa <span class="exp-current">Current</span></div>
+              <div class="exp-role">Senior Frontend Engineer</div>
+              <div class="exp-dates">Nov 2025 – Present</div>
+            </div>
+            <button class="exp-toggle">▾</button>
+          </div>
+          <div class="exp-body">
+            <ul class="exp-bullets">
+              <li>Architected scalable React + TypeScript frontend enabling <strong>~30–40% faster feature delivery cycles</strong> through reusable component patterns and modular state management</li>
+              <li>Delivered <strong>5+ core platform features</strong> — event discovery, marketplace, filtering, cart, and multi-step checkout — forming the foundation of the platform's commercial launch</li>
+              <li>Designed Zustand + event-driven state system enabling real-time UI sync without page reloads</li>
+              <li>Integrated Go-based REST API with structured error handling, eliminating silent failures across all user journeys</li>
+              <li>Introduced React Router data loaders for preloading critical data, reducing UI blocking states</li>
+              <li>Optimised rendering via lazy loading, memoisation, and controlled re-renders for low-end and mobile devices</li>
+              <li>Built location-aware discovery and filtering logic, improving event and product relevance across regions</li>
+            </ul>
+          </div>
         </div>
 
-
-        <!-- ## site header 
-        ================================================== -->
-        <header class="s-header">
-
-            <div class="header-mobile">
-                <span class="mobile-home-link"><a href="index.html"><img src="images/avatars/ser-theo.png" alt="" class="logo"></a></span>
-                <a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
+        <div class="exp-item reveal" onclick="toggleExp(this)">
+          <div class="exp-header">
+            <div class="exp-logo" style="background:linear-gradient(135deg,#1a2a1a,#1f4d1f)">IC</div>
+            <div class="exp-meta">
+              <div class="exp-company">Inhouz Cloud</div>
+              <div class="exp-role">Fullstack Developer → Technical Project Manager</div>
+              <div class="exp-dates">Jul 2025 – Nov 2025</div>
             </div>
+            <button class="exp-toggle">▾</button>
+          </div>
+          <div class="exp-body">
+            <ul class="exp-bullets">
+              <li>Built full-stack MERN features in a serverless architecture for internal tools and enterprise oil & gas clients</li>
+              <li><strong>Promoted to Technical PM</strong> — managed delivery across multiple engineering teams</li>
+              <li>Led sprint planning, backlog grooming, and delivery tracking — improving accountability and predictability</li>
+              <li>Standardised stakeholder communication, significantly reducing misalignment and requirement ambiguity</li>
+              <li>Introduced structured per-team progress reporting, improving leadership visibility</li>
+            </ul>
+          </div>
+        </div>
 
-            <div class="row wide main-nav-wrap">
-                <nav class="column lg-12 main-nav">
-                    <a href="index.html" class="home-link"><img src="images/avatars/ser-theo.png" alt="" class="logo"></a>
-                    <ul>
-                        <li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
-                        <li><a href="#works" class="smoothscroll">Works</a></li>
-                        <li><a href="#contact" class="smoothscroll">Say Hello</a></li>
-						<li class="smoothscroll"><a id="toggle-mode"><i class="fas fa-sun"></i></a></li>
-                    </ul>
-                </nav>
+        <div class="exp-item reveal" onclick="toggleExp(this)">
+          <div class="exp-header">
+            <div class="exp-logo" style="background:linear-gradient(135deg,#2a1a0a,#5c3311)">TS</div>
+            <div class="exp-meta">
+              <div class="exp-company">Terra Sunny</div>
+              <div class="exp-role">Lead Software Developer</div>
+              <div class="exp-dates">2021 – 2024</div>
             </div>
+            <button class="exp-toggle">▾</button>
+          </div>
+          <div class="exp-body">
+            <ul class="exp-bullets">
+              <li>Led development of <strong>award-winning digital products</strong> (2 awards, 4 nominations) using TypeScript, Node.js, React, and Laravel</li>
+              <li>Delivered <strong>10+ production-ready web platforms</strong> across WordPress and custom builds</li>
+              <li>Built a custom WordPress automation plugin reducing per-project setup time by <strong>~50–70%</strong></li>
+              <li>Delivered backend API integrations for clients across e-commerce, marketing, and enterprise</li>
+            </ul>
+          </div>
+        </div>
 
-        </header> <!-- end s-header -->
-
-
-        <!-- ## main content
-        ==================================================- -->
-        <main class="s-content">
-
-
-            <!-- ### intro
-            ================================================== -->
-            <section id="intro" class="s-intro target-section">
-
-                <div class="row intro-content wide">
-
-                    <div class="column">
-                        <div class="text-pretitle with-line">
-                            Hello, I'm Theo
-                        </div>
-
-                        <h1 class="text-huge-title">
-                            I am a <br>
-                            Fullstack <br>
-                            Software Engineer.
-                        </h1>
-                            <div class="lg-6 md-12">
-                                
-                                <a class="btn smoothscroll u-fullwidth" href="#about">About me</a>
-                            </div>
-                    </div>
-
-                    <ul class="intro-social">
-                        <li><a href="https://github.com/theo-georgewill">Github</a></li>
-                        <li><a href="https://www.linkedin.com/in/theodore-georgewill-734245132/">Linkedin</a></li>
-                    </ul>
-
-                </div> <!-- end intro content -->
-
-                <a href="#about" class="intro-scrolldown smoothscroll">
-                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg>
-                </a>
-
-            </section> <!-- end s-intro -->
-
-
-
-            <!-- ### about
-            ================================================== -->
-            <section id="about" class="s-about target-section">
-
-
-                <div class="row about-infos wides" data-animate-block>
-
-                    <div class="column lg-4 md-12 mob-12 about-info__pic-sblock">
-                        <img src="images/avatars/ser-theo.png" alt="" class="about-info__pic" data-animate-el>
-                    </div>
-
-                    <div class="column lg-7 md-12 mob-12">
-                        <div class="about-info__tessxt" >
-
-                            <h2 class="text-pretitle with-line" data-animate-el>
-                                About
-                            </h2>
-                            <p class="attention-getter" data-animate-el>
-                                 I'm a software engineer, indie hacker, and builder. I specialize in building full-stack web applications, marketing-driven tools, and SaaS platforms that attract users and generate revenue.
-                                 <br>
-
-                                My work lives at the intersection of engineering and entrepreneurship. I don’t just code — I build real-world products, optimize for user growth, and treat every project as a case study in product-market fit. Whether it's syncing data with CRMs like HubSpot, gamifying fitness, or building internal tools, I focus on quality, speed, and outcomes.
-                            </p>
-                            <a href="#contact" class="smoothscroll btn btn--medium u-fullwidth" data-animate-el>Let's Talk</a>
-
-                        </div>
-                    </div>
-                </div> <!-- about-info -->
-
-
-                <div class="row text-center tech-stack" data-animate-block>
-
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el>
-                        <i class="fab fa-react"></i>
-                    </div>
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el>
-                        <i class="fab fa-node-js"></i>
-                    </div>
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el>
-                        <i class="fab fa-laravel"></i>
-                    </div>
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el>
-                        <i class="fab fa-wordpress"></i>
-                    </div>
-
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el>
-                        <i class="fab fa-hubspot"></i>
-                    </div>
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el>
-                        <i class="fab fa-vuejs"></i>
-                    </div>
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el>
-                        <i class="fab fa-bootstrap"></i>
-                    </div>
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el>
-                        <i class="fab fa-git-alt "></i>
-                    </div>
-
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el>
-                        <i class="fab fa-npm "></i>
-                    </div>
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el>
-                        <i class="fab fa-github "></i>
-                    </div>
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el >
-                        <i class="fab fa-docker "></i>
-                    </div>
-                    <div class="lg-3 md-6 mob-6 column" data-animate-el>
-                        <i class="fab fa-php "></i>
-                    </div>
-
-                </div> <!-- end about-timelines -->
-
-            </section> <!-- end s-about -->
-
-
-            <!-- ### works
-            ================================================== -->
-            <section id="works" class="s-works target-section">
-
-                <div class="row works-portfolio">
-
-                    <div class="column lg-12" data-animate-block>
-
-                        <h2 class="text-pretitle" data-animate-el>
-                            Recent Works
-                        </h2>
-                        <p class="h1" data-animate-el>
-                            Here are some of my favorite projects I have done lately. Feel free to check them out.
-                        </p>
-    
-                        <ul class="folio-list row block-lg-one-half block-stack-on-1000">
-
-                            <li class="folio-list__item column" data-animate-el>
-                                <a class="folio-list__item-link" href="projects/clientsync.html">
-                                    <div class="folio-list__item-pic">
-                                        <img src="images/portfolio/clientsync/localhost_5173_dashboard.png" alt="">
-                                    </div>
-                                    
-                                    <div class="folio-list__item-text">
-                                        <div class="folio-list__item-title">
-                                            ClientSync
-                                        </div>
-                                        <div class="folio-list__item-details">
-                                            A lightweight CRM that connects with HubSpot to sync contacts, deals, pipelines, and workflows. Includes OAuth integration, custom automation rules, and real-time webhook support — built for agencies that need full control over their client data.
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="folio-list__proj-link" href="projects/clientsync.html" title="project link">
-                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                                </a>
-                            </li> <!--end folio-list__item -->
-
-                            <li class="folio-list__item column" data-animate-el>
-                                <a class="folio-list__item-link" href="projects/fitness-planner.html">
-                                    <div class="folio-list__item-pic">
-                                        <img src="images/portfolio/lamp.jpg" 
-                                             srcset="images/portfolio/lamp.jpg 1x, images/portfolio/lamp@2x.jpg 2x" alt="">
-                                    </div>
-                                    
-                                    <div class="folio-list__item-text">
-                                        <div class="folio-list__item-title">
-                                            SolarCalculator
-                                        </div>
-                                        <div class="folio-list__item-details">
-                                            A solar cost-savings calculator that estimates energy savings and ROI for users installing solar panels. Users input their location, energy usage, and roof size to get instant insights into installation costs, payback period, and monthly savings.
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="folio-list__proj-link" href="projects/solar-calculator.html" title="project link">
-                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                                </a>
-                            </li> <!--end folio-list__item -->
-
-                            <li class="folio-list__item column" data-animate-el>
-                                <a class="folio-list__item-link" href="projects/fitness-planner.html">
-                                    <div class="folio-list__item-pic">
-                                        <img src="images/portfolio/rucksack.jpg" 
-                                             srcset="images/portfolio/rucksack.jpg 1x, images/portfolio/rucksack@2x.jpg 2x" alt="">
-                                    </div>
-                                    
-                                    <div class="folio-list__item-text">
-                                        <div class="folio-list__item-title">
-                                            FitnessQuest
-                                        </div>
-                                        <div class="folio-list__item-details">
-                                            A Duolingo-style fitness app that guides users through structured daily workout programs. Tracks progress, awards XP and levels, and adapts to the user’s fitness journey — making consistency fun and measurable.
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="folio-list__proj-link" href="projects/fitness-planner.html" title="project link">
-                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                                </a>
-                            </li> <!--end folio-list__item -->
-
-                            <li class="folio-list__item column" data-animate-el>
-                                <a class="folio-list__item-link" href="projects/social-scheduler.html">
-                                    <div class="folio-list__item-pic">
-                                        <img src="images/portfolio/social-scheduler/1.png" alt="">
-                                    </div>
-                                    
-                                    <div class="folio-list__item-text">
-                                        <div class="folio-list__item-title">
-                                            SocialScheduler
-                                        </div>
-                                        <div class="folio-list__item-details">
-                                            A social media content scheduler for creators and businesses. Lets users plan, organize, and auto-post across Instagram, LinkedIn, TikTok, and more — complete with a calendar view and post templates.
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="folio-list__proj-link" href="projects/social-scheduler.html" title="project link">
-                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                                </a>
-                            </li> <!--end folio-list__item -->
-
-                        </ul> <!-- end folio-list -->
-
-                    </div> <!-- end column -->
-
-                </div> <!-- end works-portfolio -->
-
-            <!--
-                <div class="row testimonials">
-                    <div class="column lg-12" data-animate-block>
-        
-                        <div class="swiper-container testimonial-slider" data-animate-el>
-        
-                            <div class="swiper-wrapper">
-
-                                <div class="testimonial-slider__slide swiper-slide">
-                                    <div class="testimonial-slider__author">
-                                        <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonial-slider__avatar">
-                                        <cite class="testimonial-slider__cite">
-                                            <strong>Tim Cook</strong>
-                                            <span>CEO, Apple</span>
-                                        </cite>
-                                    </div>
-                                    <p>
-                                    Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
-                                    Explicabo a quaerat sint autem dolore ducimus ut consequatur neque.  Nisi dolores quaerat fuga rem nihil nostrum.
-                                    Laudantium quia consequatur molestias delectus culpa.
-                                    </p>
-                                </div> -- end testimonial-slider__slide --
-                
-                                <div class="testimonial-slider__slide swiper-slide">
-                                    <div class="testimonial-slider__author">
-                                        <img src="images/avatars/user-03.jpg" alt="Author image" class="testimonial-slider__avatar">
-                                        <cite class="testimonial-slider__cite">
-                                            <strong>Sundar Pichai</strong>
-                                            <span>CEO, Google</span>
-                                        </cite>
-                                    </div>
-                                    <p>
-                                    Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                                    Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis.
-                                    Quasi voluptas eius distinctio. Atque eos maxime.
-                                    </p>
-                                </div> -- end testimonial-slider__slide --
-                
-                                <div class="testimonial-slider__slide swiper-slide">
-                                    <div class="testimonial-slider__author">
-                                        <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonial-slider__avatar">
-                                        <cite class="testimonial-slider__cite">
-                                            <strong>Satya Nadella</strong>
-                                            <span>CEO, Microsoft</span>
-                                        </cite>
-                                    </div>
-                                    <p>
-                                    Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                                    Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
-                                    Voluptatem dignissimos ut.
-                                    </p>
-                                </div> -- end testimonial-slider__slide --
-        
-                                <div class="testimonial-slider__slide swiper-slide">
-                                    <div class="testimonial-slider__author">
-                                        <img src="images/avatars/user-06.jpg" alt="Author image" class="testimonial-slider__avatar">
-                                        <cite class="testimonial-slider__cite">
-                                            <strong>Jeff Bezos</strong>
-                                            <span>CEO, Amazon</span>
-                                        </cite>
-                                    </div>
-                                    <p>
-                                    Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc ac augue. Fusce vel dui. In ac felis 
-                                    quis tortor malesuada pretium. Curabitur vestibulum aliquam leo. Qui sed at corrupti expedita voluptas odit. 
-                                    Nihil ea quia nesciunt. Ducimus aut sed ipsam.
-                                    </p>
-                                </div> -- end testimonial-slider__slide --
-            
-                            </div> -- end swiper-wrapper --
-        
-                            <div class="swiper-pagination"></div>
-        
-                        </div> -- end swiper-container --
-        
-                    </div> -- end column --
-                </div> -- end row testimonials --
-            -->
-            </section> <!-- end s-works -->
-
-
-            <!-- ### contact
-			================================================== -->
-			<section id="contact" class="s-contact">
-
-				<div class="row contact-top">
-					<div class="column lg-12">
-						<h2 class="text-pretitle">
-							Get In Touch
-						</h2>
-
-						<p class="h1">
-							Want to chat about design, tech & art — shoot me a message.
-						</p>
-					</div>
-				</div> <!-- end contact-top -->
-
-				<div class="row contact-bottom">
-					<div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
-						<h3 class="text-pretitle">Reach me at</h3>
-						<p class="contact-links">
-							<a href="mailto:ttggwll@gmail.com" class="mailtoui">ttggwll@gmail.com</a>
-						</p>
-					</div>
-					<div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
-						<h3 class="text-pretitle">Social</h3>
-						<ul class="contact-social">
-							<li><a href="#0">LinkedIn</a></li>
-							<li><a href="#0">Github</a></li>
-						</ul>
-					</div>
-					<div class="column lg-4 md-12 contact-block">
-						<a href="mailto:sayhello@luther.com" class="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello.</a>
-					</div>
-				</div> <!-- end contact-bottom -->
-
-			</section> <!-- end contact -->
-
-        </main> <!-- end s-content -->
-
-
-        <!-- ## footer
-        ================================================== -->
-        <footer class="s-footer">
-
-            <div class="row">
-                <div class="column ss-copyright">
-                    <span>© Copyright TTG.</span> 
-                </div>
-
-                <div class="ss-go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>
-                    </a>
-                </div>
+        <div class="exp-item reveal" onclick="toggleExp(this)">
+          <div class="exp-header">
+            <div class="exp-logo" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">RB</div>
+            <div class="exp-meta">
+              <div class="exp-company">Riboline</div>
+              <div class="exp-role">Software Developer</div>
+              <div class="exp-dates">2020 – 2021</div>
             </div>
+            <button class="exp-toggle">▾</button>
+          </div>
+          <div class="exp-body">
+            <ul class="exp-bullets">
+              <li>Built automation and scraping scripts for product data aggregation, significantly reducing manual data entry</li>
+              <li>Developed responsive UI components improving usability across mobile and desktop</li>
+              <li>Contributed to debugging, QA, and deployment — ensuring stable, timely releases</li>
+            </ul>
+          </div>
+        </div>
 
-        </footer> <!-- end s-footer -->
+      </div>
+    </div>
+  </section>
 
-    </div> <!-- end -s-pagewrap -->
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <div class="section-eyebrow reveal">Projects</div>
+      <h2 class="section-title reveal">Things I've shipped.</h2>
+      <p class="section-desc reveal">Selected projects demonstrating depth across frontend architecture, backend systems, and developer tooling.</p>
+      <div class="projects-grid">
 
+        <!-- ClientSync — featured -->
+        <div class="project-card featured reveal">
+          <div class="project-icon" style="background:linear-gradient(135deg,#0d1f38,#1a3a5c)">🔗</div>
+          <div class="project-name">ClientSync</div>
+          <div class="project-desc">Full-stack CRM integrating Laravel and React with HubSpot via OAuth2. Features contact sync, webhook handling, automated email reminders, and a pipeline dashboard — built to bridge internal sales workflows with HubSpot's ecosystem.</div>
+          <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">React.js</span><span class="stack-tag">TypeScript</span><span class="stack-tag">HubSpot API</span><span class="stack-tag">OAuth2</span><span class="stack-tag">MySQL</span></div>
+          <div class="project-footer">
+            <a href="https://github.com/theo-georgewill/clientsync-alpha" target="_blank" class="project-link">
+              View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <span class="project-lang"><span class="lang-dot" style="background:#4f5d95"></span>PHP / TypeScript</span>
+          </div>
+        </div>
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery.js"></script>
-    <script src="owlcarousel/dist/owl.carousel.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-	<script src="js/custom.js"></script>
+        <!-- Meta Ads Scraper -->
+        <div class="project-card reveal">
+          <div class="project-icon" style="background:linear-gradient(135deg,#1a1030,#2d1060)">🔍</div>
+          <div class="project-name">Meta Ads Library Scraper</div>
+          <div class="project-desc">High-reliability scraper for the Meta Ads Library. Captures GraphQL ad responses in real-time, saves into a structured local JSON database, and supports both full syncs and incremental updates.</div>
+          <div class="project-stack"><span class="stack-tag">TypeScript</span><span class="stack-tag">GraphQL</span><span class="stack-tag">Meta API</span></div>
+          <div class="project-footer">
+            <a href="https://github.com/theo-georgewill/meta-ads-library-scraper" target="_blank" class="project-link">
+              View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <span class="project-lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+          </div>
+        </div>
+
+        <!-- SocialScheduler -->
+        <div class="project-card reveal">
+          <div class="project-icon" style="background:linear-gradient(135deg,#0d2a1a,#0f4a2a)">📅</div>
+          <div class="project-name">SocialScheduler</div>
+          <div class="project-desc">Multi-platform social media scheduling tool with Facebook and Reddit API integration. Built with OAuth lifecycle management, Laravel queue-based scheduling, and retry/failure handling for reliable post delivery.</div>
+          <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">Vue.js</span><span class="stack-tag">Pinia</span><span class="stack-tag">Facebook API</span><span class="stack-tag">Reddit API</span><span class="stack-tag">MySQL</span></div>
+          <div class="project-footer">
+            <a href="https://github.com/theo-georgewill/SocialScheduler" target="_blank" class="project-link">
+              View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <span class="project-lang"><span class="lang-dot" style="background:#4f5d95"></span>PHP</span>
+          </div>
+        </div>
+
+        <!-- Fitness Quest — featured (full width) -->
+        <div class="project-card featured reveal">
+          <div class="project-icon" style="background:linear-gradient(135deg,#1a2a0a,#2d4a10)">💪</div>
+          <div class="project-name">Fitness Quest</div>
+          <div class="project-desc">Full-stack fitness tracking application with a decoupled TypeScript frontend and backend. Demonstrates clean API design, type-safe data contracts between layers, and a production-ready project structure split across two repos.</div>
+          <div class="project-stack"><span class="stack-tag">TypeScript</span><span class="stack-tag">React.js</span><span class="stack-tag">Node.js</span><span class="stack-tag">REST API</span></div>
+          <div class="project-footer">
+            <div style="display:flex;gap:16px">
+              <a href="https://github.com/theo-georgewill/fitness-quest-frontend" target="_blank" class="project-link">
+                Frontend <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="https://github.com/theo-georgewill/fitness-quest-backend" target="_blank" class="project-link">
+                Backend <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+            <span class="project-lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+          </div>
+        </div>
+
+        <!-- Bookr -->
+        <div class="project-card reveal">
+          <div class="project-icon" style="background:linear-gradient(135deg,#1a1a0a,#3d3d00)">📆</div>
+          <div class="project-name">Bookr</div>
+          <div class="project-desc">Flexible appointment platform for service businesses — salons, cleaners, real estate agents. Handles complex multi-location scheduling, RBAC for business owners, staff and clients, and automated booking confirmation emails.</div>
+          <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">Vue.js</span><span class="stack-tag">TailwindCSS</span><span class="stack-tag">MySQL</span></div>
+          <div class="project-footer">
+            <a href="https://github.com/theo-georgewill/booking-app" target="_blank" class="project-link">
+              View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <span class="project-lang"><span class="lang-dot" style="background:#4f5d95"></span>PHP</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <div class="section-eyebrow reveal">Skills</div>
+      <h2 class="section-title reveal">The full stack.</h2>
+      <p class="section-desc reveal">From UI components to database design — comfortable at every layer.</p>
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Frontend</div>
+          <div class="skill-chips"><span class="skill-chip highlight">React.js</span><span class="skill-chip highlight">TypeScript</span><span class="skill-chip">Next.js</span><span class="skill-chip">Zustand</span><span class="skill-chip">Redux Toolkit</span><span class="skill-chip">Tailwind CSS</span><span class="skill-chip">Vue.js</span><span class="skill-chip">HTML / CSS</span></div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Backend</div>
+          <div class="skill-chips"><span class="skill-chip highlight">Node.js</span><span class="skill-chip highlight">Laravel</span><span class="skill-chip">Express.js</span><span class="skill-chip">NestJS</span><span class="skill-chip">PHP</span><span class="skill-chip">REST APIs</span></div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Databases</div>
+          <div class="skill-chips"><span class="skill-chip highlight">PostgreSQL</span><span class="skill-chip highlight">MySQL</span><span class="skill-chip">MongoDB</span><span class="skill-chip">SQLite</span></div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-title">DevOps & Tools</div>
+          <div class="skill-chips"><span class="skill-chip highlight">Docker</span><span class="skill-chip">GitHub Actions</span><span class="skill-chip">DigitalOcean</span><span class="skill-chip">Git</span><span class="skill-chip">WP CLI</span><span class="skill-chip">cPanel</span></div>
+        </div>
+        <div class="skill-group reveal" style="grid-column:span 2">
+          <div class="skill-group-title">Integrations & APIs</div>
+          <div class="skill-chips"><span class="skill-chip">Facebook Graph API</span><span class="skill-chip">Reddit API</span><span class="skill-chip">Twitter API</span><span class="skill-chip">HubSpot</span><span class="skill-chip">WordPress / WooCommerce</span><span class="skill-chip">OAuth 2.0</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="section-eyebrow">Contact</div>
+          <h2>Let's build<br>something great.</h2>
+          <p>I'm open to senior engineering roles, freelance projects, and technical consulting. Fill in the form or reach me directly.</p>
+          <div class="contact-quick-links">
+            <a href="mailto:ttggwll@mail.com" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span class="link-label">ttggwll@mail.com</span>
+            </a>
+            <a href="https://github.com/theo-georgewill" target="_blank" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+              <span class="link-label">github.com/theo-georgewill</span>
+            </a>
+            <a href="tel:07034387405" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span class="link-label">07034387405</span>
+            </a>
+            <a href="https://theo-georgewill.github.io" target="_blank" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              <span class="link-label">theo-georgewill.github.io</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-card reveal">
+          <div class="form-title">Send a message</div>
+          <!-- Google Apps Script — paste your Web App URL in the SCRIPT_URL variable below -->
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">I'm interested in</label>
+              <select id="subject" name="subject">
+                <option value="">Select a topic...</option>
+                <option>Full-time engineering role</option>
+                <option>Freelance / contract project</option>
+                <option>Technical consulting</option>
+                <option>Collaboration / open source</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="submitBtn">
+              <span id="submitText">Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            </button>
+            <p class="form-note">I'll respond within 24 hours.</p>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✓</div>
+            <h3>Message sent!</h3>
+            <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Theo Georgewill · Built with HTML, CSS & JS · Hosted on GitHub Pages</p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Accordion
+    function toggleExp(item) {
+      const body = item.querySelector('.exp-body');
+      const btn = item.querySelector('.exp-toggle');
+      const isOpen = body.classList.contains('open');
+      document.querySelectorAll('.exp-body').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.exp-toggle').forEach(b => b.style.transform = '');
+      if (!isOpen) { body.classList.add('open'); btn.style.transform = 'rotate(180deg)'; }
+    }
+    document.querySelector('.exp-item').click();
+
+    // ─── Contact form → Google Sheets ───────────────────────────────
+    // After deploying your Apps Script Web App, paste the URL below:
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhz2BgJoAOaOQXwZ01tcauT-zjF51Iz7uB1PKAGL0VYn_ANbxLHJ6by9lKF8m-m_qlZg/exec';
+
+    const form = document.getElementById('contactForm');
+    const successEl = document.getElementById('formSuccess');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitText.textContent = 'Sending...';
+
+      const data = {
+        name:    document.getElementById('name').value,
+        email:   document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+      };
+
+      try {
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors', // required for Apps Script
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        // no-cors means we can't read the response — assume success if no throw
+        form.style.display = 'none';
+        successEl.style.display = 'block';
+      } catch {
+        submitBtn.disabled = false;
+        submitText.textContent = 'Send Message';
+        alert('Something went wrong. Please email ttggwll@mail.com directly.');
+      }
+    });
+  </script>
 </body>
 </html>
