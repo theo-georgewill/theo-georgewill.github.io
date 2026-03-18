@@ -143,6 +143,11 @@
     #theme-toggle { cursor:pointer; background:none; border:1px solid var(--border); border-radius:980px; padding:5px 12px; color:var(--text2); font-size:13px; font-family:inherit; display:flex; align-items:center; gap:6px; transition:all 0.2s; }
     #theme-toggle:hover { border-color:var(--border-hv); color:var(--text); }
 
+    /* Project card uniform height */
+    .project-grid-item { display:flex; flex-direction:column; }
+    .project-desc-clamp { display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; }
+    .projects-grid-uniform { grid-auto-rows:1fr; }
+
     /* Back to top */
     #back-to-top { position:fixed; bottom:28px; right:24px; z-index:50; width:40px; height:40px; border-radius:50%; background:var(--surface3); border:1px solid var(--border); color:var(--text2); display:flex; align-items:center; justify-content:center; cursor:pointer; opacity:0; pointer-events:none; transition:all 0.3s; }
     #back-to-top.visible { opacity:1; pointer-events:auto; }
@@ -401,10 +406,10 @@
       <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4 reveal">Projects</p>
       <h2 class="font-display text-[clamp(32px,5vw,52px)] leading-tight tracking-tight mb-5 reveal">Things I've shipped.</h2>
       <p class="text-[19px] font-light t-text2 leading-relaxed max-w-xl mb-16 reveal">
-        Live repos from GitHub — tagged <code class="text-accent text-[15px]">portfolio</code>.
+        Open source work, side projects, and client tools — all live on GitHub.
         <button onclick="refreshProjects()" class="ml-3 text-[13px] text-accent hover:underline" aria-label="Force refresh projects from GitHub">↻ Refresh</button>
       </p>
-      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4" aria-live="polite" aria-label="Projects"></div>
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4 projects-grid-uniform" aria-live="polite" aria-label="Projects"></div>
     </div>
   </section>
 
@@ -546,7 +551,7 @@
 
   <!-- ── FOOTER ── -->
   <footer class="py-8 px-6 text-center border-t" style="border-color:var(--border)" role="contentinfo">
-    <p class="text-[13px] t-text3">© <span id="yr"></span> Theo Georgewill · Built with Tailwind CSS · Hosted on GitHub Pages</p>
+    <p class="text-[13px] t-text3">© <span id="yr"></span> Theo Georgewill
   </footer>
 
   <script>
@@ -683,7 +688,6 @@
       const langColor = LANG_COLORS[lang] || '#6e6e73';
       const desc      = r.description || 'No description provided.';
       const stars     = r.stargazers_count;
-      const updated   = timeAgo(r.pushed_at);
       const exclude   = new Set(['portfolio','featured']);
       const chips     = (r.topics||[]).filter(t=>!exclude.has(t))
         .map(t=>`<span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">${t}</span>`).join('');
@@ -697,21 +701,19 @@
         <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center font-bold t-text mb-5 flex-shrink-0"
              style="background:var(--surface2);font-size:16px" aria-hidden="true">${initials}</div>
         <h3 class="text-[17px] font-semibold mb-2 t-text">${name}</h3>
-        <p class="text-[14px] t-text2 leading-relaxed flex-1 mb-4">${desc}</p>
+        <p class="text-[14px] t-text2 leading-relaxed mb-4 project-desc-clamp">${desc}</p>
         <div class="flex flex-wrap gap-[6px] mb-5">${chips}</div>
         <div class="flex items-center justify-between mt-auto">
           <a href="${r.html_url}" target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all"
+             class="inline-flex items-center gap-[6px] text-[13px] font-medium text-accent hover:opacity-80 transition-opacity whitespace-nowrap"
              aria-label="View ${name} on GitHub">
             View on GitHub ${ARROW}
           </a>
           <div class="flex items-center gap-3">
-            ${starsHtml}
-            <span class="text-[12px] t-text3 flex items-center gap-[5px]" title="Last pushed ${updated}">
+            <span class="text-[12px] t-text3 flex items-center gap-[5px]">
               <span class="w-[10px] h-[10px] rounded-full inline-block" style="background:${langColor}" aria-hidden="true"></span>
               ${lang}
             </span>
-            <span class="text-[11px] t-text3">${updated}</span>
           </div>
         </div>
       </article>`;
