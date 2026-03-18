@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://theo-georgewill.github.io/sitemap.xml
