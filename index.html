@@ -3,228 +3,262 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ── -->
   <title>Theo Georgewill — Senior Fullstack Engineer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23000'/><rect width='32' height='32' rx='8' fill='%232997ff' opacity='0.15'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='13' fill='%232997ff' letter-spacing='-0.5'>TG</text></svg>">
+  <meta name="description" content="Senior Fullstack Engineer with 6+ years building end-to-end web platforms. React, TypeScript, Node.js, Laravel. Based in Port Harcourt, Nigeria." />
+  <meta name="author" content="Theo Georgewill" />
+  <link rel="canonical" href="https://theo-georgewill.github.io" />
+
+  <!-- ── Open Graph (LinkedIn, WhatsApp, Twitter previews) ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://theo-georgewill.github.io" />
+  <meta property="og:title" content="Theo Georgewill — Senior Fullstack Engineer" />
+  <meta property="og:description" content="Building end-to-end web platforms with React, TypeScript, Node.js & Laravel. 6+ years, 10+ production platforms, 2 industry awards." />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/54627441?v=4" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Theo Georgewill — Senior Fullstack Engineer" />
+  <meta name="twitter:description" content="Building end-to-end web platforms with React, TypeScript, Node.js & Laravel." />
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/54627441?v=4" />
+
+  <!-- ── Preconnects (speed) ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.github.com" />
+  <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+
+  <!-- ── Favicon ── -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23000'/><rect width='32' height='32' rx='8' fill='%232997ff' opacity='0.15'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='13' fill='%232997ff' letter-spacing='-0.5'>TG</text></svg>" />
+
+  <!-- ── Fonts ── -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+
+  <!-- ── Tailwind ── -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            surface: '#0a0a0a',
-            surface2: '#141414',
-            surface3: '#1c1c1e',
-            accent: '#2997ff',
-            'accent-dim': 'rgba(41,151,255,0.12)',
-            success: '#30d158',
-          },
+          colors: { accent: '#2997ff', success: '#30d158' },
           fontFamily: {
             sans: ['DM Sans', 'system-ui', 'sans-serif'],
             display: ['DM Serif Display', 'serif'],
           },
-          borderColor: {
-            subtle: 'rgba(255,255,255,0.08)',
-            hover: 'rgba(255,255,255,0.18)',
-          },
-          animation: {
-            'fade-up': 'fadeUp 0.7s ease both',
-            'shimmer': 'shimmer 4s linear infinite',
-            'pulse-dot': 'pulseDot 2s ease infinite',
-            'scroll-line': 'scrollLine 2s ease infinite',
-          },
-          keyframes: {
-            fadeUp: { from: { opacity: '0', transform: 'translateY(20px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
-            shimmer: { to: { backgroundPosition: '200% center' } },
-            pulseDot: { '0%,100%': { opacity: '1' }, '50%': { opacity: '0.3' } },
-            scrollLine: { '0%,100%': { opacity: '0.4' }, '50%': { opacity: '1' } },
-          }
         }
       }
     }
   </script>
+
+  <!-- ── JSON-LD Person Schema ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Theo Georgewill",
+    "jobTitle": "Senior Fullstack Engineer",
+    "url": "https://theo-georgewill.github.io",
+    "image": "https://avatars.githubusercontent.com/u/54627441?v=4",
+    "email": "ttggwll@mail.com",
+    "telephone": "07034387405",
+    "address": { "@type": "PostalAddress", "addressLocality": "Port Harcourt", "addressCountry": "NG" },
+    "sameAs": ["https://github.com/theo-georgewill"],
+    "knowsAbout": ["React", "TypeScript", "Node.js", "Laravel", "Fullstack Development", "System Architecture"]
+  }
+  </script>
+
   <style>
-    /* ── DARK (default) ── */
     :root, .dark {
-      --bg:        #000000;
-      --surface:   #0a0a0a;
-      --surface2:  #141414;
-      --surface3:  #1c1c1e;
-      --border:    rgba(255,255,255,0.08);
-      --border-hv: rgba(255,255,255,0.18);
-      --text:      #f5f5f7;
-      --text2:     #a1a1a6;
-      --text3:     #6e6e73;
-      --nav-bg:    rgba(0,0,0,0.72);
-      --sb-track:  #000;
-      --sb-thumb:  #333;
-      --inp-bg:    #141414;
-      --sel-bg:    #1c1c1e;
+      --bg:#000; --surface:#0a0a0a; --surface2:#141414; --surface3:#1c1c1e;
+      --border:rgba(255,255,255,0.08); --border-hv:rgba(255,255,255,0.18);
+      --text:#f5f5f7; --text2:#a1a1a6; --text3:#6e6e73;
+      --nav-bg:rgba(0,0,0,0.72); --inp-bg:#141414; --sel-bg:#1c1c1e;
     }
-
-    /* ── LIGHT ── */
     .light {
-      --bg:        #ffffff;
-      --surface:   #f5f5f7;
-      --surface2:  #e8e8ed;
-      --surface3:  #d8d8dc;
-      --border:    rgba(0,0,0,0.10);
-      --border-hv: rgba(0,0,0,0.22);
-      --text:      #1d1d1f;
-      --text2:     #515154;
-      --text3:     #86868b;
-      --nav-bg:    rgba(255,255,255,0.72);
-      --sb-track:  #fff;
-      --sb-thumb:  #ccc;
-      --inp-bg:    #f0f0f2;
-      --sel-bg:    #e0e0e5;
+      --bg:#fff; --surface:#f5f5f7; --surface2:#e8e8ed; --surface3:#d8d8dc;
+      --border:rgba(0,0,0,0.10); --border-hv:rgba(0,0,0,0.22);
+      --text:#1d1d1f; --text2:#515154; --text3:#86868b;
+      --nav-bg:rgba(255,255,255,0.72); --inp-bg:#f0f0f2; --sel-bg:#e0e0e5;
     }
+    body { background:var(--bg); color:var(--text); transition:background 0.3s,color 0.3s; }
 
-    body { background: var(--bg); color: var(--text); transition: background 0.3s, color 0.3s; }
+    /* Theme helpers */
+    .t-surface  { background:var(--surface)  !important; }
+    .t-surface2 { background:var(--surface2) !important; }
+    .t-surface3 { background:var(--surface3) !important; }
+    .t-text     { color:var(--text)  !important; }
+    .t-text2    { color:var(--text2) !important; }
+    .t-text3    { color:var(--text3) !important; }
+    .t-border   { border-color:var(--border)  !important; }
 
-    /* Theming helpers — override Tailwind hardcoded colours */
-    .t-surface  { background: var(--surface)  !important; }
-    .t-surface2 { background: var(--surface2) !important; }
-    .t-surface3 { background: var(--surface3) !important; }
-    .t-text     { color: var(--text)  !important; }
-    .t-text2    { color: var(--text2) !important; }
-    .t-text3    { color: var(--text3) !important; }
-    .t-border   { border-color: var(--border)  !important; }
-    .t-border-hv:hover { border-color: var(--border-hv) !important; }
-    .t-divide > * + * { border-color: var(--border) !important; }
+    /* Focus styles for keyboard nav */
+    :focus-visible { outline: 2px solid #2997ff; outline-offset: 3px; border-radius: 4px; }
 
-    /* Theme toggle button */
-    #theme-toggle { cursor: pointer; background: none; border: 1px solid var(--border); border-radius: 980px; padding: 5px 12px; color: var(--text2); font-size: 13px; font-family: inherit; display: flex; align-items: center; gap: 6px; transition: all 0.2s; }
-    #theme-toggle:hover { border-color: var(--border-hv); color: var(--text); }
-
-    .font-display { font-family: 'DM Serif Display', serif; }
-
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
+    /* Gradient hero text */
     .gradient-text {
-      background: linear-gradient(135deg, #2997ff 0%, #5ac8fa 50%, #2997ff 100%);
-      background-size: 200% auto;
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text; animation: shimmer 4s linear infinite;
+      background:linear-gradient(135deg,#2997ff 0%,#5ac8fa 50%,#2997ff 100%);
+      background-size:200% auto; -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent; background-clip:text;
+      animation:shimmer 4s linear infinite;
     }
+    @keyframes shimmer { to { background-position:200% center; } }
+    @keyframes fadeUp  { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes pulseDot{ 0%,100%{opacity:1} 50%{opacity:0.3} }
+    @keyframes scrollLine{ 0%,100%{opacity:0.4} 50%{opacity:1} }
+    @keyframes slideIn { from{transform:translateX(100%);opacity:0} to{transform:translateX(0);opacity:1} }
+    @keyframes slideOut{ from{transform:translateX(0);opacity:1} to{transform:translateX(100%);opacity:0} }
 
-    .nav-blur {
-      background: var(--nav-bg) !important;
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-    }
+    /* Nav */
+    .nav-blur { background:var(--nav-bg) !important; backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); }
+    .nav-link { font-size:13px; color:var(--text2); text-decoration:none; transition:color 0.2s; position:relative; padding-bottom:2px; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; right:0; height:1px; background:#2997ff; transform:scaleX(0); transition:transform 0.2s; }
+    .nav-link.active { color:var(--text) !important; }
+    .nav-link.active::after { transform:scaleX(1); }
+    .nav-link:hover { color:var(--text); }
 
-    .exp-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
-    .exp-body.open { max-height: 700px; padding-bottom: 1.75rem; }
+    /* Mobile menu */
+    #mobile-menu { display:none; position:fixed; top:52px; left:0; right:0; bottom:0; z-index:49; background:var(--bg); padding:32px 24px; flex-direction:column; gap:8px; }
+    #mobile-menu.open { display:flex; animation:slideIn 0.25s ease; }
+    .mobile-nav-link { font-size:22px; font-weight:500; color:var(--text2); text-decoration:none; padding:12px 0; border-bottom:1px solid var(--border); transition:color 0.2s; }
+    .mobile-nav-link:hover { color:var(--text); }
 
+    /* Reveal */
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease,transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* Accordion */
+    .exp-body { max-height:0; overflow:hidden; transition:max-height 0.4s ease,padding 0.3s ease; }
+    .exp-body.open { max-height:700px; padding-bottom:1.75rem; }
+
+    /* Card shine */
     .card-shine::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,#2997ff,transparent); opacity:0; transition:opacity 0.3s; }
     .card-shine:hover::before { opacity:1; }
 
-    .form-input { background: var(--inp-bg) !important; border-color: var(--border) !important; color: var(--text) !important; }
-    .form-input:focus { border-color: #2997ff !important; box-shadow: 0 0 0 3px rgba(41,151,255,0.1); outline: none; }
-    .form-input::placeholder { color: var(--text3); }
-    select.form-input option { background: var(--sel-bg); color: var(--text); }
+    /* Form inputs */
+    .form-input { background:var(--inp-bg) !important; border-color:var(--border) !important; color:var(--text) !important; }
+    .form-input:focus { border-color:#2997ff !important; box-shadow:0 0 0 3px rgba(41,151,255,0.1); outline:none; }
+    .form-input::placeholder { color:var(--text3); }
+    select.form-input option { background:var(--sel-bg); color:var(--text); }
 
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--sb-track); }
-    ::-webkit-scrollbar-thumb { background: var(--sb-thumb); border-radius: 3px; }
+    /* Theme toggle */
+    #theme-toggle { cursor:pointer; background:none; border:1px solid var(--border); border-radius:980px; padding:5px 12px; color:var(--text2); font-size:13px; font-family:inherit; display:flex; align-items:center; gap:6px; transition:all 0.2s; }
+    #theme-toggle:hover { border-color:var(--border-hv); color:var(--text); }
 
-    /* Light mode overrides for elements with hardcoded dark Tailwind classes */
-    .light .bg-black  { background: var(--bg) !important; }
-    .light .bg-\[\#141414\] { background: var(--inp-bg) !important; }
-    .light .text-white { color: var(--text) !important; }
-    .light .text-\[\#a1a1a6\] { color: var(--text2) !important; }
-    .light .text-\[\#6e6e73\] { color: var(--text3) !important; }
-    .light .border-white\/\[0\.08\] { border-color: var(--border) !important; }
-    .light .divide-x > * + * { border-color: var(--border) !important; }
-    .light .divide-y > * + * { border-color: var(--border) !important; }
+    /* Back to top */
+    #back-to-top { position:fixed; bottom:28px; right:24px; z-index:50; width:40px; height:40px; border-radius:50%; background:var(--surface3); border:1px solid var(--border); color:var(--text2); display:flex; align-items:center; justify-content:center; cursor:pointer; opacity:0; pointer-events:none; transition:all 0.3s; }
+    #back-to-top.visible { opacity:1; pointer-events:auto; }
+    #back-to-top:hover { border-color:var(--border-hv); color:var(--text); transform:translateY(-2px); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width:6px; }
+    ::-webkit-scrollbar-track { background:var(--bg); }
+    ::-webkit-scrollbar-thumb { background:var(--border-hv); border-radius:3px; }
+
+    /* Light mode overrides */
+    .light .bg-black { background:var(--bg) !important; }
+    .light .text-white { color:var(--text) !important; }
+    .light .text-\[\#a1a1a6\] { color:var(--text2) !important; }
+    .light .text-\[\#6e6e73\] { color:var(--text3) !important; }
   </style>
 </head>
 <body class="font-sans antialiased overflow-x-hidden">
 
-  <!-- NAV -->
-  <nav class="nav-blur fixed top-0 left-0 right-0 z-50 h-[52px] flex items-center justify-between px-6 border-b border-subtle">
-    <a href="#" class="text-[17px] font-semibold t-text">TG</a>
-    <ul class="hidden md:flex gap-7">
-      <li><a href="#about" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">About</a></li>
-      <li><a href="#experience" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">Experience</a></li>
-      <li><a href="#projects" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">Projects</a></li>
-      <li><a href="#skills" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">Skills</a></li>
-      <li><a href="#contact" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">Contact</a></li>
+  <!-- ── BACK TO TOP ── -->
+  <button id="back-to-top" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- ── NAV ── -->
+  <nav class="nav-blur fixed top-0 left-0 right-0 z-50 h-[52px] flex items-center justify-between px-6 border-b" style="border-color:var(--border)" role="navigation" aria-label="Main navigation">
+    <a href="#" class="text-[17px] font-semibold t-text" aria-label="Theo Georgewill — home">TG</a>
+
+    <!-- Desktop links -->
+    <ul class="hidden md:flex gap-7 list-none" role="list">
+      <li><a href="#about"      class="nav-link" data-section="about">About</a></li>
+      <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+      <li><a href="#projects"   class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#skills"     class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#contact"    class="nav-link" data-section="contact">Contact</a></li>
     </ul>
+
     <div class="flex items-center gap-3">
-      <button id="theme-toggle" aria-label="Toggle theme">
-        <span id="theme-icon">☀️</span>
+      <button id="theme-toggle" aria-label="Toggle colour theme">
+        <span id="theme-icon" aria-hidden="true">☀️</span>
         <span id="theme-label" class="hidden sm:inline">Light</span>
       </button>
-      <a href="#contact" class="text-[13px] font-medium bg-accent text-white px-4 py-[7px] rounded-full hover:opacity-85 transition-opacity">Get in touch</a>
+      <a href="#contact" class="text-[13px] font-medium bg-accent text-white px-4 py-[7px] rounded-full hover:opacity-85 transition-opacity hidden md:inline-flex">Get in touch</a>
+      <!-- Hamburger -->
+      <button id="menu-toggle" class="md:hidden flex flex-col gap-[5px] p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="ham-line block w-5 h-[1.5px] transition-all" style="background:var(--text)"></span>
+        <span class="ham-line block w-5 h-[1.5px] transition-all" style="background:var(--text)"></span>
+        <span class="ham-line block w-5 h-[1.5px] transition-all" style="background:var(--text)"></span>
+      </button>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-28 pb-20 relative overflow-hidden">
-    <!-- Glow -->
-    <div class="absolute w-[700px] h-[700px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(41,151,255,0.13) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%)"></div>
+  <!-- ── MOBILE MENU ── -->
+  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <a href="#about"      class="mobile-nav-link" onclick="closeMobileMenu()">About</a>
+    <a href="#experience" class="mobile-nav-link" onclick="closeMobileMenu()">Experience</a>
+    <a href="#projects"   class="mobile-nav-link" onclick="closeMobileMenu()">Projects</a>
+    <a href="#skills"     class="mobile-nav-link" onclick="closeMobileMenu()">Skills</a>
+    <a href="#contact"    class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+    <a href="#contact" class="mt-6 text-[15px] font-medium bg-accent text-white px-6 py-3 rounded-full text-center" onclick="closeMobileMenu()">Get in touch</a>
+  </div>
 
-    <div class="inline-flex items-center gap-2 text-[13px] font-medium text-accent uppercase tracking-widest mb-6 px-4 py-[6px] rounded-full border border-accent/30 bg-accent/[0.06] animate-fade-up">
-      <span class="w-[6px] h-[6px] rounded-full bg-success animate-pulse-dot"></span>
+  <!-- ── HERO ── -->
+  <section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-28 pb-20 relative overflow-hidden">
+    <div class="absolute w-[700px] h-[700px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(41,151,255,0.13) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%)" aria-hidden="true"></div>
+    <div class="inline-flex items-center gap-2 text-[13px] font-medium text-accent uppercase tracking-widest mb-6 px-4 py-[6px] rounded-full border border-accent/30 bg-accent/[0.06]" style="animation:fadeUp 0.8s ease both">
+      <span class="w-[6px] h-[6px] rounded-full bg-success" style="animation:pulseDot 2s ease infinite" aria-hidden="true"></span>
       Available for new opportunities
     </div>
-
     <h1 class="font-display text-[clamp(52px,9vw,104px)] leading-[1.04] tracking-tight mb-6" style="animation:fadeUp 0.8s 0.1s ease both;opacity:0">
       Building products<br>that <span class="gradient-text">ship</span>.
     </h1>
-
-    <p class="text-[clamp(18px,2.2vw,22px)] font-light text-[#a1a1a6] max-w-[580px] leading-relaxed mb-12" style="animation:fadeUp 0.8s 0.2s ease both;opacity:0">
+    <p class="text-[clamp(18px,2.2vw,22px)] font-light max-w-[580px] leading-relaxed mb-12 t-text2" style="animation:fadeUp 0.8s 0.2s ease both;opacity:0">
       Senior Fullstack Engineer with 6+ years delivering end-to-end web platforms — from pixel-perfect frontends to scalable APIs and everything in between.
     </p>
-
     <div class="flex gap-4 flex-wrap justify-center" style="animation:fadeUp 0.8s 0.3s ease both;opacity:0">
       <a href="#projects" class="text-[17px] font-medium bg-accent text-white px-8 py-[14px] rounded-full hover:bg-[#0a84ff] hover:scale-[1.02] transition-all">View my work</a>
-      <a href="#contact" class="text-[17px] font-medium text-accent px-8 py-[14px] rounded-full border border-accent/40 hover:bg-accent/[0.08] transition-all">Let's talk</a>
+      <a href="#contact"  class="text-[17px] font-medium text-accent px-8 py-[14px] rounded-full border border-accent/40 hover:bg-accent/[0.08] transition-all">Let's talk</a>
     </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-10 flex flex-col items-center gap-2 text-[11px] text-[#6e6e73] tracking-widest uppercase" style="animation:fadeUp 1s 0.8s ease both;opacity:0">
-      <div class="w-px h-10 animate-scroll-line" style="background:linear-gradient(to bottom,#6e6e73,transparent)"></div>
+    <div class="absolute bottom-10 flex flex-col items-center gap-2 text-[11px] t-text3 tracking-widest uppercase" style="animation:fadeUp 1s 0.8s ease both;opacity:0" aria-hidden="true">
+      <div class="w-px h-10" style="background:linear-gradient(to bottom,var(--text3),transparent);animation:scrollLine 2s ease infinite"></div>
       Scroll
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="t-surface2 border-y border-subtle py-8 px-6">
+  <!-- ── STATS ── -->
+  <div class="t-surface2 border-y py-8 px-6" style="border-color:var(--border)" aria-label="Key stats">
     <div class="max-w-4xl mx-auto grid grid-cols-4">
-      <div class="py-5 px-2 text-center border-r border-subtle">
+      <div class="py-5 px-2 text-center border-r" style="border-color:var(--border)">
         <div class="text-[26px] md:text-[38px] font-bold tracking-tight leading-none mb-1">6<span class="text-accent">+</span></div>
-        <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Years Experience</div>
+        <div class="text-[11px] t-text2 whitespace-nowrap">Years Exp.</div>
       </div>
-      <div class="py-5 px-2 text-center border-r border-subtle">
+      <div class="py-5 px-2 text-center border-r" style="border-color:var(--border)">
         <div class="text-[26px] md:text-[38px] font-bold tracking-tight leading-none mb-1">10<span class="text-accent">+</span></div>
-        <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Production Platforms</div>
+        <div class="text-[11px] t-text2 whitespace-nowrap">Platforms</div>
       </div>
-      <div class="py-5 px-2 text-center border-r border-subtle">
+      <div class="py-5 px-2 text-center border-r" style="border-color:var(--border)">
         <div class="text-[26px] md:text-[38px] font-bold tracking-tight leading-none mb-1">2</div>
-        <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Industry Awards</div>
+        <div class="text-[11px] t-text2 whitespace-nowrap">Awards</div>
       </div>
       <div class="py-5 px-2 text-center">
         <div class="text-[26px] md:text-[38px] font-bold tracking-tight leading-none mb-1">5<span class="text-accent">+</span></div>
-        <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Tech Stacks</div>
+        <div class="text-[11px] t-text2 whitespace-nowrap">Tech Stacks</div>
       </div>
     </div>
   </div>
 
-  <!-- ABOUT -->
+  <!-- ── ABOUT ── -->
   <section id="about" class="t-surface py-28 px-6">
     <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-20 items-center">
       <div class="reveal">
         <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4">About</p>
         <h2 class="font-display text-[clamp(36px,5vw,56px)] leading-[1.08] tracking-tight mb-6">Engineer.<br>Architect.<br>Maker.</h2>
-        <p class="text-[17px] text-[#a1a1a6] font-light leading-[1.75] mb-5">I'm Theo — a Senior Fullstack Engineer from Port Harcourt, Nigeria. I build <strong class="text-white font-medium">end-to-end products</strong> that are fast, maintainable, and actually used by real people.</p>
-        <p class="text-[17px] text-[#a1a1a6] font-light leading-[1.75] mb-5">From architecting React + TypeScript frontends that cut delivery cycles by <strong class="text-white font-medium">30–40%</strong>, to leading cross-functional engineering teams — I own the full lifecycle.</p>
-        <p class="text-[17px] text-[#a1a1a6] font-light leading-[1.75] mb-8">I hold a <strong class="text-white font-medium">BSc in Computer Science</strong> from Clifford University, graduating as the Department's Best Student.</p>
+        <p class="text-[17px] t-text2 font-light leading-[1.75] mb-5">I'm Theo — a Senior Fullstack Engineer from Port Harcourt, Nigeria. I build <strong class="t-text font-medium">end-to-end products</strong> that are fast, maintainable, and actually used by real people.</p>
+        <p class="text-[17px] t-text2 font-light leading-[1.75] mb-5">From architecting React + TypeScript frontends that cut delivery cycles by <strong class="t-text font-medium">30–40%</strong>, to leading cross-functional engineering teams — I own the full lifecycle.</p>
+        <p class="text-[17px] t-text2 font-light leading-[1.75] mb-8">I hold a <strong class="t-text font-medium">BSc in Computer Science</strong> from Clifford University, graduating as the Department's Best Student.</p>
         <div class="flex flex-wrap gap-2">
           <span class="text-[13px] font-medium px-4 py-[6px] rounded-full border t-surface3 t-border t-text2">React + TypeScript</span>
           <span class="text-[13px] font-medium px-4 py-[6px] rounded-full border t-surface3 t-border t-text2">Node.js + Laravel</span>
@@ -232,25 +266,38 @@
           <span class="text-[13px] font-medium px-4 py-[6px] rounded-full border t-surface3 t-border t-text2">Technical Leadership</span>
         </div>
       </div>
-      <div class="reveal">
-        <div class="border border-subtle rounded-[18px] p-9" style="background:var(--surface3)">
-          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-6">Awards & Recognition</p>
+      <div class="reveal flex flex-col gap-6">
+        <!-- GitHub Avatar -->
+        <div class="flex items-center gap-4 p-5 rounded-2xl border t-surface3 t-border">
+          <img src="https://avatars.githubusercontent.com/u/54627441?v=4" alt="Theo Georgewill" width="64" height="64" class="w-16 h-16 rounded-2xl border-2 border-accent/30" loading="lazy" />
+          <div>
+            <p class="font-semibold t-text">Theo Georgewill</p>
+            <p class="text-[13px] t-text3">@theo-georgewill</p>
+            <a href="https://github.com/theo-georgewill" target="_blank" rel="noopener" class="text-[13px] text-accent hover:underline mt-1 inline-flex items-center gap-1">
+              View GitHub profile
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Awards card -->
+        <div class="border t-border rounded-[18px] p-8 t-surface3">
+          <p class="text-[12px] font-semibold t-text3 uppercase tracking-widest mb-6">Awards & Recognition</p>
           <div class="space-y-5">
-            <div class="flex gap-4 pb-5 border-b border-subtle">
-              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#f5a623,#f5813f)">🏆</div>
-              <div><p class="text-[14px] font-medium mb-1">Best Data-Driven SME Web Design</p><p class="text-[12px] text-[#6e6e73]">Martech Awards 2024 · Innovation in Business</p></div>
+            <div class="flex gap-4 pb-5 border-b t-border">
+              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#f5a623,#f5813f)" aria-hidden="true">🏆</div>
+              <div><p class="text-[14px] font-medium t-text mb-1">Best Data-Driven SME Web Design</p><p class="text-[12px] t-text3">Martech Awards 2024 · Innovation in Business</p></div>
             </div>
-            <div class="flex gap-4 pb-5 border-b border-subtle">
-              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#f5a623,#f5813f)">🏆</div>
-              <div><p class="text-[14px] font-medium mb-1">Digital Marketing Agency of the Year</p><p class="text-[12px] text-[#6e6e73]">Corporate LiveWire Innovation & Excellence Award</p></div>
+            <div class="flex gap-4 pb-5 border-b t-border">
+              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#f5a623,#f5813f)" aria-hidden="true">🏆</div>
+              <div><p class="text-[14px] font-medium t-text mb-1">Digital Marketing Agency of the Year</p><p class="text-[12px] t-text3">Corporate LiveWire Innovation & Excellence Award</p></div>
             </div>
-            <div class="flex gap-4 pb-5 border-b border-subtle">
-              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#1d5a8a,#2997ff)">🎓</div>
-              <div><p class="text-[14px] font-medium mb-1">Dean's Award — Best Graduating Student</p><p class="text-[12px] text-[#6e6e73]">Clifford University · Computer Science</p></div>
+            <div class="flex gap-4 pb-5 border-b t-border">
+              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#1d5a8a,#2997ff)" aria-hidden="true">🎓</div>
+              <div><p class="text-[14px] font-medium t-text mb-1">Dean's Award — Best Graduating Student</p><p class="text-[12px] t-text3">Clifford University · Computer Science</p></div>
             </div>
             <div class="flex gap-4">
-              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#5856d6,#007aff)">🌍</div>
-              <div><p class="text-[14px] font-medium mb-1">4× Industry Nominations</p><p class="text-[12px] text-[#6e6e73]">Media Innovator · Martech · Corporate Livewire · Global Recognition</p></div>
+              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#5856d6,#007aff)" aria-hidden="true">🌍</div>
+              <div><p class="text-[14px] font-medium t-text mb-1">4× Industry Nominations</p><p class="text-[12px] t-text3">Media Innovator · Martech · Corporate Livewire · Global Recognition</p></div>
             </div>
           </div>
         </div>
@@ -258,93 +305,88 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="t-surface2 py-28 px-6">
+  <!-- ── EXPERIENCE ── -->
+  <section id="experience" class="py-28 px-6" style="background:var(--bg)">
     <div class="max-w-4xl mx-auto">
       <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4 reveal">Experience</p>
       <h2 class="font-display text-[clamp(32px,5vw,52px)] leading-tight tracking-tight mb-5 reveal">Where I've built.</h2>
-      <p class="text-[19px] font-light text-[#a1a1a6] leading-relaxed max-w-xl mb-16 reveal">6+ years across event platforms, agencies, e-commerce, and enterprise.</p>
-
+      <p class="text-[19px] font-light t-text2 leading-relaxed max-w-xl mb-16 reveal">6+ years across event platforms, agencies, e-commerce, and enterprise.</p>
       <div class="flex flex-col gap-[2px]">
 
-        <!-- EventPark -->
-        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal" style="background:var(--surface);border-color:var(--border)" onclick="toggleExp(this)">
+        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal t-surface t-border" onclick="toggleExp(this)">
           <div class="flex items-center gap-5 p-7">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1c1c3a,#2c2c5e)">EP</div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1c1c3a,#2c2c5e)" aria-hidden="true">EP</div>
             <div class="flex-1">
-              <div class="text-[17px] font-semibold mb-[2px]">EventPark Africa <span class="text-[11px] font-semibold text-success px-2 py-[3px] rounded-full bg-success/10 border border-success/25 ml-2 align-middle">Current</span></div>
+              <div class="text-[17px] font-semibold mb-[2px] t-text">EventPark Africa <span class="text-[11px] font-semibold text-success px-2 py-[3px] rounded-full ml-2 align-middle" style="background:rgba(48,209,88,0.1);border:1px solid rgba(48,209,88,0.25)">Current</span></div>
               <div class="text-[14px] text-accent font-medium">Senior Frontend Engineer</div>
-              <div class="text-[13px] text-[#6e6e73] mt-[2px]">Nov 2025 – Present</div>
+              <div class="text-[13px] t-text3 mt-[2px]">Nov 2025 – Present</div>
             </div>
-            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
+            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn" aria-label="Toggle details" aria-expanded="false">▾</button>
           </div>
-          <div class="exp-body px-7">
+          <div class="exp-body px-7" role="region">
             <ul class="space-y-[10px] pb-1">
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Architected scalable React + TypeScript frontend enabling <strong class="text-white font-medium">~30–40% faster feature delivery cycles</strong> through reusable component patterns</li>
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Delivered <strong class="text-white font-medium">5+ core platform features</strong> — event discovery, marketplace, filtering, cart, and multi-step checkout — forming the foundation of the platform's commercial launch</li>
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Designed Zustand + event-driven state system enabling real-time UI sync without page reloads</li>
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Integrated Go-based REST API with structured error handling, eliminating silent failures across all user journeys</li>
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Optimised rendering via lazy loading, memoisation, and controlled re-renders for mobile devices</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Architected scalable React + TypeScript frontend enabling <strong class="t-text font-medium">~30–40% faster feature delivery cycles</strong></li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Delivered <strong class="t-text font-medium">5+ core platform features</strong> — event discovery, marketplace, filtering, cart, and multi-step checkout</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Designed Zustand + event-driven state system enabling real-time UI sync without page reloads</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Integrated Go-based REST API with structured error handling, eliminating silent failures</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Optimised rendering via lazy loading, memoisation, and controlled re-renders for mobile devices</li>
             </ul>
           </div>
         </div>
 
-        <!-- Inhouz -->
-        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal" style="background:var(--surface);border-color:var(--border)" onclick="toggleExp(this)">
+        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal t-surface t-border" onclick="toggleExp(this)">
           <div class="flex items-center gap-5 p-7">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1a2a1a,#1f4d1f)">IC</div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1a2a1a,#1f4d1f)" aria-hidden="true">IC</div>
             <div class="flex-1">
-              <div class="text-[17px] font-semibold mb-[2px]">Inhouz Cloud</div>
+              <div class="text-[17px] font-semibold mb-[2px] t-text">Inhouz Cloud</div>
               <div class="text-[14px] text-accent font-medium">Fullstack Developer → Technical Project Manager</div>
-              <div class="text-[13px] text-[#6e6e73] mt-[2px]">Jul 2025 – Nov 2025</div>
+              <div class="text-[13px] t-text3 mt-[2px]">Jul 2025 – Nov 2025</div>
             </div>
-            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
+            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn" aria-label="Toggle details" aria-expanded="false">▾</button>
           </div>
-          <div class="exp-body px-7">
+          <div class="exp-body px-7" role="region">
             <ul class="space-y-[10px] pb-1">
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Built full-stack MERN features in a serverless architecture for internal tools and enterprise oil & gas clients</li>
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent"><strong class="text-white font-medium">Promoted to Technical PM</strong> — managed delivery across multiple engineering teams, aligning execution with business priorities</li>
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Led sprint planning, backlog grooming, and delivery tracking — improving accountability and predictability</li>
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Standardised stakeholder communication, significantly reducing misalignment and requirement ambiguity</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Built full-stack MERN features in a serverless architecture for enterprise oil & gas clients</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent"><strong class="t-text font-medium">Promoted to Technical PM</strong> — managed delivery across multiple engineering teams</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Led sprint planning, backlog grooming, and delivery tracking</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Standardised stakeholder communication, reducing misalignment and requirement ambiguity</li>
             </ul>
           </div>
         </div>
 
-        <!-- Terra Sunny -->
-        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal" style="background:var(--surface);border-color:var(--border)" onclick="toggleExp(this)">
+        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal t-surface t-border" onclick="toggleExp(this)">
           <div class="flex items-center gap-5 p-7">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#2a1a0a,#5c3311)">TS</div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#2a1a0a,#5c3311)" aria-hidden="true">TS</div>
             <div class="flex-1">
-              <div class="text-[17px] font-semibold mb-[2px]">Terra Sunny</div>
+              <div class="text-[17px] font-semibold mb-[2px] t-text">Terra Sunny</div>
               <div class="text-[14px] text-accent font-medium">Lead Software Developer</div>
-              <div class="text-[13px] text-[#6e6e73] mt-[2px]">2021 – 2024</div>
+              <div class="text-[13px] t-text3 mt-[2px]">2021 – 2024</div>
             </div>
-            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
+            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn" aria-label="Toggle details" aria-expanded="false">▾</button>
           </div>
-          <div class="exp-body px-7">
+          <div class="exp-body px-7" role="region">
             <ul class="space-y-[10px] pb-1">
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Led development of <strong class="text-white font-medium">award-winning digital products</strong> (2 awards, 4 nominations) using TypeScript, Node.js, React, and Laravel</li>
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Delivered <strong class="text-white font-medium">10+ production-ready web platforms</strong> across WordPress and custom builds</li>
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Built a custom WordPress automation plugin reducing per-project setup time by <strong class="text-white font-medium">~50–70%</strong></li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Led development of <strong class="t-text font-medium">award-winning digital products</strong> (2 awards, 4 nominations)</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Delivered <strong class="t-text font-medium">10+ production-ready platforms</strong> across WordPress and custom builds</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Built WordPress automation plugin reducing setup time by <strong class="t-text font-medium">~50–70%</strong></li>
             </ul>
           </div>
         </div>
 
-        <!-- Riboline -->
-        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal" style="background:var(--surface);border-color:var(--border)" onclick="toggleExp(this)">
+        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal t-surface t-border" onclick="toggleExp(this)">
           <div class="flex items-center gap-5 p-7">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">RB</div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1a1a2e,#16213e)" aria-hidden="true">RB</div>
             <div class="flex-1">
-              <div class="text-[17px] font-semibold mb-[2px]">Riboline</div>
+              <div class="text-[17px] font-semibold mb-[2px] t-text">Riboline</div>
               <div class="text-[14px] text-accent font-medium">Software Developer</div>
-              <div class="text-[13px] text-[#6e6e73] mt-[2px]">2020 – 2021</div>
+              <div class="text-[13px] t-text3 mt-[2px]">2020 – 2021</div>
             </div>
-            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
+            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn" aria-label="Toggle details" aria-expanded="false">▾</button>
           </div>
-          <div class="exp-body px-7">
+          <div class="exp-body px-7" role="region">
             <ul class="space-y-[10px] pb-1">
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Built automation and scraping scripts for product data aggregation, significantly reducing manual data entry</li>
-              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Developed responsive UI components improving usability across mobile and desktop</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Built automation and scraping scripts for product data aggregation</li>
+              <li class="text-[14px] t-text2 leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Developed responsive UI components improving usability across mobile and desktop</li>
             </ul>
           </div>
         </div>
@@ -353,127 +395,126 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- ── PROJECTS ── -->
   <section id="projects" class="t-surface py-28 px-6">
     <div class="max-w-4xl mx-auto">
       <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4 reveal">Projects</p>
       <h2 class="font-display text-[clamp(32px,5vw,52px)] leading-tight tracking-tight mb-5 reveal">Things I've shipped.</h2>
-      <p class="text-[19px] font-light t-text2 leading-relaxed max-w-xl mb-16 reveal">Real repos. Real code. All on GitHub.</p>
-      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+      <p class="text-[19px] font-light t-text2 leading-relaxed max-w-xl mb-16 reveal">
+        Live repos from GitHub — tagged <code class="text-accent text-[15px]">portfolio</code>.
+        <button onclick="refreshProjects()" class="ml-3 text-[13px] text-accent hover:underline" aria-label="Force refresh projects from GitHub">↻ Refresh</button>
+      </p>
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4" aria-live="polite" aria-label="Projects"></div>
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- ── SKILLS ── -->
   <section id="skills" class="t-surface2 py-28 px-6">
     <div class="max-w-4xl mx-auto">
       <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4 reveal">Skills</p>
       <h2 class="font-display text-[clamp(32px,5vw,52px)] leading-tight tracking-tight mb-5 reveal">The full stack.</h2>
-      <p class="text-[19px] font-light text-[#a1a1a6] leading-relaxed max-w-xl mb-16 reveal">Comfortable at every layer — from UI components to database design.</p>
-
+      <p class="text-[19px] font-light t-text2 leading-relaxed max-w-xl mb-16 reveal">Comfortable at every layer — from UI components to database design.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="border border-subtle rounded-[18px] p-8 reveal" style="background:var(--surface)">
-          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Frontend</p>
+        <div class="border t-border rounded-[18px] p-8 t-surface reveal">
+          <p class="text-[12px] font-semibold t-text3 uppercase tracking-widest mb-5">Frontend</p>
           <div class="flex flex-wrap gap-2">
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">React.js</span>
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">TypeScript</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Next.js</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Zustand</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Redux Toolkit</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Tailwind CSS</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Vue.js</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">Next.js</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">Zustand</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">Redux Toolkit</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">Tailwind CSS</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">Vue.js</span>
           </div>
         </div>
-        <div class="border border-subtle rounded-[18px] p-8 reveal" style="background:var(--surface)">
-          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Backend</p>
+        <div class="border t-border rounded-[18px] p-8 t-surface reveal">
+          <p class="text-[12px] font-semibold t-text3 uppercase tracking-widest mb-5">Backend</p>
           <div class="flex flex-wrap gap-2">
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">Node.js</span>
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">Laravel</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Express.js</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">NestJS</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">PHP</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">REST APIs</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">Express.js</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">NestJS</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">PHP</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">REST APIs</span>
           </div>
         </div>
-        <div class="border border-subtle rounded-[18px] p-8 reveal" style="background:var(--surface)">
-          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Databases</p>
+        <div class="border t-border rounded-[18px] p-8 t-surface reveal">
+          <p class="text-[12px] font-semibold t-text3 uppercase tracking-widest mb-5">Databases</p>
           <div class="flex flex-wrap gap-2">
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">PostgreSQL</span>
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">MySQL</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">MongoDB</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">SQLite</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">MongoDB</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">SQLite</span>
           </div>
         </div>
-        <div class="border border-subtle rounded-[18px] p-8 reveal" style="background:var(--surface)">
-          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">DevOps & Tools</p>
+        <div class="border t-border rounded-[18px] p-8 t-surface reveal">
+          <p class="text-[12px] font-semibold t-text3 uppercase tracking-widest mb-5">DevOps & Tools</p>
           <div class="flex flex-wrap gap-2">
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">Docker</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">GitHub Actions</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">DigitalOcean</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Git</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">WP CLI</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">GitHub Actions</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">DigitalOcean</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">Git</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">WP CLI</span>
           </div>
         </div>
-        <div class="border border-subtle rounded-[18px] p-8 md:col-span-2 reveal" style="background:var(--surface)">
-          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Integrations & APIs</p>
+        <div class="border t-border rounded-[18px] p-8 t-surface md:col-span-2 reveal">
+          <p class="text-[12px] font-semibold t-text3 uppercase tracking-widest mb-5">Integrations & APIs</p>
           <div class="flex flex-wrap gap-2">
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Facebook Graph API</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Reddit API</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Twitter API</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">HubSpot</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">WordPress / WooCommerce</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">OAuth 2.0</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">Facebook Graph API</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">Reddit API</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">Twitter API</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">HubSpot</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">WordPress / WooCommerce</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 t-border t-surface3 border">OAuth 2.0</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ── CONTACT ── -->
   <section id="contact" class="t-surface py-28 px-6">
     <div class="max-w-4xl mx-auto">
       <div class="grid md:grid-cols-2 gap-14 items-start">
-
         <div class="reveal">
           <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4">Contact</p>
-          <h2 class="font-display text-[clamp(28px,4vw,44px)] leading-tight tracking-tight mb-5">Let's build<br>something great.</h2>
-          <p class="text-[17px] font-light text-[#a1a1a6] leading-relaxed mb-9">Open to senior engineering roles, freelance projects, and technical consulting. Fill in the form or reach me directly.</p>
+          <h2 class="font-display text-[clamp(28px,4vw,44px)] leading-tight tracking-tight mb-5 t-text">Let's build<br>something great.</h2>
+          <p class="text-[17px] font-light t-text2 leading-relaxed mb-9">Open to senior engineering roles, freelance projects, and technical consulting.</p>
           <div class="flex flex-col gap-3">
-            <a href="mailto:ttggwll@mail.com" class="flex items-center gap-3 text-[14px] font-medium p-[13px] px-[18px] rounded-xl border border-subtle hover:translate-x-1 transition-all t-text t-surface3 t-border t-border-hv">
-              <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:ttggwll@mail.com" class="flex items-center gap-3 text-[14px] font-medium t-text p-[13px] px-[18px] rounded-xl t-surface3 border t-border hover:border-hover hover:translate-x-1 transition-all" style="--tw-border-opacity:1">
+              <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               ttggwll@mail.com
             </a>
-            <a href="https://github.com/theo-georgewill" target="_blank" class="flex items-center gap-3 text-[14px] font-medium p-[13px] px-[18px] rounded-xl border border-subtle hover:translate-x-1 transition-all t-text t-surface3 t-border t-border-hv">
-              <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+            <a href="https://github.com/theo-georgewill" target="_blank" rel="noopener" class="flex items-center gap-3 text-[14px] font-medium t-text p-[13px] px-[18px] rounded-xl t-surface3 border t-border hover:border-hover hover:translate-x-1 transition-all">
+              <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
               github.com/theo-georgewill
             </a>
-            <a href="tel:07034387405" class="flex items-center gap-3 text-[14px] font-medium p-[13px] px-[18px] rounded-xl border border-subtle hover:translate-x-1 transition-all t-text t-surface3 t-border t-border-hv">
-              <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:07034387405" class="flex items-center gap-3 text-[14px] font-medium t-text p-[13px] px-[18px] rounded-xl t-surface3 border t-border hover:border-hover hover:translate-x-1 transition-all">
+              <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               07034387405
             </a>
           </div>
         </div>
 
-        <div class="border border-subtle rounded-[18px] p-9" style="background:var(--surface3)" relative overflow-hidden reveal" style="box-shadow:inset 0 1px 0 rgba(255,255,255,0.05)">
-          <div class="absolute top-0 left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,#2997ff,transparent)"></div>
-          <p class="text-[17px] font-semibold mb-7">Send a message</p>
-
-          <form id="contactForm">
+        <div class="border t-border rounded-[18px] p-9 t-surface3 relative overflow-hidden reveal" style="box-shadow:inset 0 1px 0 rgba(255,255,255,0.05)">
+          <div class="absolute top-0 left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,#2997ff,transparent)" aria-hidden="true"></div>
+          <p class="text-[17px] font-semibold t-text mb-7">Send a message</p>
+          <form id="contactForm" novalidate aria-label="Contact form">
             <div class="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <label class="block text-[11px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-2">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required
-                  class="form-input w-full bg-[#141414] border border-white/[0.08] text-white text-[15px] rounded-xl px-4 py-3 font-sans transition-colors" />
+                <label for="name" class="block text-[11px] font-semibold t-text3 uppercase tracking-widest mb-2">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name"
+                  class="form-input w-full border rounded-xl px-4 py-3 text-[15px] font-sans transition-colors" />
               </div>
               <div>
-                <label class="block text-[11px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-2">Email</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required
-                  class="form-input w-full bg-[#141414] border border-white/[0.08] text-white text-[15px] rounded-xl px-4 py-3 font-sans transition-colors" />
+                <label for="email" class="block text-[11px] font-semibold t-text3 uppercase tracking-widest mb-2">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email"
+                  class="form-input w-full border rounded-xl px-4 py-3 text-[15px] font-sans transition-colors" />
               </div>
             </div>
             <div class="mb-4">
-              <label class="block text-[11px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-2">I'm interested in</label>
-              <select id="subject" name="subject"
-                class="form-input w-full bg-[#141414] border border-white/[0.08] text-white text-[15px] rounded-xl px-4 py-3 font-sans cursor-pointer appearance-none transition-colors">
+              <label for="subject" class="block text-[11px] font-semibold t-text3 uppercase tracking-widest mb-2">I'm interested in</label>
+              <select id="subject" name="subject" class="form-input w-full border rounded-xl px-4 py-3 text-[15px] font-sans cursor-pointer appearance-none transition-colors">
                 <option value="">Select a topic...</option>
                 <option>Full-time engineering role</option>
                 <option>Freelance / contract project</option>
@@ -483,211 +524,273 @@
               </select>
             </div>
             <div class="mb-5">
-              <label class="block text-[11px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-2">Message</label>
+              <label for="message" class="block text-[11px] font-semibold t-text3 uppercase tracking-widest mb-2">Message</label>
               <textarea id="message" name="message" placeholder="Tell me about your project or opportunity..." required
-                class="form-input w-full bg-[#141414] border border-white/[0.08] text-white text-[15px] rounded-xl px-4 py-3 font-sans transition-colors resize-vertical" style="min-height:120px;line-height:1.5"></textarea>
+                class="form-input w-full border rounded-xl px-4 py-3 text-[15px] font-sans transition-colors resize-vertical" style="min-height:120px;line-height:1.5"></textarea>
             </div>
             <button type="submit" id="submitBtn" class="w-full py-[14px] bg-accent text-white rounded-full text-[15px] font-semibold flex items-center justify-center gap-2 hover:bg-[#0a84ff] hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-60 disabled:pointer-events-none">
               <span id="submitText">Send Message</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
             </button>
-            <p class="text-[12px] text-[#6e6e73] text-center mt-3">I'll respond within 24 hours.</p>
+            <p class="text-[12px] t-text3 text-center mt-3">I'll respond within 24 hours.</p>
           </form>
-
           <div id="formSuccess" class="hidden text-center py-12">
-            <div class="w-14 h-14 rounded-full flex items-center justify-center text-2xl mx-auto mb-5" style="background:rgba(48,209,88,0.12);border:1px solid rgba(48,209,88,0.3)">✓</div>
-            <h3 class="text-[20px] font-semibold mb-2">Message sent!</h3>
-            <p class="text-[14px] text-[#a1a1a6]">Thanks for reaching out. I'll get back to you within 24 hours.</p>
+            <div class="w-14 h-14 rounded-full flex items-center justify-center text-2xl mx-auto mb-5" style="background:rgba(48,209,88,0.12);border:1px solid rgba(48,209,88,0.3)" aria-hidden="true">✓</div>
+            <h3 class="text-[20px] font-semibold t-text mb-2">Message sent!</h3>
+            <p class="text-[14px] t-text2">Thanks for reaching out. I'll get back to you within 24 hours.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <footer class="py-8 px-6 text-center border-t border-subtle text-[13px] t-text3">
-    © <span id="yr"></span> Theo Georgewill 
+  <!-- ── FOOTER ── -->
+  <footer class="py-8 px-6 text-center border-t" style="border-color:var(--border)" role="contentinfo">
+    <p class="text-[13px] t-text3">© <span id="yr"></span> Theo Georgewill · Built with Tailwind CSS · Hosted on GitHub Pages</p>
   </footer>
 
   <script>
-    // ── LANGUAGE COLOURS (extend as needed) ─────────────────────────
-    const LANG_COLORS = {
-      JavaScript: "#f1e05a", TypeScript: "#3178c6", PHP: "#4f5d95",
-      Python: "#3572A5", CSS: "#563d7c", HTML: "#e34c26",
-      Vue: "#41b883", Shell: "#89e051", Go: "#00ADD8", Ruby: "#701516"
-    };
+  // ── Theme ──────────────────────────────────────────────────────────────────
+  const html  = document.documentElement;
+  const tBtn  = document.getElementById('theme-toggle');
+  const tIcon = document.getElementById('theme-icon');
+  const tLbl  = document.getElementById('theme-label');
 
-    const ARROW_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+  function applyTheme(t) {
+    html.classList.toggle('dark',  t === 'dark');
+    html.classList.toggle('light', t === 'light');
+    tIcon.textContent = t === 'dark' ? '☀️' : '🌙';
+    tLbl.textContent  = t === 'dark' ? 'Light' : 'Dark';
+    localStorage.setItem('theme', t);
+  }
+  const saved = localStorage.getItem('theme');
+  applyTheme(saved || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'));
+  tBtn.addEventListener('click', () => applyTheme(html.classList.contains('dark') ? 'light' : 'dark'));
 
-    // Repos tagged with the "portfolio" topic on GitHub will appear here automatically.
-    // To add a repo: go to its GitHub page → gear icon next to About → add topic "portfolio".
-    async function loadProjects() {
-      const grid = document.getElementById('projects-grid');
+  // ── Mobile menu ────────────────────────────────────────────────────────────
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
 
-      // Loading skeleton
-      grid.innerHTML = Array(4).fill(`
-        <div class="border rounded-[18px] p-8 animate-pulse" style="background:var(--surface3);border-color:var(--border)">
-          <div class="w-[52px] h-[52px] rounded-2xl mb-5" style="background:var(--surface2)"></div>
-          <div class="h-4 rounded mb-3 w-2/3" style="background:var(--surface2)"></div>
-          <div class="h-3 rounded mb-2" style="background:var(--surface2)"></div>
-          <div class="h-3 rounded mb-2 w-5/6" style="background:var(--surface2)"></div>
-          <div class="h-3 rounded w-4/6" style="background:var(--surface2)"></div>
-        </div>`).join('');
+  function closeMobileMenu() {
+    menuOpen = false;
+    mobileMenu.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  menuToggle.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('open', menuOpen);
+    menuToggle.setAttribute('aria-expanded', String(menuOpen));
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
 
-      try {
-        const res = await fetch('https://api.github.com/users/theo-georgewill/repos?per_page=100&sort=updated');
-        if (!res.ok) throw new Error('API error');
-        const repos = await res.json();
+  // ── Back to top ────────────────────────────────────────────────────────────
+  const btt = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 400), { passive: true });
+  btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // Filter to repos with the "portfolio" topic
-        const portfolio = repos.filter(r => r.topics && r.topics.includes('portfolio'));
+  // ── Active nav highlight ───────────────────────────────────────────────────
+  const sections  = ['hero','about','experience','projects','skills','contact'];
+  const navLinks  = document.querySelectorAll('.nav-link');
 
-        if (!portfolio.length) {
-          grid.innerHTML = `<p class="t-text2 md:col-span-3 text-center py-12">No repos tagged with <code>portfolio</code> topic yet.</p>`;
-          return;
-        }
-
-        grid.innerHTML = portfolio.map((r, i) => {
-          const featured = r.topics.includes('featured');
-          const colSpan  = featured ? 'md:col-span-2' : '';
-          const lang     = r.language || 'Code';
-          const langColor = LANG_COLORS[lang] || '#6e6e73';
-          const desc     = r.description || 'No description provided.';
-          const stars    = r.stargazers_count;
-
-          // Topic chips — exclude meta-tags
-          const exclude = new Set(['portfolio','featured']);
-          const chips = (r.topics || [])
-            .filter(t => !exclude.has(t))
-            .map(t => `<span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">${t}</span>`)
-            .join('');
-
-          const starsHtml = stars > 0
-            ? `<span class="text-[12px] t-text3 flex items-center gap-1">★ ${stars}</span>`
-            : '';
-
-          // Format name: kebab-case → Title Case
-          const name = r.name.replace(/-/g,' ').replace(/\w/g, c => c.toUpperCase());
-
-          return `
-          <div class="relative ${colSpan} border rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal"
-               style="background:var(--surface3);border-color:var(--border)">
-            <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5 flex-shrink-0 font-bold t-text"
-                 style="background:var(--surface2);font-size:18px">${name.slice(0,2).toUpperCase()}</div>
-            <h3 class="text-[17px] font-semibold mb-2 t-text">${name}</h3>
-            <p class="text-[14px] t-text2 leading-relaxed flex-1 mb-6">${desc}</p>
-            <div class="flex flex-wrap gap-[6px] mb-6">${chips}</div>
-            <div class="flex items-center justify-between">
-              <a href="${r.html_url}" target="_blank"
-                 class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">
-                View on GitHub ${ARROW_SVG}
-              </a>
-              <div class="flex items-center gap-3">
-                ${starsHtml}
-                <span class="text-[12px] t-text3 flex items-center gap-[5px]">
-                  <span class="w-[10px] h-[10px] rounded-full inline-block" style="background:${langColor}"></span>
-                  ${lang}
-                </span>
-              </div>
-            </div>
-          </div>`;
-        }).join('');
-
-      } catch (e) {
-        // Fallback: show a link to GitHub profile
-        grid.innerHTML = `
-          <div class="md:col-span-3 text-center py-12 border rounded-[18px]" style="background:var(--surface3);border-color:var(--border)">
-            <p class="t-text2 mb-4">Couldn't load projects right now.</p>
-            <a href="https://github.com/theo-georgewill" target="_blank"
-               class="inline-flex items-center gap-2 text-[13px] font-medium text-accent">
-              View all repos on GitHub ${ARROW_SVG}
-            </a>
-          </div>`;
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === entry.target.id));
       }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
 
-      // Re-observe cards for scroll reveal
-      grid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+
+  // ── Scroll reveal ──────────────────────────────────────────────────────────
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ── Accordion ─────────────────────────────────────────────────────────────
+  function toggleExp(item) {
+    const body = item.querySelector('.exp-body');
+    const btn  = item.querySelector('.toggle-btn');
+    const open = body.classList.contains('open');
+    document.querySelectorAll('.exp-body').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.toggle-btn').forEach(b => { b.style.transform = ''; b.setAttribute('aria-expanded','false'); });
+    if (!open) { body.classList.add('open'); btn.style.transform = 'rotate(180deg)'; btn.setAttribute('aria-expanded','true'); }
+  }
+  document.querySelector('.exp-item').click();
+
+  // ── Dynamic year ───────────────────────────────────────────────────────────
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ── GitHub Projects (cached) ───────────────────────────────────────────────
+  const CACHE_KEY = 'tg_portfolio_repos';
+  const CACHE_TTL = 60 * 60 * 1000; // 1 hour
+
+  const LANG_COLORS = {
+    JavaScript:'#f1e05a', TypeScript:'#3178c6', PHP:'#4f5d95',
+    Python:'#3572A5', CSS:'#563d7c', HTML:'#e34c26',
+    Vue:'#41b883', Shell:'#89e051', Go:'#00ADD8', Blade:'#f05340'
+  };
+
+  const ARROW = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+
+  function getCached() {
+    try {
+      const raw = localStorage.getItem(CACHE_KEY);
+      if (!raw) return null;
+      const { data, ts } = JSON.parse(raw);
+      return (Date.now() - ts < CACHE_TTL) ? data : null;
+    } catch { return null; }
+  }
+
+  function setCache(data) {
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() })); } catch {}
+  }
+
+  function timeAgo(dateStr) {
+    const diff = Date.now() - new Date(dateStr).getTime();
+    const d = Math.floor(diff / 86400000);
+    if (d < 1)  return 'today';
+    if (d < 7)  return `${d}d ago`;
+    if (d < 30) return `${Math.floor(d/7)}w ago`;
+    if (d < 365) return `${Math.floor(d/30)}mo ago`;
+    return `${Math.floor(d/365)}y ago`;
+  }
+
+  function renderProjects(repos) {
+    const grid = document.getElementById('projects-grid');
+    const portfolio = repos.filter(r => r.topics && r.topics.includes('portfolio'));
+
+    if (!portfolio.length) {
+      grid.innerHTML = `
+        <div class="md:col-span-3 text-center py-16 border rounded-[18px] t-surface3 t-border">
+          <p class="t-text2 mb-2 text-[15px]">No repos tagged with <code class="text-accent">portfolio</code> topic yet.</p>
+          <p class="t-text3 text-[13px]">Go to each repo on GitHub → ⚙️ About → Topics → add <strong>portfolio</strong></p>
+        </div>`;
+      return;
     }
 
-    loadProjects();
+    grid.innerHTML = portfolio.map(r => {
+      const featured  = r.topics.includes('featured');
+      const colSpan   = featured ? 'md:col-span-2' : '';
+      const lang      = r.language || 'Code';
+      const langColor = LANG_COLORS[lang] || '#6e6e73';
+      const desc      = r.description || 'No description provided.';
+      const stars     = r.stargazers_count;
+      const updated   = timeAgo(r.pushed_at);
+      const exclude   = new Set(['portfolio','featured']);
+      const chips     = (r.topics||[]).filter(t=>!exclude.has(t))
+        .map(t=>`<span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">${t}</span>`).join('');
+      const name      = r.name.replace(/-/g,' ').replace(/\b\w/g, c => c.toUpperCase());
+      const initials  = name.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
+      const starsHtml = stars > 0 ? `<span class="text-[12px] t-text3 flex items-center gap-1" aria-label="${stars} stars">★ ${stars}</span>` : '';
+      const featuredBg = featured ? 'background:linear-gradient(135deg,#0d1f38 0%,#0a1628 100%);border-color:rgba(41,151,255,0.2)' : 'background:var(--surface3);border-color:var(--border)';
 
-    document.getElementById("yr").textContent = new Date().getFullYear();
+      return `
+      <article class="relative ${colSpan} border rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal" style="${featuredBg}">
+        <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center font-bold t-text mb-5 flex-shrink-0"
+             style="background:var(--surface2);font-size:16px" aria-hidden="true">${initials}</div>
+        <h3 class="text-[17px] font-semibold mb-2 t-text">${name}</h3>
+        <p class="text-[14px] t-text2 leading-relaxed flex-1 mb-4">${desc}</p>
+        <div class="flex flex-wrap gap-[6px] mb-5">${chips}</div>
+        <div class="flex items-center justify-between mt-auto">
+          <a href="${r.html_url}" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all"
+             aria-label="View ${name} on GitHub">
+            View on GitHub ${ARROW}
+          </a>
+          <div class="flex items-center gap-3">
+            ${starsHtml}
+            <span class="text-[12px] t-text3 flex items-center gap-[5px]" title="Last pushed ${updated}">
+              <span class="w-[10px] h-[10px] rounded-full inline-block" style="background:${langColor}" aria-hidden="true"></span>
+              ${lang}
+            </span>
+            <span class="text-[11px] t-text3">${updated}</span>
+          </div>
+        </div>
+      </article>`;
+    }).join('');
 
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    grid.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  }
 
-    // Accordion
-    function toggleExp(item) {
-      const body = item.querySelector('.exp-body');
-      const btn = item.querySelector('.toggle-btn');
-      const isOpen = body.classList.contains('open');
-      document.querySelectorAll('.exp-body').forEach(b => b.classList.remove('open'));
-      document.querySelectorAll('.toggle-btn').forEach(b => b.style.transform = '');
-      if (!isOpen) { body.classList.add('open'); btn.style.transform = 'rotate(180deg)'; }
-    }
-    document.querySelector('.exp-item').click();
+  async function loadProjects(forceRefresh = false) {
+    const grid = document.getElementById('projects-grid');
+    grid.innerHTML = Array(3).fill(`
+      <div class="border rounded-[18px] p-8 animate-pulse t-surface3 t-border">
+        <div class="w-[52px] h-[52px] rounded-2xl mb-5 t-surface2"></div>
+        <div class="h-4 rounded mb-3 w-2/3 t-surface2"></div>
+        <div class="h-3 rounded mb-2 t-surface2"></div>
+        <div class="h-3 rounded mb-2 w-5/6 t-surface2"></div>
+        <div class="h-3 rounded w-4/6 t-surface2"></div>
+      </div>`).join('');
 
-    // Contact form → Google Sheets
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhz2BgJoAOaOQXwZ01tcauT-zjF51Iz7uB1PKAGL0VYn_ANbxLHJ6by9lKF8m-m_qlZg/exec';
-
-    const form = document.getElementById('contactForm');
-    const successEl = document.getElementById('formSuccess');
-    const submitBtn = document.getElementById('submitBtn');
-    const submitText = document.getElementById('submitText');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitText.textContent = 'Sending...';
-      const data = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value,
-      };
-      try {
-        await fetch(SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
+    try {
+      let repos = forceRefresh ? null : getCached();
+      if (!repos) {
+        const res = await fetch('https://api.github.com/users/theo-georgewill/repos?per_page=100&sort=pushed', {
+          headers: { 'Accept': 'application/vnd.github.mercy-preview+json' }
         });
-        form.style.display = 'none';
-        successEl.classList.remove('hidden');
-      } catch {
-        submitBtn.disabled = false;
-        submitText.textContent = 'Send Message';
-        alert('Something went wrong. Please email ttggwll@mail.com directly.');
+        if (!res.ok) throw new Error(`GitHub ${res.status}`);
+        repos = await res.json();
+        setCache(repos);
       }
-    });
-    // Theme toggle
-    const html = document.documentElement;
-    const btn = document.getElementById('theme-toggle');
-    const icon = document.getElementById('theme-icon');
-    const label = document.getElementById('theme-label');
-
-    function applyTheme(theme) {
-      if (theme === 'light') {
-        html.classList.remove('dark'); html.classList.add('light');
-        icon.textContent = '🌙'; label.textContent = 'Dark';
-      } else {
-        html.classList.remove('light'); html.classList.add('dark');
-        icon.textContent = '☀️'; label.textContent = 'Light';
-      }
-      localStorage.setItem('theme', theme);
+      renderProjects(repos);
+    } catch (e) {
+      grid.innerHTML = `
+        <div class="md:col-span-3 text-center py-12 border rounded-[18px] t-surface3 t-border">
+          <p class="t-text2 mb-4">Couldn't load projects right now.</p>
+          <a href="https://github.com/theo-georgewill" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-[13px] font-medium text-accent">
+            View all repos on GitHub ${ARROW}
+          </a>
+        </div>`;
     }
+  }
 
-    // Load saved preference, fallback to system preference
-    const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+  function refreshProjects() {
+    localStorage.removeItem(CACHE_KEY);
+    loadProjects(true);
+  }
 
-    btn.addEventListener('click', () => {
-      applyTheme(html.classList.contains('dark') ? 'light' : 'dark');
-    });
+  loadProjects();
+
+  // ── Contact form → Google Sheets ───────────────────────────────────────────
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhz2BgJoAOaOQXwZ01tcauT-zjF51Iz7uB1PKAGL0VYn_ANbxLHJ6by9lKF8m-m_qlZg/exec';
+  const form      = document.getElementById('contactForm');
+  const successEl = document.getElementById('formSuccess');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitTxt = document.getElementById('submitText');
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitTxt.textContent = 'Sending...';
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name:    document.getElementById('name').value,
+          email:   document.getElementById('email').value,
+          subject: document.getElementById('subject').value,
+          message: document.getElementById('message').value,
+        })
+      });
+      form.style.display = 'none';
+      successEl.classList.remove('hidden');
+    } catch {
+      submitBtn.disabled = false;
+      submitTxt.textContent = 'Send Message';
+      alert('Something went wrong. Please email ttggwll@mail.com directly.');
+    }
+  });
   </script>
 </body>
 </html>
