@@ -358,100 +358,8 @@
     <div class="max-w-4xl mx-auto">
       <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4 reveal">Projects</p>
       <h2 class="font-display text-[clamp(32px,5vw,52px)] leading-tight tracking-tight mb-5 reveal">Things I've shipped.</h2>
-      <p class="text-[19px] font-light text-[#a1a1a6] leading-relaxed max-w-xl mb-16 reveal">Real repos. Real code. All on GitHub.</p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-        <!-- ClientSync — featured -->
-        <div class="relative md:col-span-2 bg-gradient-to-br from-[#0d1f38] to-[#0a1628] border border-accent/20 rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal">
-          <div class="w-13 h-13 rounded-2xl flex items-center justify-center text-2xl mb-5 w-[52px] h-[52px]" style="background:linear-gradient(135deg,#0d1f38,#1a3a5c)">🔗</div>
-          <h3 class="text-[17px] font-semibold mb-2">ClientSync</h3>
-          <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Full-stack CRM integrating Laravel and React with HubSpot via OAuth2. Features contact sync, webhook handling, automated email reminders, and a pipeline dashboard — bridging internal sales workflows with HubSpot's ecosystem.</p>
-          <div class="flex flex-wrap gap-[6px] mb-6">
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Laravel</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">React.js</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">TypeScript</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">HubSpot API</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">OAuth2</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">MySQL</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <a href="https://github.com/theo-georgewill/clientsync-alpha" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            <span class="text-[12px] text-[#6e6e73] flex items-center gap-[5px]"><span class="w-[10px] h-[10px] rounded-full inline-block" style="background:#4f5d95"></span>PHP / TS</span>
-          </div>
-        </div>
-
-        <!-- Meta Ads Scraper -->
-        <div class="relative border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal" style="background:var(--surface3)">
-          <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#1a1030,#2d1060)">🔍</div>
-          <h3 class="text-[17px] font-semibold mb-2">Meta Ads Scraper</h3>
-          <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">High-reliability Meta Ads Library scraper. Captures GraphQL ad responses in real-time, saves into a structured JSON database, and supports full syncs and incremental updates.</p>
-          <div class="flex flex-wrap gap-[6px] mb-6">
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">TypeScript</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">GraphQL</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Meta API</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <a href="https://github.com/theo-georgewill/meta-ads-library-scraper" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            <span class="text-[12px] text-[#6e6e73] flex items-center gap-[5px]"><span class="w-[10px] h-[10px] rounded-full inline-block" style="background:#3178c6"></span>TS</span>
-          </div>
-        </div>
-
-        <!-- SocialScheduler -->
-        <div class="relative border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal" style="background:var(--surface3)">
-          <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#0d2a1a,#0f4a2a)">📅</div>
-          <h3 class="text-[17px] font-semibold mb-2">SocialScheduler</h3>
-          <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Multi-platform scheduling tool with Facebook and Reddit integration. OAuth lifecycle management, queue-based scheduling, and retry/failure handling for reliable post delivery.</p>
-          <div class="flex flex-wrap gap-[6px] mb-6">
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Laravel</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Vue.js</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Facebook API</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Reddit API</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <a href="https://github.com/theo-georgewill/SocialScheduler" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            <span class="text-[12px] text-[#6e6e73] flex items-center gap-[5px]"><span class="w-[10px] h-[10px] rounded-full inline-block" style="background:#4f5d95"></span>PHP</span>
-          </div>
-        </div>
-
-        <!-- Fitness Quest — featured -->
-        <div class="relative md:col-span-2 bg-gradient-to-br from-[#0d1f0d] to-[#0a1a0a] border border-success/15 rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal">
-          <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#1a2a0a,#2d4a10)">💪</div>
-          <h3 class="text-[17px] font-semibold mb-2">Fitness Quest</h3>
-          <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Full-stack fitness tracking app with a decoupled TypeScript frontend and backend. Demonstrates clean API design, type-safe data contracts across layers, and a production-ready project structure.</p>
-          <div class="flex flex-wrap gap-[6px] mb-6">
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">TypeScript</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">React.js</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Node.js</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">REST API</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <div class="flex gap-5">
-              <a href="https://github.com/theo-georgewill/fitness-quest-frontend" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">Frontend <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="https://github.com/theo-georgewill/fitness-quest-backend" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">Backend <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <span class="text-[12px] text-[#6e6e73] flex items-center gap-[5px]"><span class="w-[10px] h-[10px] rounded-full inline-block" style="background:#3178c6"></span>TypeScript</span>
-          </div>
-        </div>
-
-        <!-- Bookr -->
-        <div class="relative border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal" style="background:var(--surface3)">
-          <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#1a1a0a,#3d3d00)">📆</div>
-          <h3 class="text-[17px] font-semibold mb-2">Bookr</h3>
-          <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Appointment platform for service businesses. Multi-location scheduling, RBAC for business owners, staff and clients, and automated booking confirmation emails.</p>
-          <div class="flex flex-wrap gap-[6px] mb-6">
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Laravel</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Vue.js</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">TailwindCSS</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">MySQL</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <a href="https://github.com/theo-georgewill/booking-app" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            <span class="text-[12px] text-[#6e6e73] flex items-center gap-[5px]"><span class="w-[10px] h-[10px] rounded-full inline-block" style="background:#4f5d95"></span>PHP</span>
-          </div>
-        </div>
-
-      </div>
+      <p class="text-[19px] font-light t-text2 leading-relaxed max-w-xl mb-16 reveal">Real repos. Real code. All on GitHub.</p>
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
     </div>
   </section>
 
@@ -598,10 +506,104 @@
   </section>
 
   <footer class="py-8 px-6 text-center border-t border-subtle text-[13px] t-text3">
-    © <span id="yr"></span> Theo Georgewill · Built with Tailwind CSS · Hosted on GitHub Pages
+    © <span id="yr"></span> Theo Georgewill 
   </footer>
 
   <script>
+    // ── PROJECT DATA — add/edit projects here ──────────────────────────
+    const PROJECTS = [
+      {
+        name: "ClientSync",
+        emoji: "🔗",
+        iconBg: "linear-gradient(135deg,#0d1f38,#1a3a5c)",
+        desc: "Full-stack CRM integrating Laravel and React with HubSpot via OAuth2. Features contact sync, webhook handling, automated email reminders, and a pipeline dashboard — bridging internal sales workflows with HubSpot's ecosystem.",
+        stack: ["Laravel","React.js","TypeScript","HubSpot API","OAuth2","MySQL"],
+        lang: "PHP / TS", langColor: "#4f5d95",
+        links: [{ label: "View on GitHub", url: "https://github.com/theo-georgewill/clientsync-alpha" }],
+        featured: true
+      },
+      {
+        name: "Meta Ads Scraper",
+        emoji: "🔍",
+        iconBg: "linear-gradient(135deg,#1a1030,#2d1060)",
+        desc: "High-reliability Meta Ads Library scraper. Captures GraphQL ad responses in real-time, saves into a structured JSON database, and supports full syncs and incremental updates.",
+        stack: ["TypeScript","GraphQL","Meta API"],
+        lang: "TypeScript", langColor: "#3178c6",
+        links: [{ label: "View on GitHub", url: "https://github.com/theo-georgewill/meta-ads-library-scraper" }],
+        featured: false
+      },
+      {
+        name: "SocialScheduler",
+        emoji: "📅",
+        iconBg: "linear-gradient(135deg,#0d2a1a,#0f4a2a)",
+        desc: "Multi-platform scheduling tool with Facebook and Reddit integration. OAuth lifecycle management, queue-based scheduling, and retry/failure handling for reliable post delivery.",
+        stack: ["Laravel","Vue.js","Facebook API","Reddit API","MySQL"],
+        lang: "PHP", langColor: "#4f5d95",
+        links: [{ label: "View on GitHub", url: "https://github.com/theo-georgewill/SocialScheduler" }],
+        featured: false
+      },
+      {
+        name: "Fitness Quest",
+        emoji: "💪",
+        iconBg: "linear-gradient(135deg,#1a2a0a,#2d4a10)",
+        desc: "Full-stack fitness tracking app with a decoupled TypeScript frontend and backend. Clean API design, type-safe data contracts across layers, and a production-ready project structure.",
+        stack: ["TypeScript","React.js","Node.js","REST API"],
+        lang: "TypeScript", langColor: "#3178c6",
+        links: [
+          { label: "Frontend", url: "https://github.com/theo-georgewill/fitness-quest-frontend" },
+          { label: "Backend",  url: "https://github.com/theo-georgewill/fitness-quest-backend" }
+        ],
+        featured: true
+      },
+      {
+        name: "Bookr",
+        emoji: "📆",
+        iconBg: "linear-gradient(135deg,#1a1a0a,#3d3d00)",
+        desc: "Appointment platform for service businesses. Multi-location scheduling, RBAC for business owners, staff and clients, and automated booking confirmation emails.",
+        stack: ["Laravel","Vue.js","TailwindCSS","MySQL"],
+        lang: "PHP", langColor: "#4f5d95",
+        links: [{ label: "View on GitHub", url: "https://github.com/theo-georgewill/booking-app" }],
+        featured: false
+      }
+    ];
+
+    const ARROW_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+
+    function renderProjects() {
+      const grid = document.getElementById('projects-grid');
+      grid.innerHTML = PROJECTS.map(p => {
+        const colSpan = p.featured ? 'md:col-span-2' : '';
+        const chips = p.stack.map(s =>
+          `<span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">${s}</span>`
+        ).join('');
+        const links = p.links.map(l =>
+          `<a href="${l.url}" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">${l.label} ${ARROW_SVG}</a>`
+        ).join('');
+
+        return `
+        <div class="relative ${colSpan} border rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal"
+             style="background:var(--surface3);border-color:var(--border)">
+          <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5 flex-shrink-0"
+               style="background:${p.iconBg}">${p.emoji}</div>
+          <h3 class="text-[17px] font-semibold mb-2 t-text">${p.name}</h3>
+          <p class="text-[14px] t-text2 leading-relaxed flex-1 mb-6">${p.desc}</p>
+          <div class="flex flex-wrap gap-[6px] mb-6">${chips}</div>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-4">${links}</div>
+            <span class="text-[12px] t-text3 flex items-center gap-[5px]">
+              <span class="w-[10px] h-[10px] rounded-full inline-block" style="background:${p.langColor}"></span>
+              ${p.lang}
+            </span>
+          </div>
+        </div>`;
+      }).join('');
+
+      // Re-observe new cards for scroll reveal
+      grid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    renderProjects();
+
     document.getElementById("yr").textContent = new Date().getFullYear();
 
     // Scroll reveal
