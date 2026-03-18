@@ -147,7 +147,7 @@
 
   <!-- NAV -->
   <nav class="nav-blur fixed top-0 left-0 right-0 z-50 h-[52px] flex items-center justify-between px-6 border-b border-subtle">
-    <a href="#" class="text-[17px] font-semibold text-white">TG</a>
+    <a href="#" class="text-[17px] font-semibold t-text">TG</a>
     <ul class="hidden md:flex gap-7">
       <li><a href="#about" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">About</a></li>
       <li><a href="#experience" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">Experience</a></li>
@@ -197,19 +197,19 @@
   <!-- STATS -->
   <div class="t-surface2 border-y border-subtle py-8 px-6">
     <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 border border-subtle">
-      <div class="py-6 px-3 text-center bg-surface2">
+      <div class="py-6 px-3 text-center t-surface2">
         <div class="text-[38px] font-bold tracking-tight leading-none mb-1">6<span class="text-accent">+</span></div>
         <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Years Experience</div>
       </div>
-      <div class="py-6 px-3 text-center bg-surface2">
+      <div class="py-6 px-3 text-center t-surface2">
         <div class="text-[38px] font-bold tracking-tight leading-none mb-1">10<span class="text-accent">+</span></div>
         <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Production Platforms</div>
       </div>
-      <div class="py-6 px-3 text-center bg-surface2">
+      <div class="py-6 px-3 text-center t-surface2">
         <div class="text-[38px] font-bold tracking-tight leading-none mb-1">2</div>
         <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Industry Awards</div>
       </div>
-      <div class="py-6 px-3 text-center bg-surface2">
+      <div class="py-6 px-3 text-center t-surface2">
         <div class="text-[38px] font-bold tracking-tight leading-none mb-1">5<span class="text-accent">+</span></div>
         <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Tech Stacks</div>
       </div>
@@ -226,14 +226,14 @@
         <p class="text-[17px] text-[#a1a1a6] font-light leading-[1.75] mb-5">From architecting React + TypeScript frontends that cut delivery cycles by <strong class="text-white font-medium">30–40%</strong>, to leading cross-functional engineering teams — I own the full lifecycle.</p>
         <p class="text-[17px] text-[#a1a1a6] font-light leading-[1.75] mb-8">I hold a <strong class="text-white font-medium">BSc in Computer Science</strong> from Clifford University, graduating as the Department's Best Student.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full bg-surface3 border border-subtle text-[#a1a1a6]">React + TypeScript</span>
-          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full bg-surface3 border border-subtle text-[#a1a1a6]">Node.js + Laravel</span>
-          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full bg-surface3 border border-subtle text-[#a1a1a6]">System Architecture</span>
-          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full bg-surface3 border border-subtle text-[#a1a1a6]">Technical Leadership</span>
+          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full border t-surface3 t-border t-text2">React + TypeScript</span>
+          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full border t-surface3 t-border t-text2">Node.js + Laravel</span>
+          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full border t-surface3 t-border t-text2">System Architecture</span>
+          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full border t-surface3 t-border t-text2">Technical Leadership</span>
         </div>
       </div>
       <div class="reveal">
-        <div class="bg-surface3 border border-subtle rounded-[18px] p-9">
+        <div class="border border-subtle rounded-[18px] p-9" style="background:var(--surface3)">
           <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-6">Awards & Recognition</p>
           <div class="space-y-5">
             <div class="flex gap-4 pb-5 border-b border-subtle">
@@ -268,7 +268,7 @@
       <div class="flex flex-col gap-[2px]">
 
         <!-- EventPark -->
-        <div class="exp-item bg-surface border border-subtle rounded-[18px] overflow-hidden cursor-pointer hover:border-hover transition-colors reveal" onclick="toggleExp(this)">
+        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal" style="background:var(--surface);border-color:var(--border)" onclick="toggleExp(this)">
           <div class="flex items-center gap-5 p-7">
             <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1c1c3a,#2c2c5e)">EP</div>
             <div class="flex-1">
@@ -276,7 +276,7 @@
               <div class="text-[14px] text-accent font-medium">Senior Frontend Engineer</div>
               <div class="text-[13px] text-[#6e6e73] mt-[2px]">Nov 2025 – Present</div>
             </div>
-            <button class="w-7 h-7 rounded-full bg-surface3 border-none text-[#6e6e73] flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
+            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
           </div>
           <div class="exp-body px-7">
             <ul class="space-y-[10px] pb-1">
@@ -290,7 +290,7 @@
         </div>
 
         <!-- Inhouz -->
-        <div class="exp-item bg-surface border border-subtle rounded-[18px] overflow-hidden cursor-pointer hover:border-hover transition-colors reveal" onclick="toggleExp(this)">
+        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal" style="background:var(--surface);border-color:var(--border)" onclick="toggleExp(this)">
           <div class="flex items-center gap-5 p-7">
             <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1a2a1a,#1f4d1f)">IC</div>
             <div class="flex-1">
@@ -298,7 +298,7 @@
               <div class="text-[14px] text-accent font-medium">Fullstack Developer → Technical Project Manager</div>
               <div class="text-[13px] text-[#6e6e73] mt-[2px]">Jul 2025 – Nov 2025</div>
             </div>
-            <button class="w-7 h-7 rounded-full bg-surface3 border-none text-[#6e6e73] flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
+            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
           </div>
           <div class="exp-body px-7">
             <ul class="space-y-[10px] pb-1">
@@ -311,7 +311,7 @@
         </div>
 
         <!-- Terra Sunny -->
-        <div class="exp-item bg-surface border border-subtle rounded-[18px] overflow-hidden cursor-pointer hover:border-hover transition-colors reveal" onclick="toggleExp(this)">
+        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal" style="background:var(--surface);border-color:var(--border)" onclick="toggleExp(this)">
           <div class="flex items-center gap-5 p-7">
             <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#2a1a0a,#5c3311)">TS</div>
             <div class="flex-1">
@@ -319,7 +319,7 @@
               <div class="text-[14px] text-accent font-medium">Lead Software Developer</div>
               <div class="text-[13px] text-[#6e6e73] mt-[2px]">2021 – 2024</div>
             </div>
-            <button class="w-7 h-7 rounded-full bg-surface3 border-none text-[#6e6e73] flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
+            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
           </div>
           <div class="exp-body px-7">
             <ul class="space-y-[10px] pb-1">
@@ -331,7 +331,7 @@
         </div>
 
         <!-- Riboline -->
-        <div class="exp-item bg-surface border border-subtle rounded-[18px] overflow-hidden cursor-pointer hover:border-hover transition-colors reveal" onclick="toggleExp(this)">
+        <div class="exp-item border rounded-[18px] overflow-hidden cursor-pointer transition-colors reveal" style="background:var(--surface);border-color:var(--border)" onclick="toggleExp(this)">
           <div class="flex items-center gap-5 p-7">
             <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">RB</div>
             <div class="flex-1">
@@ -339,7 +339,7 @@
               <div class="text-[14px] text-accent font-medium">Software Developer</div>
               <div class="text-[13px] text-[#6e6e73] mt-[2px]">2020 – 2021</div>
             </div>
-            <button class="w-7 h-7 rounded-full bg-surface3 border-none text-[#6e6e73] flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
+            <button class="w-7 h-7 rounded-full t-surface3 border-none t-text3 flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
           </div>
           <div class="exp-body px-7">
             <ul class="space-y-[10px] pb-1">
@@ -368,12 +368,12 @@
           <h3 class="text-[17px] font-semibold mb-2">ClientSync</h3>
           <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Full-stack CRM integrating Laravel and React with HubSpot via OAuth2. Features contact sync, webhook handling, automated email reminders, and a pipeline dashboard — bridging internal sales workflows with HubSpot's ecosystem.</p>
           <div class="flex flex-wrap gap-[6px] mb-6">
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">Laravel</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">React.js</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">TypeScript</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">HubSpot API</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">OAuth2</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">MySQL</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Laravel</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">React.js</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">TypeScript</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">HubSpot API</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">OAuth2</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">MySQL</span>
           </div>
           <div class="flex items-center justify-between">
             <a href="https://github.com/theo-georgewill/clientsync-alpha" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -382,14 +382,14 @@
         </div>
 
         <!-- Meta Ads Scraper -->
-        <div class="relative bg-surface3 border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal">
+        <div class="relative border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal" style="background:var(--surface3)">
           <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#1a1030,#2d1060)">🔍</div>
           <h3 class="text-[17px] font-semibold mb-2">Meta Ads Scraper</h3>
           <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">High-reliability Meta Ads Library scraper. Captures GraphQL ad responses in real-time, saves into a structured JSON database, and supports full syncs and incremental updates.</p>
           <div class="flex flex-wrap gap-[6px] mb-6">
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">TypeScript</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">GraphQL</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Meta API</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">TypeScript</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">GraphQL</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Meta API</span>
           </div>
           <div class="flex items-center justify-between">
             <a href="https://github.com/theo-georgewill/meta-ads-library-scraper" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -398,15 +398,15 @@
         </div>
 
         <!-- SocialScheduler -->
-        <div class="relative bg-surface3 border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal">
+        <div class="relative border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal" style="background:var(--surface3)">
           <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#0d2a1a,#0f4a2a)">📅</div>
           <h3 class="text-[17px] font-semibold mb-2">SocialScheduler</h3>
           <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Multi-platform scheduling tool with Facebook and Reddit integration. OAuth lifecycle management, queue-based scheduling, and retry/failure handling for reliable post delivery.</p>
           <div class="flex flex-wrap gap-[6px] mb-6">
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Laravel</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Vue.js</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Facebook API</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Reddit API</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Laravel</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Vue.js</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Facebook API</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Reddit API</span>
           </div>
           <div class="flex items-center justify-between">
             <a href="https://github.com/theo-georgewill/SocialScheduler" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -420,10 +420,10 @@
           <h3 class="text-[17px] font-semibold mb-2">Fitness Quest</h3>
           <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Full-stack fitness tracking app with a decoupled TypeScript frontend and backend. Demonstrates clean API design, type-safe data contracts across layers, and a production-ready project structure.</p>
           <div class="flex flex-wrap gap-[6px] mb-6">
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">TypeScript</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">React.js</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">Node.js</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">REST API</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">TypeScript</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">React.js</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Node.js</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">REST API</span>
           </div>
           <div class="flex items-center justify-between">
             <div class="flex gap-5">
@@ -435,15 +435,15 @@
         </div>
 
         <!-- Bookr -->
-        <div class="relative bg-surface3 border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal">
+        <div class="relative border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal" style="background:var(--surface3)">
           <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#1a1a0a,#3d3d00)">📆</div>
           <h3 class="text-[17px] font-semibold mb-2">Bookr</h3>
           <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Appointment platform for service businesses. Multi-location scheduling, RBAC for business owners, staff and clients, and automated booking confirmation emails.</p>
           <div class="flex flex-wrap gap-[6px] mb-6">
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Laravel</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Vue.js</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">TailwindCSS</span>
-            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">MySQL</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Laravel</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">Vue.js</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">TailwindCSS</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">MySQL</span>
           </div>
           <div class="flex items-center justify-between">
             <a href="https://github.com/theo-georgewill/booking-app" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -463,57 +463,57 @@
       <p class="text-[19px] font-light text-[#a1a1a6] leading-relaxed max-w-xl mb-16 reveal">Comfortable at every layer — from UI components to database design.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-surface border border-subtle rounded-[18px] p-8 reveal">
+        <div class="border border-subtle rounded-[18px] p-8 reveal" style="background:var(--surface)">
           <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Frontend</p>
           <div class="flex flex-wrap gap-2">
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">React.js</span>
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">TypeScript</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Next.js</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Zustand</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Redux Toolkit</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Tailwind CSS</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Vue.js</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Next.js</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Zustand</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Redux Toolkit</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Tailwind CSS</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Vue.js</span>
           </div>
         </div>
-        <div class="bg-surface border border-subtle rounded-[18px] p-8 reveal">
+        <div class="border border-subtle rounded-[18px] p-8 reveal" style="background:var(--surface)">
           <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Backend</p>
           <div class="flex flex-wrap gap-2">
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">Node.js</span>
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">Laravel</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Express.js</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">NestJS</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">PHP</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">REST APIs</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Express.js</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">NestJS</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">PHP</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">REST APIs</span>
           </div>
         </div>
-        <div class="bg-surface border border-subtle rounded-[18px] p-8 reveal">
+        <div class="border border-subtle rounded-[18px] p-8 reveal" style="background:var(--surface)">
           <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Databases</p>
           <div class="flex flex-wrap gap-2">
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">PostgreSQL</span>
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">MySQL</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">MongoDB</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">SQLite</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">MongoDB</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">SQLite</span>
           </div>
         </div>
-        <div class="bg-surface border border-subtle rounded-[18px] p-8 reveal">
+        <div class="border border-subtle rounded-[18px] p-8 reveal" style="background:var(--surface)">
           <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">DevOps & Tools</p>
           <div class="flex flex-wrap gap-2">
             <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">Docker</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">GitHub Actions</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">DigitalOcean</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Git</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">WP CLI</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">GitHub Actions</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">DigitalOcean</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Git</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">WP CLI</span>
           </div>
         </div>
-        <div class="bg-surface border border-subtle rounded-[18px] p-8 md:col-span-2 reveal">
+        <div class="border border-subtle rounded-[18px] p-8 md:col-span-2 reveal" style="background:var(--surface)">
           <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Integrations & APIs</p>
           <div class="flex flex-wrap gap-2">
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Facebook Graph API</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Reddit API</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Twitter API</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">HubSpot</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">WordPress / WooCommerce</span>
-            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">OAuth 2.0</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Facebook Graph API</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Reddit API</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">Twitter API</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">HubSpot</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">WordPress / WooCommerce</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full t-text2 border t-border t-surface3">OAuth 2.0</span>
           </div>
         </div>
       </div>
@@ -530,22 +530,22 @@
           <h2 class="font-display text-[clamp(28px,4vw,44px)] leading-tight tracking-tight mb-5">Let's build<br>something great.</h2>
           <p class="text-[17px] font-light text-[#a1a1a6] leading-relaxed mb-9">Open to senior engineering roles, freelance projects, and technical consulting. Fill in the form or reach me directly.</p>
           <div class="flex flex-col gap-3">
-            <a href="mailto:ttggwll@mail.com" class="flex items-center gap-3 text-[14px] font-medium text-white p-[13px] px-[18px] rounded-xl bg-surface3 border border-subtle hover:border-hover hover:translate-x-1 transition-all">
+            <a href="mailto:ttggwll@mail.com" class="flex items-center gap-3 text-[14px] font-medium p-[13px] px-[18px] rounded-xl border border-subtle hover:translate-x-1 transition-all t-text t-surface3 t-border t-border-hv">
               <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               ttggwll@mail.com
             </a>
-            <a href="https://github.com/theo-georgewill" target="_blank" class="flex items-center gap-3 text-[14px] font-medium text-white p-[13px] px-[18px] rounded-xl bg-surface3 border border-subtle hover:border-hover hover:translate-x-1 transition-all">
+            <a href="https://github.com/theo-georgewill" target="_blank" class="flex items-center gap-3 text-[14px] font-medium p-[13px] px-[18px] rounded-xl border border-subtle hover:translate-x-1 transition-all t-text t-surface3 t-border t-border-hv">
               <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
               github.com/theo-georgewill
             </a>
-            <a href="tel:07034387405" class="flex items-center gap-3 text-[14px] font-medium text-white p-[13px] px-[18px] rounded-xl bg-surface3 border border-subtle hover:border-hover hover:translate-x-1 transition-all">
+            <a href="tel:07034387405" class="flex items-center gap-3 text-[14px] font-medium p-[13px] px-[18px] rounded-xl border border-subtle hover:translate-x-1 transition-all t-text t-surface3 t-border t-border-hv">
               <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               07034387405
             </a>
           </div>
         </div>
 
-        <div class="bg-surface3 border border-subtle rounded-[18px] p-9 relative overflow-hidden reveal" style="box-shadow:inset 0 1px 0 rgba(255,255,255,0.05)">
+        <div class="border border-subtle rounded-[18px] p-9" style="background:var(--surface3)" relative overflow-hidden reveal" style="box-shadow:inset 0 1px 0 rgba(255,255,255,0.05)">
           <div class="absolute top-0 left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,#2997ff,transparent)"></div>
           <p class="text-[17px] font-semibold mb-7">Send a message</p>
 
@@ -597,8 +597,8 @@
     </div>
   </section>
 
-  <footer class="py-8 px-6 text-center border-t border-subtle text-[13px] text-[#6e6e73]">
-    © <span id="yr"></span> Theo Georgewill 
+  <footer class="py-8 px-6 text-center border-t border-subtle text-[13px] t-text3">
+    © <span id="yr"></span> Theo Georgewill · Built with Tailwind CSS · Hosted on GitHub Pages
   </footer>
 
   <script>
