@@ -1,266 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Theo Georgewill — Senior Fullstack Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #000; --surface: #0a0a0a; --surface2: #141414; --surface3: #1c1c1e;
-      --border: rgba(255,255,255,0.08); --border-hover: rgba(255,255,255,0.18);
-      --text: #f5f5f7; --text-secondary: #a1a1a6; --text-tertiary: #6e6e73;
-      --accent: #2997ff; --green: #30d158;
-      --radius: 18px; --radius-sm: 12px; --nav-h: 52px;
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: '#0a0a0a',
+            surface2: '#141414',
+            surface3: '#1c1c1e',
+            accent: '#2997ff',
+            'accent-dim': 'rgba(41,151,255,0.12)',
+            success: '#30d158',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+            display: ['DM Serif Display', 'serif'],
+          },
+          borderColor: {
+            subtle: 'rgba(255,255,255,0.08)',
+            hover: 'rgba(255,255,255,0.18)',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.7s ease both',
+            'shimmer': 'shimmer 4s linear infinite',
+            'pulse-dot': 'pulseDot 2s ease infinite',
+            'scroll-line': 'scrollLine 2s ease infinite',
+          },
+          keyframes: {
+            fadeUp: { from: { opacity: '0', transform: 'translateY(20px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+            shimmer: { to: { backgroundPosition: '200% center' } },
+            pulseDot: { '0%,100%': { opacity: '1' }, '50%': { opacity: '0.3' } },
+            scrollLine: { '0%,100%': { opacity: '0.4' }, '50%': { opacity: '1' } },
+          }
+        }
+      }
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  </script>
+  <style>
+    body { background: #000; color: #f5f5f7; }
+    .font-display { font-family: 'DM Serif Display', serif; }
 
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; background: rgba(0,0,0,0.72); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--border); }
-    .nav-logo { font-size: 17px; font-weight: 600; color: var(--text); text-decoration: none; }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta { font-size: 13px; font-weight: 500; background: var(--accent); color: #fff; padding: 7px 16px; border-radius: 980px; text-decoration: none; transition: opacity 0.2s; }
-    .nav-cta:hover { opacity: 0.85; }
-
-    /* HERO */
-    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; }
-    .hero-glow { position: absolute; width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, rgba(41,151,255,0.12) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--accent); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 24px; padding: 6px 14px; border-radius: 980px; border: 1px solid rgba(41,151,255,0.3); background: rgba(41,151,255,0.06); animation: fadeUp 0.8s ease both; }
-    .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); display: inline-block; animation: pulse 2s ease infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-    .hero h1 { font-size: clamp(48px,8vw,96px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 24px; animation: fadeUp 0.8s 0.1s ease both; }
-    .hero h1 em { font-style: normal; background: linear-gradient(135deg, #2997ff 0%, #5ac8fa 50%, #2997ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% auto; animation: shimmer 4s linear infinite; }
-    @keyframes shimmer { to { background-position: 200% center; } }
-    .hero-sub { font-size: clamp(19px,2.5vw,24px); font-weight: 300; color: var(--text-secondary); max-width: 600px; line-height: 1.5; margin-bottom: 48px; animation: fadeUp 0.8s 0.2s ease both; }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.8s 0.3s ease both; }
-    .btn-primary { font-size: 17px; font-weight: 500; background: var(--accent); color: #fff; padding: 14px 32px; border-radius: 980px; text-decoration: none; transition: all 0.2s; }
-    .btn-primary:hover { background: #0a84ff; transform: scale(1.02); }
-    .btn-secondary { font-size: 17px; font-weight: 500; color: var(--accent); padding: 14px 32px; border-radius: 980px; text-decoration: none; transition: all 0.2s; border: 1px solid rgba(41,151,255,0.4); }
-    .btn-secondary:hover { background: rgba(41,151,255,0.08); }
-    .hero-scroll { position: absolute; bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--text-tertiary); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; animation: fadeUp 1s 0.8s ease both; }
-    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--text-tertiary), transparent); animation: scrollPulse 2s ease infinite; }
-    @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
-    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-
-    /* STATS */
-    .stats-bar { background: var(--surface2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px 24px; }
-    .stats-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); }
-    .stat { background: var(--surface2); padding: 24px 32px; text-align: center; }
-    .stat-number { font-size: 42px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; margin-bottom: 6px; }
-    .stat-number span { color: var(--accent); }
-    .stat-label { font-size: 13px; color: var(--text-secondary); }
-
-    /* SECTIONS */
-    section { padding: 120px 24px; }
-    .section-inner { max-width: 960px; margin: 0 auto; }
-    .section-eyebrow { font-size: 13px; font-weight: 500; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
-    .section-title { font-size: clamp(32px,5vw,52px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 20px; }
-    .section-desc { font-size: 19px; font-weight: 300; color: var(--text-secondary); line-height: 1.6; max-width: 600px; margin-bottom: 64px; }
-
-    /* ABOUT */
-    #about { background: var(--surface); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .about-text p { font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; font-weight: 300; }
-    .about-text p strong { color: var(--text); font-weight: 500; }
-    .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
-    .tag { font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 980px; background: var(--surface3); border: 1px solid var(--border); color: var(--text-secondary); }
-    .about-card { background: var(--surface3); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; }
-    .about-card-title { font-size: 13px; font-weight: 500; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 24px; }
-    .award-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
-    .award-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .award-icon { width: 36px; height: 36px; border-radius: 9px; background: linear-gradient(135deg,#f5a623,#f5813f); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-    .award-name { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
-    .award-org { font-size: 12px; color: var(--text-tertiary); }
-
-    /* EXPERIENCE */
-    #experience { background: var(--bg); }
-    .exp-list { display: flex; flex-direction: column; gap: 2px; }
-    .exp-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s; cursor: pointer; }
-    .exp-item:hover { border-color: var(--border-hover); }
-    .exp-header { display: flex; align-items: center; gap: 20px; padding: 28px 32px; }
-    .exp-logo { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; color: #fff; flex-shrink: 0; }
-    .exp-meta { flex: 1; }
-    .exp-company { font-size: 17px; font-weight: 600; margin-bottom: 2px; }
-    .exp-role { font-size: 14px; color: var(--accent); font-weight: 500; }
-    .exp-dates { font-size: 13px; color: var(--text-tertiary); margin-top: 2px; }
-    .exp-toggle { width: 28px; height: 28px; border-radius: 50%; background: var(--surface3); border: none; cursor: pointer; color: var(--text-tertiary); display: flex; align-items: center; justify-content: center; transition: all 0.2s; font-size: 14px; }
-    .exp-toggle:hover { background: var(--border-hover); color: var(--text); }
-    .exp-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; padding: 0 32px; }
-    .exp-body.open { max-height: 600px; padding: 0 32px 28px; }
-    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .exp-bullets li { font-size: 14px; color: var(--text-secondary); line-height: 1.6; padding-left: 20px; position: relative; }
-    .exp-bullets li::before { content:''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
-    .exp-bullets li strong { color: var(--text); font-weight: 500; }
-    .exp-current { font-size: 11px; font-weight: 600; color: var(--green); padding: 3px 9px; border-radius: 980px; background: rgba(48,209,88,0.1); border: 1px solid rgba(48,209,88,0.25); margin-left: 10px; vertical-align: middle; }
-
-    /* PROJECTS */
-    #projects { background: var(--surface); }
-    .projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-    .project-card { background: var(--surface3); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; display: flex; flex-direction: column; transition: all 0.3s ease; position: relative; overflow: hidden; }
-    .project-card::before { content:''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0; transition: opacity 0.3s; }
-    .project-card:hover { transform: translateY(-4px); border-color: var(--border-hover); }
-    .project-card:hover::before { opacity: 1; }
-    .project-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
-    .project-name { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
-    .project-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; flex: 1; margin-bottom: 24px; }
-    .project-stack { display: flex; flex-wrap: wrap; gap: 6px; }
-    .stack-tag { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 980px; background: var(--surface2); border: 1px solid var(--border); color: var(--text-tertiary); }
-    .project-card.featured { grid-column: span 2; background: linear-gradient(135deg,#0d1f38 0%,#0a1628 100%); border-color: rgba(41,151,255,0.2); }
-    .project-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 24px; }
-    .project-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; transition: gap 0.2s; }
-    .project-link:hover { gap: 10px; }
-    .project-link svg { width: 14px; height: 14px; }
-    .project-lang { font-size: 12px; color: var(--text-tertiary); display: flex; align-items: center; gap: 5px; }
-    .lang-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-
-    /* SKILLS */
-    #skills { background: var(--bg); }
-    .skills-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
-    .skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; }
-    .skill-group-title { font-size: 13px; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 18px; }
-    .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-chip { font-size: 13px; font-weight: 500; color: var(--text-secondary); padding: 7px 14px; border-radius: 980px; background: var(--surface3); border: 1px solid var(--border); transition: all 0.2s; }
-    .skill-chip:hover { color: var(--text); border-color: var(--border-hover); }
-    .skill-chip.highlight { color: var(--accent); border-color: rgba(41,151,255,0.3); background: rgba(41,151,255,0.06); }
-
-    /* CONTACT */
-    #contact { background: var(--surface); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
-    .contact-left h2 { font-size: clamp(28px,4vw,44px); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 16px; line-height: 1.1; }
-    .contact-left > p { font-size: 17px; color: var(--text-secondary); font-weight: 300; line-height: 1.6; margin-bottom: 36px; }
-    .contact-quick-links { display: flex; flex-direction: column; gap: 10px; }
-    .contact-link { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; color: var(--text); padding: 13px 18px; border-radius: var(--radius-sm); background: var(--surface3); border: 1px solid var(--border); text-decoration: none; transition: all 0.2s; }
-    .contact-link:hover { border-color: var(--border-hover); transform: translateX(4px); }
-    .contact-link svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
-    .contact-link .link-label { flex: 1; }
-
-    /* Form */
-    .contact-form-card { background: var(--surface3); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; position: relative; overflow: hidden; }
-    .contact-form-card::before { content:''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
-    .form-title { font-size: 17px; font-weight: 600; margin-bottom: 28px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; font-size: 11px; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 7px; }
-    .form-group input,
-    .form-group textarea,
-    .form-group select { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 15px; font-size: 15px; color: var(--text); font-family: inherit; outline: none; transition: border-color 0.2s, box-shadow 0.2s; -webkit-appearance: none; }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--text-tertiary); }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(41,151,255,0.1); }
-    .form-group textarea { resize: vertical; min-height: 110px; line-height: 1.5; }
-    .form-group select { cursor: pointer; }
-    .form-group select option { background: var(--surface3); color: var(--text); }
-    .form-submit { width: 100%; padding: 14px; background: var(--accent); color: #fff; border: none; border-radius: 980px; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .form-submit:hover { background: #0a84ff; transform: scale(1.01); }
-    .form-submit:active { transform: scale(0.99); }
-    .form-submit:disabled { opacity: 0.6; pointer-events: none; }
-    .form-note { font-size: 12px; color: var(--text-tertiary); text-align: center; margin-top: 12px; line-height: 1.5; }
-    .form-success { display: none; text-align: center; padding: 48px 16px; }
-    .success-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(48,209,88,0.12); border: 1px solid rgba(48,209,88,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 26px; }
-    .form-success h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-    .form-success p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
-
-    /* FOOTER */
-    footer { padding: 32px 24px; text-align: center; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-tertiary); }
-
-    /* SCROLL REVEAL */
-    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .stats-inner { grid-template-columns: repeat(2,1fr); }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .project-card.featured { grid-column: span 1; }
-      .skills-grid { grid-template-columns: 1fr; }
-      section { padding: 80px 24px; }
-      .form-row { grid-template-columns: 1fr; }
+    /* Hero gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #2997ff 0%, #5ac8fa 50%, #2997ff 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
     }
+
+    /* Nav blur */
+    .nav-blur {
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    /* Accordion */
+    .exp-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+    .exp-body.open { max-height: 700px; padding-bottom: 1.75rem; }
+
+    /* Card top shine on hover */
+    .card-shine::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, #2997ff, transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .card-shine:hover::before { opacity: 1; }
+
+    /* Form inputs */
+    input, textarea, select {
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #f5f5f7;
+      border-radius: 12px;
+      padding: 12px 15px;
+      font-size: 15px;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+    input::placeholder, textarea::placeholder { color: #6e6e73; }
+    input:focus, textarea:focus, select:focus {
+      border-color: #2997ff;
+      box-shadow: 0 0 0 3px rgba(41,151,255,0.1);
+    }
+    textarea { resize: vertical; min-height: 110px; line-height: 1.5; }
+    select { cursor: pointer; }
+    select option { background: #1c1c1e; color: #f5f5f7; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
   </style>
 </head>
-<body>
+<body class="font-sans antialiased overflow-x-hidden">
 
-  <nav>
-    <a href="#" class="nav-logo">TG</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+  <!-- NAV -->
+  <nav class="nav-blur fixed top-0 left-0 right-0 z-50 h-[52px] flex items-center justify-between px-6 border-b border-subtle">
+    <a href="#" class="text-[17px] font-semibold text-white">TG</a>
+    <ul class="hidden md:flex gap-7">
+      <li><a href="#about" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">About</a></li>
+      <li><a href="#experience" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">Experience</a></li>
+      <li><a href="#projects" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">Projects</a></li>
+      <li><a href="#skills" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">Skills</a></li>
+      <li><a href="#contact" class="text-[13px] text-[#a1a1a6] hover:text-white transition-colors">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Get in touch</a>
+    <a href="#contact" class="text-[13px] font-medium bg-accent text-white px-4 py-[7px] rounded-full hover:opacity-85 transition-opacity">Get in touch</a>
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-eyebrow"><span class="dot"></span> Available for new opportunities</div>
-    <h1>Building products<br>that <em>ship</em>.</h1>
-    <p class="hero-sub">Senior Fullstack Engineer with 6+ years delivering end-to-end web platforms — from pixel-perfect frontends to scalable APIs and everything in between.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-primary">View my work</a>
-      <a href="#contact" class="btn-secondary">Let's talk</a>
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-28 pb-20 relative overflow-hidden">
+    <!-- Glow -->
+    <div class="absolute w-[700px] h-[700px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(41,151,255,0.13) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%)"></div>
+
+    <div class="inline-flex items-center gap-2 text-[13px] font-medium text-accent uppercase tracking-widest mb-6 px-4 py-[6px] rounded-full border border-accent/30 bg-accent/[0.06] animate-fade-up">
+      <span class="w-[6px] h-[6px] rounded-full bg-success animate-pulse-dot"></span>
+      Available for new opportunities
     </div>
-    <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+
+    <h1 class="font-display text-[clamp(52px,9vw,104px)] leading-[1.04] tracking-tight mb-6" style="animation:fadeUp 0.8s 0.1s ease both;opacity:0">
+      Building products<br>that <span class="gradient-text">ship</span>.
+    </h1>
+
+    <p class="text-[clamp(18px,2.2vw,22px)] font-light text-[#a1a1a6] max-w-[580px] leading-relaxed mb-12" style="animation:fadeUp 0.8s 0.2s ease both;opacity:0">
+      Senior Fullstack Engineer with 6+ years delivering end-to-end web platforms — from pixel-perfect frontends to scalable APIs and everything in between.
+    </p>
+
+    <div class="flex gap-4 flex-wrap justify-center" style="animation:fadeUp 0.8s 0.3s ease both;opacity:0">
+      <a href="#projects" class="text-[17px] font-medium bg-accent text-white px-8 py-[14px] rounded-full hover:bg-[#0a84ff] hover:scale-[1.02] transition-all">View my work</a>
+      <a href="#contact" class="text-[17px] font-medium text-accent px-8 py-[14px] rounded-full border border-accent/40 hover:bg-accent/[0.08] transition-all">Let's talk</a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 flex flex-col items-center gap-2 text-[11px] text-[#6e6e73] tracking-widest uppercase" style="animation:fadeUp 1s 0.8s ease both;opacity:0">
+      <div class="w-px h-10 animate-scroll-line" style="background:linear-gradient(to bottom,#6e6e73,transparent)"></div>
+      Scroll
+    </div>
   </section>
 
   <!-- STATS -->
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <div class="stat"><div class="stat-number">6<span>+</span></div><div class="stat-label">Years Experience</div></div>
-      <div class="stat"><div class="stat-number">10<span>+</span></div><div class="stat-label">Production Platforms</div></div>
-      <div class="stat"><div class="stat-number">2</div><div class="stat-label">Industry Awards</div></div>
-      <div class="stat"><div class="stat-number">5<span>+</span></div><div class="stat-label">Tech Stacks</div></div>
+  <div class="bg-surface2 border-y border-subtle py-8 px-6">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 border border-subtle">
+      <div class="py-6 px-8 text-center bg-surface2">
+        <div class="text-[42px] font-bold tracking-tight leading-none mb-1">6<span class="text-accent">+</span></div>
+        <div class="text-[13px] text-[#a1a1a6]">Years Experience</div>
+      </div>
+      <div class="py-6 px-8 text-center bg-surface2">
+        <div class="text-[42px] font-bold tracking-tight leading-none mb-1">10<span class="text-accent">+</span></div>
+        <div class="text-[13px] text-[#a1a1a6]">Production Platforms</div>
+      </div>
+      <div class="py-6 px-8 text-center bg-surface2">
+        <div class="text-[42px] font-bold tracking-tight leading-none mb-1">2</div>
+        <div class="text-[13px] text-[#a1a1a6]">Industry Awards</div>
+      </div>
+      <div class="py-6 px-8 text-center bg-surface2">
+        <div class="text-[42px] font-bold tracking-tight leading-none mb-1">5<span class="text-accent">+</span></div>
+        <div class="text-[13px] text-[#a1a1a6]">Tech Stacks</div>
+      </div>
     </div>
   </div>
 
   <!-- ABOUT -->
-  <section id="about">
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <div class="section-eyebrow">About</div>
-          <h2 class="section-title">Engineer.<br>Architect.<br>Maker.</h2>
-          <p>I'm Theo — a Senior Fullstack Engineer from Port Harcourt, Nigeria. I build <strong>end-to-end products</strong> that are fast, maintainable, and actually used by real people.</p>
-          <p>From architecting React + TypeScript frontends that cut delivery cycles by <strong>30–40%</strong>, to leading cross-functional engineering teams shipping apps for oil and gas clients — I own the full lifecycle.</p>
-          <p>I hold a <strong>BSc in Computer Science</strong> from Clifford University, where I graduated as the Department's Best Student.</p>
-          <div class="about-tags">
-            <span class="tag">React + TypeScript</span>
-            <span class="tag">Node.js + Laravel</span>
-            <span class="tag">System Architecture</span>
-            <span class="tag">Technical Leadership</span>
-            <span class="tag">REST APIs</span>
-          </div>
+  <section id="about" class="bg-surface py-28 px-6">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+      <div class="reveal">
+        <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4">About</p>
+        <h2 class="font-display text-[clamp(36px,5vw,56px)] leading-[1.08] tracking-tight mb-6">Engineer.<br>Architect.<br>Maker.</h2>
+        <p class="text-[17px] text-[#a1a1a6] font-light leading-[1.75] mb-5">I'm Theo — a Senior Fullstack Engineer from Port Harcourt, Nigeria. I build <strong class="text-white font-medium">end-to-end products</strong> that are fast, maintainable, and actually used by real people.</p>
+        <p class="text-[17px] text-[#a1a1a6] font-light leading-[1.75] mb-5">From architecting React + TypeScript frontends that cut delivery cycles by <strong class="text-white font-medium">30–40%</strong>, to leading cross-functional engineering teams — I own the full lifecycle.</p>
+        <p class="text-[17px] text-[#a1a1a6] font-light leading-[1.75] mb-8">I hold a <strong class="text-white font-medium">BSc in Computer Science</strong> from Clifford University, graduating as the Department's Best Student.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full bg-surface3 border border-subtle text-[#a1a1a6]">React + TypeScript</span>
+          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full bg-surface3 border border-subtle text-[#a1a1a6]">Node.js + Laravel</span>
+          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full bg-surface3 border border-subtle text-[#a1a1a6]">System Architecture</span>
+          <span class="text-[13px] font-medium px-4 py-[6px] rounded-full bg-surface3 border border-subtle text-[#a1a1a6]">Technical Leadership</span>
         </div>
-        <div class="reveal">
-          <div class="about-card">
-            <div class="about-card-title">Awards & Recognition</div>
-            <div class="award-item">
-              <div class="award-icon">🏆</div>
-              <div><div class="award-name">Best Data-Driven SME Web Design</div><div class="award-org">Martech Awards 2024 · Innovation in Business</div></div>
+      </div>
+      <div class="reveal">
+        <div class="bg-surface3 border border-subtle rounded-[18px] p-9">
+          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-6">Awards & Recognition</p>
+          <div class="space-y-5">
+            <div class="flex gap-4 pb-5 border-b border-subtle">
+              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#f5a623,#f5813f)">🏆</div>
+              <div><p class="text-[14px] font-medium mb-1">Best Data-Driven SME Web Design</p><p class="text-[12px] text-[#6e6e73]">Martech Awards 2024 · Innovation in Business</p></div>
             </div>
-            <div class="award-item">
-              <div class="award-icon">🏆</div>
-              <div><div class="award-name">Digital Marketing Agency of the Year</div><div class="award-org">Corporate LiveWire Innovation & Excellence Award</div></div>
+            <div class="flex gap-4 pb-5 border-b border-subtle">
+              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#f5a623,#f5813f)">🏆</div>
+              <div><p class="text-[14px] font-medium mb-1">Digital Marketing Agency of the Year</p><p class="text-[12px] text-[#6e6e73]">Corporate LiveWire Innovation & Excellence Award</p></div>
             </div>
-            <div class="award-item">
-              <div class="award-icon">🎓</div>
-              <div><div class="award-name">Dean's Award — Best Graduating Student</div><div class="award-org">Clifford University · Computer Science</div></div>
+            <div class="flex gap-4 pb-5 border-b border-subtle">
+              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#1d5a8a,#2997ff)">🎓</div>
+              <div><p class="text-[14px] font-medium mb-1">Dean's Award — Best Graduating Student</p><p class="text-[12px] text-[#6e6e73]">Clifford University · Computer Science</p></div>
             </div>
-            <div class="award-item">
-              <div class="award-icon" style="background:linear-gradient(135deg,#5856d6,#007aff)">🌍</div>
-              <div><div class="award-name">4× Industry Nominations</div><div class="award-org">Media Innovator · Martech · Corporate Livewire · Global Recognition</div></div>
+            <div class="flex gap-4">
+              <div class="w-9 h-9 rounded-[9px] flex items-center justify-center text-base flex-shrink-0" style="background:linear-gradient(135deg,#5856d6,#007aff)">🌍</div>
+              <div><p class="text-[14px] font-medium mb-1">4× Industry Nominations</p><p class="text-[12px] text-[#6e6e73]">Media Innovator · Martech · Corporate Livewire · Global Recognition</p></div>
             </div>
           </div>
         </div>
@@ -269,92 +221,92 @@
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="section-inner">
-      <div class="section-eyebrow reveal">Experience</div>
-      <h2 class="section-title reveal">Where I've built.</h2>
-      <p class="section-desc reveal">6+ years across event platforms, agencies, e-commerce, and enterprise — always owning end-to-end delivery.</p>
-      <div class="exp-list">
+  <section id="experience" class="bg-black py-28 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4 reveal">Experience</p>
+      <h2 class="font-display text-[clamp(32px,5vw,52px)] leading-tight tracking-tight mb-5 reveal">Where I've built.</h2>
+      <p class="text-[19px] font-light text-[#a1a1a6] leading-relaxed max-w-xl mb-16 reveal">6+ years across event platforms, agencies, e-commerce, and enterprise.</p>
 
-        <div class="exp-item reveal" onclick="toggleExp(this)">
-          <div class="exp-header">
-            <div class="exp-logo" style="background:linear-gradient(135deg,#1c1c3a,#2c2c5e)">EP</div>
-            <div class="exp-meta">
-              <div class="exp-company">EventPark Africa <span class="exp-current">Current</span></div>
-              <div class="exp-role">Senior Frontend Engineer</div>
-              <div class="exp-dates">Nov 2025 – Present</div>
+      <div class="flex flex-col gap-[2px]">
+
+        <!-- EventPark -->
+        <div class="exp-item bg-surface border border-subtle rounded-[18px] overflow-hidden cursor-pointer hover:border-hover transition-colors reveal" onclick="toggleExp(this)">
+          <div class="flex items-center gap-5 p-7">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1c1c3a,#2c2c5e)">EP</div>
+            <div class="flex-1">
+              <div class="text-[17px] font-semibold mb-[2px]">EventPark Africa <span class="text-[11px] font-semibold text-success px-2 py-[3px] rounded-full bg-success/10 border border-success/25 ml-2 align-middle">Current</span></div>
+              <div class="text-[14px] text-accent font-medium">Senior Frontend Engineer</div>
+              <div class="text-[13px] text-[#6e6e73] mt-[2px]">Nov 2025 – Present</div>
             </div>
-            <button class="exp-toggle">▾</button>
+            <button class="w-7 h-7 rounded-full bg-surface3 border-none text-[#6e6e73] flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
           </div>
-          <div class="exp-body">
-            <ul class="exp-bullets">
-              <li>Architected scalable React + TypeScript frontend enabling <strong>~30–40% faster feature delivery cycles</strong> through reusable component patterns and modular state management</li>
-              <li>Delivered <strong>5+ core platform features</strong> — event discovery, marketplace, filtering, cart, and multi-step checkout — forming the foundation of the platform's commercial launch</li>
-              <li>Designed Zustand + event-driven state system enabling real-time UI sync without page reloads</li>
-              <li>Integrated Go-based REST API with structured error handling, eliminating silent failures across all user journeys</li>
-              <li>Introduced React Router data loaders for preloading critical data, reducing UI blocking states</li>
-              <li>Optimised rendering via lazy loading, memoisation, and controlled re-renders for low-end and mobile devices</li>
-              <li>Built location-aware discovery and filtering logic, improving event and product relevance across regions</li>
+          <div class="exp-body px-7">
+            <ul class="space-y-[10px] pb-1">
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Architected scalable React + TypeScript frontend enabling <strong class="text-white font-medium">~30–40% faster feature delivery cycles</strong> through reusable component patterns</li>
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Delivered <strong class="text-white font-medium">5+ core platform features</strong> — event discovery, marketplace, filtering, cart, and multi-step checkout — forming the foundation of the platform's commercial launch</li>
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Designed Zustand + event-driven state system enabling real-time UI sync without page reloads</li>
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Integrated Go-based REST API with structured error handling, eliminating silent failures across all user journeys</li>
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Optimised rendering via lazy loading, memoisation, and controlled re-renders for mobile devices</li>
             </ul>
           </div>
         </div>
 
-        <div class="exp-item reveal" onclick="toggleExp(this)">
-          <div class="exp-header">
-            <div class="exp-logo" style="background:linear-gradient(135deg,#1a2a1a,#1f4d1f)">IC</div>
-            <div class="exp-meta">
-              <div class="exp-company">Inhouz Cloud</div>
-              <div class="exp-role">Fullstack Developer → Technical Project Manager</div>
-              <div class="exp-dates">Jul 2025 – Nov 2025</div>
+        <!-- Inhouz -->
+        <div class="exp-item bg-surface border border-subtle rounded-[18px] overflow-hidden cursor-pointer hover:border-hover transition-colors reveal" onclick="toggleExp(this)">
+          <div class="flex items-center gap-5 p-7">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1a2a1a,#1f4d1f)">IC</div>
+            <div class="flex-1">
+              <div class="text-[17px] font-semibold mb-[2px]">Inhouz Cloud</div>
+              <div class="text-[14px] text-accent font-medium">Fullstack Developer → Technical Project Manager</div>
+              <div class="text-[13px] text-[#6e6e73] mt-[2px]">Jul 2025 – Nov 2025</div>
             </div>
-            <button class="exp-toggle">▾</button>
+            <button class="w-7 h-7 rounded-full bg-surface3 border-none text-[#6e6e73] flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
           </div>
-          <div class="exp-body">
-            <ul class="exp-bullets">
-              <li>Built full-stack MERN features in a serverless architecture for internal tools and enterprise oil & gas clients</li>
-              <li><strong>Promoted to Technical PM</strong> — managed delivery across multiple engineering teams</li>
-              <li>Led sprint planning, backlog grooming, and delivery tracking — improving accountability and predictability</li>
-              <li>Standardised stakeholder communication, significantly reducing misalignment and requirement ambiguity</li>
-              <li>Introduced structured per-team progress reporting, improving leadership visibility</li>
+          <div class="exp-body px-7">
+            <ul class="space-y-[10px] pb-1">
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Built full-stack MERN features in a serverless architecture for internal tools and enterprise oil & gas clients</li>
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent"><strong class="text-white font-medium">Promoted to Technical PM</strong> — managed delivery across multiple engineering teams, aligning execution with business priorities</li>
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Led sprint planning, backlog grooming, and delivery tracking — improving accountability and predictability</li>
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Standardised stakeholder communication, significantly reducing misalignment and requirement ambiguity</li>
             </ul>
           </div>
         </div>
 
-        <div class="exp-item reveal" onclick="toggleExp(this)">
-          <div class="exp-header">
-            <div class="exp-logo" style="background:linear-gradient(135deg,#2a1a0a,#5c3311)">TS</div>
-            <div class="exp-meta">
-              <div class="exp-company">Terra Sunny</div>
-              <div class="exp-role">Lead Software Developer</div>
-              <div class="exp-dates">2021 – 2024</div>
+        <!-- Terra Sunny -->
+        <div class="exp-item bg-surface border border-subtle rounded-[18px] overflow-hidden cursor-pointer hover:border-hover transition-colors reveal" onclick="toggleExp(this)">
+          <div class="flex items-center gap-5 p-7">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#2a1a0a,#5c3311)">TS</div>
+            <div class="flex-1">
+              <div class="text-[17px] font-semibold mb-[2px]">Terra Sunny</div>
+              <div class="text-[14px] text-accent font-medium">Lead Software Developer</div>
+              <div class="text-[13px] text-[#6e6e73] mt-[2px]">2021 – 2024</div>
             </div>
-            <button class="exp-toggle">▾</button>
+            <button class="w-7 h-7 rounded-full bg-surface3 border-none text-[#6e6e73] flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
           </div>
-          <div class="exp-body">
-            <ul class="exp-bullets">
-              <li>Led development of <strong>award-winning digital products</strong> (2 awards, 4 nominations) using TypeScript, Node.js, React, and Laravel</li>
-              <li>Delivered <strong>10+ production-ready web platforms</strong> across WordPress and custom builds</li>
-              <li>Built a custom WordPress automation plugin reducing per-project setup time by <strong>~50–70%</strong></li>
-              <li>Delivered backend API integrations for clients across e-commerce, marketing, and enterprise</li>
+          <div class="exp-body px-7">
+            <ul class="space-y-[10px] pb-1">
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Led development of <strong class="text-white font-medium">award-winning digital products</strong> (2 awards, 4 nominations) using TypeScript, Node.js, React, and Laravel</li>
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Delivered <strong class="text-white font-medium">10+ production-ready web platforms</strong> across WordPress and custom builds</li>
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Built a custom WordPress automation plugin reducing per-project setup time by <strong class="text-white font-medium">~50–70%</strong></li>
             </ul>
           </div>
         </div>
 
-        <div class="exp-item reveal" onclick="toggleExp(this)">
-          <div class="exp-header">
-            <div class="exp-logo" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">RB</div>
-            <div class="exp-meta">
-              <div class="exp-company">Riboline</div>
-              <div class="exp-role">Software Developer</div>
-              <div class="exp-dates">2020 – 2021</div>
+        <!-- Riboline -->
+        <div class="exp-item bg-surface border border-subtle rounded-[18px] overflow-hidden cursor-pointer hover:border-hover transition-colors reveal" onclick="toggleExp(this)">
+          <div class="flex items-center gap-5 p-7">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[13px] font-bold text-white flex-shrink-0" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">RB</div>
+            <div class="flex-1">
+              <div class="text-[17px] font-semibold mb-[2px]">Riboline</div>
+              <div class="text-[14px] text-accent font-medium">Software Developer</div>
+              <div class="text-[13px] text-[#6e6e73] mt-[2px]">2020 – 2021</div>
             </div>
-            <button class="exp-toggle">▾</button>
+            <button class="w-7 h-7 rounded-full bg-surface3 border-none text-[#6e6e73] flex items-center justify-center transition-all text-sm toggle-btn">▾</button>
           </div>
-          <div class="exp-body">
-            <ul class="exp-bullets">
-              <li>Built automation and scraping scripts for product data aggregation, significantly reducing manual data entry</li>
-              <li>Developed responsive UI components improving usability across mobile and desktop</li>
-              <li>Contributed to debugging, QA, and deployment — ensuring stable, timely releases</li>
+          <div class="exp-body px-7">
+            <ul class="space-y-[10px] pb-1">
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Built automation and scraping scripts for product data aggregation, significantly reducing manual data entry</li>
+              <li class="text-[14px] text-[#a1a1a6] leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-[8px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-accent">Developed responsive UI components improving usability across mobile and desktop</li>
             </ul>
           </div>
         </div>
@@ -364,85 +316,100 @@
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-inner">
-      <div class="section-eyebrow reveal">Projects</div>
-      <h2 class="section-title reveal">Things I've shipped.</h2>
-      <p class="section-desc reveal">Selected projects demonstrating depth across frontend architecture, backend systems, and developer tooling.</p>
-      <div class="projects-grid">
+  <section id="projects" class="bg-surface py-28 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4 reveal">Projects</p>
+      <h2 class="font-display text-[clamp(32px,5vw,52px)] leading-tight tracking-tight mb-5 reveal">Things I've shipped.</h2>
+      <p class="text-[19px] font-light text-[#a1a1a6] leading-relaxed max-w-xl mb-16 reveal">Real repos. Real code. All on GitHub.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
         <!-- ClientSync — featured -->
-        <div class="project-card featured reveal">
-          <div class="project-icon" style="background:linear-gradient(135deg,#0d1f38,#1a3a5c)">🔗</div>
-          <div class="project-name">ClientSync</div>
-          <div class="project-desc">Full-stack CRM integrating Laravel and React with HubSpot via OAuth2. Features contact sync, webhook handling, automated email reminders, and a pipeline dashboard — built to bridge internal sales workflows with HubSpot's ecosystem.</div>
-          <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">React.js</span><span class="stack-tag">TypeScript</span><span class="stack-tag">HubSpot API</span><span class="stack-tag">OAuth2</span><span class="stack-tag">MySQL</span></div>
-          <div class="project-footer">
-            <a href="https://github.com/theo-georgewill/clientsync-alpha" target="_blank" class="project-link">
-              View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <span class="project-lang"><span class="lang-dot" style="background:#4f5d95"></span>PHP / TypeScript</span>
+        <div class="relative md:col-span-2 bg-gradient-to-br from-[#0d1f38] to-[#0a1628] border border-accent/20 rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal">
+          <div class="w-13 h-13 rounded-2xl flex items-center justify-center text-2xl mb-5 w-[52px] h-[52px]" style="background:linear-gradient(135deg,#0d1f38,#1a3a5c)">🔗</div>
+          <h3 class="text-[17px] font-semibold mb-2">ClientSync</h3>
+          <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Full-stack CRM integrating Laravel and React with HubSpot via OAuth2. Features contact sync, webhook handling, automated email reminders, and a pipeline dashboard — bridging internal sales workflows with HubSpot's ecosystem.</p>
+          <div class="flex flex-wrap gap-[6px] mb-6">
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">Laravel</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">React.js</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">TypeScript</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">HubSpot API</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">OAuth2</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">MySQL</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <a href="https://github.com/theo-georgewill/clientsync-alpha" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <span class="text-[12px] text-[#6e6e73] flex items-center gap-[5px]"><span class="w-[10px] h-[10px] rounded-full inline-block" style="background:#4f5d95"></span>PHP / TS</span>
           </div>
         </div>
 
         <!-- Meta Ads Scraper -->
-        <div class="project-card reveal">
-          <div class="project-icon" style="background:linear-gradient(135deg,#1a1030,#2d1060)">🔍</div>
-          <div class="project-name">Meta Ads Library Scraper</div>
-          <div class="project-desc">High-reliability scraper for the Meta Ads Library. Captures GraphQL ad responses in real-time, saves into a structured local JSON database, and supports both full syncs and incremental updates.</div>
-          <div class="project-stack"><span class="stack-tag">TypeScript</span><span class="stack-tag">GraphQL</span><span class="stack-tag">Meta API</span></div>
-          <div class="project-footer">
-            <a href="https://github.com/theo-georgewill/meta-ads-library-scraper" target="_blank" class="project-link">
-              View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <span class="project-lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+        <div class="relative bg-surface3 border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal">
+          <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#1a1030,#2d1060)">🔍</div>
+          <h3 class="text-[17px] font-semibold mb-2">Meta Ads Scraper</h3>
+          <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">High-reliability Meta Ads Library scraper. Captures GraphQL ad responses in real-time, saves into a structured JSON database, and supports full syncs and incremental updates.</p>
+          <div class="flex flex-wrap gap-[6px] mb-6">
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">TypeScript</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">GraphQL</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Meta API</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <a href="https://github.com/theo-georgewill/meta-ads-library-scraper" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <span class="text-[12px] text-[#6e6e73] flex items-center gap-[5px]"><span class="w-[10px] h-[10px] rounded-full inline-block" style="background:#3178c6"></span>TS</span>
           </div>
         </div>
 
         <!-- SocialScheduler -->
-        <div class="project-card reveal">
-          <div class="project-icon" style="background:linear-gradient(135deg,#0d2a1a,#0f4a2a)">📅</div>
-          <div class="project-name">SocialScheduler</div>
-          <div class="project-desc">Multi-platform social media scheduling tool with Facebook and Reddit API integration. Built with OAuth lifecycle management, Laravel queue-based scheduling, and retry/failure handling for reliable post delivery.</div>
-          <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">Vue.js</span><span class="stack-tag">Pinia</span><span class="stack-tag">Facebook API</span><span class="stack-tag">Reddit API</span><span class="stack-tag">MySQL</span></div>
-          <div class="project-footer">
-            <a href="https://github.com/theo-georgewill/SocialScheduler" target="_blank" class="project-link">
-              View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <span class="project-lang"><span class="lang-dot" style="background:#4f5d95"></span>PHP</span>
+        <div class="relative bg-surface3 border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal">
+          <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#0d2a1a,#0f4a2a)">📅</div>
+          <h3 class="text-[17px] font-semibold mb-2">SocialScheduler</h3>
+          <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Multi-platform scheduling tool with Facebook and Reddit integration. OAuth lifecycle management, queue-based scheduling, and retry/failure handling for reliable post delivery.</p>
+          <div class="flex flex-wrap gap-[6px] mb-6">
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Laravel</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Vue.js</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Facebook API</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Reddit API</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <a href="https://github.com/theo-georgewill/SocialScheduler" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <span class="text-[12px] text-[#6e6e73] flex items-center gap-[5px]"><span class="w-[10px] h-[10px] rounded-full inline-block" style="background:#4f5d95"></span>PHP</span>
           </div>
         </div>
 
-        <!-- Fitness Quest — featured (full width) -->
-        <div class="project-card featured reveal">
-          <div class="project-icon" style="background:linear-gradient(135deg,#1a2a0a,#2d4a10)">💪</div>
-          <div class="project-name">Fitness Quest</div>
-          <div class="project-desc">Full-stack fitness tracking application with a decoupled TypeScript frontend and backend. Demonstrates clean API design, type-safe data contracts between layers, and a production-ready project structure split across two repos.</div>
-          <div class="project-stack"><span class="stack-tag">TypeScript</span><span class="stack-tag">React.js</span><span class="stack-tag">Node.js</span><span class="stack-tag">REST API</span></div>
-          <div class="project-footer">
-            <div style="display:flex;gap:16px">
-              <a href="https://github.com/theo-georgewill/fitness-quest-frontend" target="_blank" class="project-link">
-                Frontend <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="https://github.com/theo-georgewill/fitness-quest-backend" target="_blank" class="project-link">
-                Backend <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+        <!-- Fitness Quest — featured -->
+        <div class="relative md:col-span-2 bg-gradient-to-br from-[#0d1f0d] to-[#0a1a0a] border border-success/15 rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal">
+          <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#1a2a0a,#2d4a10)">💪</div>
+          <h3 class="text-[17px] font-semibold mb-2">Fitness Quest</h3>
+          <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Full-stack fitness tracking app with a decoupled TypeScript frontend and backend. Demonstrates clean API design, type-safe data contracts across layers, and a production-ready project structure.</p>
+          <div class="flex flex-wrap gap-[6px] mb-6">
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">TypeScript</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">React.js</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">Node.js</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-black/30 border border-subtle text-[#6e6e73]">REST API</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-5">
+              <a href="https://github.com/theo-georgewill/fitness-quest-frontend" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">Frontend <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="https://github.com/theo-georgewill/fitness-quest-backend" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">Backend <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </div>
-            <span class="project-lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+            <span class="text-[12px] text-[#6e6e73] flex items-center gap-[5px]"><span class="w-[10px] h-[10px] rounded-full inline-block" style="background:#3178c6"></span>TypeScript</span>
           </div>
         </div>
 
         <!-- Bookr -->
-        <div class="project-card reveal">
-          <div class="project-icon" style="background:linear-gradient(135deg,#1a1a0a,#3d3d00)">📆</div>
-          <div class="project-name">Bookr</div>
-          <div class="project-desc">Flexible appointment platform for service businesses — salons, cleaners, real estate agents. Handles complex multi-location scheduling, RBAC for business owners, staff and clients, and automated booking confirmation emails.</div>
-          <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">Vue.js</span><span class="stack-tag">TailwindCSS</span><span class="stack-tag">MySQL</span></div>
-          <div class="project-footer">
-            <a href="https://github.com/theo-georgewill/booking-app" target="_blank" class="project-link">
-              View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <span class="project-lang"><span class="lang-dot" style="background:#4f5d95"></span>PHP</span>
+        <div class="relative bg-surface3 border border-subtle rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal">
+          <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#1a1a0a,#3d3d00)">📆</div>
+          <h3 class="text-[17px] font-semibold mb-2">Bookr</h3>
+          <p class="text-[14px] text-[#a1a1a6] leading-relaxed flex-1 mb-6">Appointment platform for service businesses. Multi-location scheduling, RBAC for business owners, staff and clients, and automated booking confirmation emails.</p>
+          <div class="flex flex-wrap gap-[6px] mb-6">
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Laravel</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">Vue.js</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">TailwindCSS</span>
+            <span class="text-[11px] font-medium px-[10px] py-1 rounded-full bg-surface2 border border-subtle text-[#6e6e73]">MySQL</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <a href="https://github.com/theo-georgewill/booking-app" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">View on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <span class="text-[12px] text-[#6e6e73] flex items-center gap-[5px]"><span class="w-[10px] h-[10px] rounded-full inline-block" style="background:#4f5d95"></span>PHP</span>
           </div>
         </div>
 
@@ -451,80 +418,112 @@
   </section>
 
   <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-inner">
-      <div class="section-eyebrow reveal">Skills</div>
-      <h2 class="section-title reveal">The full stack.</h2>
-      <p class="section-desc reveal">From UI components to database design — comfortable at every layer.</p>
-      <div class="skills-grid">
-        <div class="skill-group reveal">
-          <div class="skill-group-title">Frontend</div>
-          <div class="skill-chips"><span class="skill-chip highlight">React.js</span><span class="skill-chip highlight">TypeScript</span><span class="skill-chip">Next.js</span><span class="skill-chip">Zustand</span><span class="skill-chip">Redux Toolkit</span><span class="skill-chip">Tailwind CSS</span><span class="skill-chip">Vue.js</span><span class="skill-chip">HTML / CSS</span></div>
+  <section id="skills" class="bg-black py-28 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4 reveal">Skills</p>
+      <h2 class="font-display text-[clamp(32px,5vw,52px)] leading-tight tracking-tight mb-5 reveal">The full stack.</h2>
+      <p class="text-[19px] font-light text-[#a1a1a6] leading-relaxed max-w-xl mb-16 reveal">Comfortable at every layer — from UI components to database design.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-surface border border-subtle rounded-[18px] p-8 reveal">
+          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Frontend</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">React.js</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">TypeScript</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Next.js</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Zustand</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Redux Toolkit</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Tailwind CSS</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Vue.js</span>
+          </div>
         </div>
-        <div class="skill-group reveal">
-          <div class="skill-group-title">Backend</div>
-          <div class="skill-chips"><span class="skill-chip highlight">Node.js</span><span class="skill-chip highlight">Laravel</span><span class="skill-chip">Express.js</span><span class="skill-chip">NestJS</span><span class="skill-chip">PHP</span><span class="skill-chip">REST APIs</span></div>
+        <div class="bg-surface border border-subtle rounded-[18px] p-8 reveal">
+          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Backend</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">Node.js</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">Laravel</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Express.js</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">NestJS</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">PHP</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">REST APIs</span>
+          </div>
         </div>
-        <div class="skill-group reveal">
-          <div class="skill-group-title">Databases</div>
-          <div class="skill-chips"><span class="skill-chip highlight">PostgreSQL</span><span class="skill-chip highlight">MySQL</span><span class="skill-chip">MongoDB</span><span class="skill-chip">SQLite</span></div>
+        <div class="bg-surface border border-subtle rounded-[18px] p-8 reveal">
+          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Databases</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">PostgreSQL</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">MySQL</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">MongoDB</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">SQLite</span>
+          </div>
         </div>
-        <div class="skill-group reveal">
-          <div class="skill-group-title">DevOps & Tools</div>
-          <div class="skill-chips"><span class="skill-chip highlight">Docker</span><span class="skill-chip">GitHub Actions</span><span class="skill-chip">DigitalOcean</span><span class="skill-chip">Git</span><span class="skill-chip">WP CLI</span><span class="skill-chip">cPanel</span></div>
+        <div class="bg-surface border border-subtle rounded-[18px] p-8 reveal">
+          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">DevOps & Tools</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-accent border border-accent/30 bg-accent/[0.06]">Docker</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">GitHub Actions</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">DigitalOcean</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Git</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">WP CLI</span>
+          </div>
         </div>
-        <div class="skill-group reveal" style="grid-column:span 2">
-          <div class="skill-group-title">Integrations & APIs</div>
-          <div class="skill-chips"><span class="skill-chip">Facebook Graph API</span><span class="skill-chip">Reddit API</span><span class="skill-chip">Twitter API</span><span class="skill-chip">HubSpot</span><span class="skill-chip">WordPress / WooCommerce</span><span class="skill-chip">OAuth 2.0</span></div>
+        <div class="bg-surface border border-subtle rounded-[18px] p-8 md:col-span-2 reveal">
+          <p class="text-[12px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-5">Integrations & APIs</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Facebook Graph API</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Reddit API</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">Twitter API</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">HubSpot</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">WordPress / WooCommerce</span>
+            <span class="text-[13px] font-medium px-4 py-[7px] rounded-full text-[#a1a1a6] border border-subtle bg-surface3">OAuth 2.0</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-inner">
-      <div class="contact-grid">
-        <div class="contact-left reveal">
-          <div class="section-eyebrow">Contact</div>
-          <h2>Let's build<br>something great.</h2>
-          <p>I'm open to senior engineering roles, freelance projects, and technical consulting. Fill in the form or reach me directly.</p>
-          <div class="contact-quick-links">
-            <a href="mailto:ttggwll@mail.com" class="contact-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              <span class="link-label">ttggwll@mail.com</span>
+  <section id="contact" class="bg-surface py-28 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-14 items-start">
+
+        <div class="reveal">
+          <p class="text-[13px] font-medium text-accent uppercase tracking-widest mb-4">Contact</p>
+          <h2 class="font-display text-[clamp(28px,4vw,44px)] leading-tight tracking-tight mb-5">Let's build<br>something great.</h2>
+          <p class="text-[17px] font-light text-[#a1a1a6] leading-relaxed mb-9">Open to senior engineering roles, freelance projects, and technical consulting. Fill in the form or reach me directly.</p>
+          <div class="flex flex-col gap-3">
+            <a href="mailto:ttggwll@mail.com" class="flex items-center gap-3 text-[14px] font-medium text-white p-[13px] px-[18px] rounded-xl bg-surface3 border border-subtle hover:border-hover hover:translate-x-1 transition-all">
+              <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              ttggwll@mail.com
             </a>
-            <a href="https://github.com/theo-georgewill" target="_blank" class="contact-link">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-              <span class="link-label">github.com/theo-georgewill</span>
+            <a href="https://github.com/theo-georgewill" target="_blank" class="flex items-center gap-3 text-[14px] font-medium text-white p-[13px] px-[18px] rounded-xl bg-surface3 border border-subtle hover:border-hover hover:translate-x-1 transition-all">
+              <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+              github.com/theo-georgewill
             </a>
-            <a href="tel:07034387405" class="contact-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              <span class="link-label">07034387405</span>
-            </a>
-            <a href="https://theo-georgewill.github.io" target="_blank" class="contact-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-              <span class="link-label">theo-georgewill.github.io</span>
+            <a href="tel:07034387405" class="flex items-center gap-3 text-[14px] font-medium text-white p-[13px] px-[18px] rounded-xl bg-surface3 border border-subtle hover:border-hover hover:translate-x-1 transition-all">
+              <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              07034387405
             </a>
           </div>
         </div>
 
-        <div class="contact-form-card reveal">
-          <div class="form-title">Send a message</div>
-          <!-- Google Apps Script — paste your Web App URL in the SCRIPT_URL variable below -->
+        <div class="bg-surface3 border border-subtle rounded-[18px] p-9 relative overflow-hidden reveal" style="box-shadow:inset 0 1px 0 rgba(255,255,255,0.05)">
+          <div class="absolute top-0 left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,#2997ff,transparent)"></div>
+          <p class="text-[17px] font-semibold mb-7">Send a message</p>
+
           <form id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Name</label>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-[11px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-2">Name</label>
                 <input type="text" id="name" name="name" placeholder="Your name" required />
               </div>
-              <div class="form-group">
-                <label for="email">Email</label>
+              <div>
+                <label class="block text-[11px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-2">Email</label>
                 <input type="email" id="email" name="email" placeholder="your@email.com" required />
               </div>
             </div>
-            <div class="form-group">
-              <label for="subject">I'm interested in</label>
+            <div class="mb-4">
+              <label class="block text-[11px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-2">I'm interested in</label>
               <select id="subject" name="subject">
                 <option value="">Select a topic...</option>
                 <option>Full-time engineering role</option>
@@ -534,20 +533,21 @@
                 <option>Something else</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="message">Message</label>
+            <div class="mb-5">
+              <label class="block text-[11px] font-semibold text-[#6e6e73] uppercase tracking-widest mb-2">Message</label>
               <textarea id="message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
             </div>
-            <button type="submit" class="form-submit" id="submitBtn">
+            <button type="submit" id="submitBtn" class="w-full py-[14px] bg-accent text-white rounded-full text-[15px] font-semibold flex items-center justify-center gap-2 hover:bg-[#0a84ff] hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-60 disabled:pointer-events-none">
               <span id="submitText">Send Message</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
             </button>
-            <p class="form-note">I'll respond within 24 hours.</p>
+            <p class="text-[12px] text-[#6e6e73] text-center mt-3">I'll respond within 24 hours.</p>
           </form>
-          <div class="form-success" id="formSuccess">
-            <div class="success-icon">✓</div>
-            <h3>Message sent!</h3>
-            <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
+
+          <div id="formSuccess" class="hidden text-center py-12">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center text-2xl mx-auto mb-5" style="background:rgba(48,209,88,0.12);border:1px solid rgba(48,209,88,0.3)">✓</div>
+            <h3 class="text-[20px] font-semibold mb-2">Message sent!</h3>
+            <p class="text-[14px] text-[#a1a1a6]">Thanks for reaching out. I'll get back to you within 24 hours.</p>
           </div>
         </div>
 
@@ -555,32 +555,29 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2026 Theo Georgewill · Built with HTML, CSS & JS · Hosted on GitHub Pages</p>
+  <footer class="py-8 px-6 text-center border-t border-subtle text-[13px] text-[#6e6e73]">
+    © 2026 Theo Georgewill · Built with Tailwind CSS · Hosted on GitHub Pages
   </footer>
 
   <script>
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // Accordion
     function toggleExp(item) {
       const body = item.querySelector('.exp-body');
-      const btn = item.querySelector('.exp-toggle');
+      const btn = item.querySelector('.toggle-btn');
       const isOpen = body.classList.contains('open');
       document.querySelectorAll('.exp-body').forEach(b => b.classList.remove('open'));
-      document.querySelectorAll('.exp-toggle').forEach(b => b.style.transform = '');
+      document.querySelectorAll('.toggle-btn').forEach(b => b.style.transform = '');
       if (!isOpen) { body.classList.add('open'); btn.style.transform = 'rotate(180deg)'; }
     }
     document.querySelector('.exp-item').click();
 
-    // ─── Contact form → Google Sheets ───────────────────────────────
-    // After deploying your Apps Script Web App, paste the URL below:
+    // Contact form → Google Sheets
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhz2BgJoAOaOQXwZ01tcauT-zjF51Iz7uB1PKAGL0VYn_ANbxLHJ6by9lKF8m-m_qlZg/exec';
 
     const form = document.getElementById('contactForm');
@@ -592,24 +589,21 @@
       e.preventDefault();
       submitBtn.disabled = true;
       submitText.textContent = 'Sending...';
-
       const data = {
-        name:    document.getElementById('name').value,
-        email:   document.getElementById('email').value,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
         subject: document.getElementById('subject').value,
         message: document.getElementById('message').value,
       };
-
       try {
         await fetch(SCRIPT_URL, {
           method: 'POST',
-          mode: 'no-cors', // required for Apps Script
+          mode: 'no-cors',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
-        // no-cors means we can't read the response — assume success if no throw
         form.style.display = 'none';
-        successEl.style.display = 'block';
+        successEl.classList.remove('hidden');
       } catch {
         submitBtn.disabled = false;
         submitText.textContent = 'Send Message';
