@@ -196,21 +196,21 @@
 
   <!-- STATS -->
   <div class="t-surface2 border-y border-subtle py-8 px-6">
-    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 border border-subtle">
-      <div class="py-6 px-3 text-center t-surface2">
-        <div class="text-[38px] font-bold tracking-tight leading-none mb-1">6<span class="text-accent">+</span></div>
+    <div class="max-w-4xl mx-auto grid grid-cols-4">
+      <div class="py-5 px-2 text-center border-r border-subtle">
+        <div class="text-[26px] md:text-[38px] font-bold tracking-tight leading-none mb-1">6<span class="text-accent">+</span></div>
         <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Years Experience</div>
       </div>
-      <div class="py-6 px-3 text-center t-surface2">
-        <div class="text-[38px] font-bold tracking-tight leading-none mb-1">10<span class="text-accent">+</span></div>
+      <div class="py-5 px-2 text-center border-r border-subtle">
+        <div class="text-[26px] md:text-[38px] font-bold tracking-tight leading-none mb-1">10<span class="text-accent">+</span></div>
         <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Production Platforms</div>
       </div>
-      <div class="py-6 px-3 text-center t-surface2">
-        <div class="text-[38px] font-bold tracking-tight leading-none mb-1">2</div>
+      <div class="py-5 px-2 text-center border-r border-subtle">
+        <div class="text-[26px] md:text-[38px] font-bold tracking-tight leading-none mb-1">2</div>
         <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Industry Awards</div>
       </div>
-      <div class="py-6 px-3 text-center t-surface2">
-        <div class="text-[38px] font-bold tracking-tight leading-none mb-1">5<span class="text-accent">+</span></div>
+      <div class="py-5 px-2 text-center">
+        <div class="text-[26px] md:text-[38px] font-bold tracking-tight leading-none mb-1">5<span class="text-accent">+</span></div>
         <div class="text-[11px] text-[#a1a1a6] whitespace-nowrap">Tech Stacks</div>
       </div>
     </div>
@@ -506,103 +506,110 @@
   </section>
 
   <footer class="py-8 px-6 text-center border-t border-subtle text-[13px] t-text3">
-    © <span id="yr"></span> Theo Georgewill 
+    © <span id="yr"></span> Theo Georgewill · Built with Tailwind CSS · Hosted on GitHub Pages
   </footer>
 
   <script>
-    // ── PROJECT DATA — add/edit projects here ──────────────────────────
-    const PROJECTS = [
-      {
-        name: "ClientSync",
-        emoji: "🔗",
-        iconBg: "linear-gradient(135deg,#0d1f38,#1a3a5c)",
-        desc: "Full-stack CRM integrating Laravel and React with HubSpot via OAuth2. Features contact sync, webhook handling, automated email reminders, and a pipeline dashboard — bridging internal sales workflows with HubSpot's ecosystem.",
-        stack: ["Laravel","React.js","TypeScript","HubSpot API","OAuth2","MySQL"],
-        lang: "PHP / TS", langColor: "#4f5d95",
-        links: [{ label: "View on GitHub", url: "https://github.com/theo-georgewill/clientsync-alpha" }],
-        featured: true
-      },
-      {
-        name: "Meta Ads Scraper",
-        emoji: "🔍",
-        iconBg: "linear-gradient(135deg,#1a1030,#2d1060)",
-        desc: "High-reliability Meta Ads Library scraper. Captures GraphQL ad responses in real-time, saves into a structured JSON database, and supports full syncs and incremental updates.",
-        stack: ["TypeScript","GraphQL","Meta API"],
-        lang: "TypeScript", langColor: "#3178c6",
-        links: [{ label: "View on GitHub", url: "https://github.com/theo-georgewill/meta-ads-library-scraper" }],
-        featured: false
-      },
-      {
-        name: "SocialScheduler",
-        emoji: "📅",
-        iconBg: "linear-gradient(135deg,#0d2a1a,#0f4a2a)",
-        desc: "Multi-platform scheduling tool with Facebook and Reddit integration. OAuth lifecycle management, queue-based scheduling, and retry/failure handling for reliable post delivery.",
-        stack: ["Laravel","Vue.js","Facebook API","Reddit API","MySQL"],
-        lang: "PHP", langColor: "#4f5d95",
-        links: [{ label: "View on GitHub", url: "https://github.com/theo-georgewill/SocialScheduler" }],
-        featured: false
-      },
-      {
-        name: "Fitness Quest",
-        emoji: "💪",
-        iconBg: "linear-gradient(135deg,#1a2a0a,#2d4a10)",
-        desc: "Full-stack fitness tracking app with a decoupled TypeScript frontend and backend. Clean API design, type-safe data contracts across layers, and a production-ready project structure.",
-        stack: ["TypeScript","React.js","Node.js","REST API"],
-        lang: "TypeScript", langColor: "#3178c6",
-        links: [
-          { label: "Frontend", url: "https://github.com/theo-georgewill/fitness-quest-frontend" },
-          { label: "Backend",  url: "https://github.com/theo-georgewill/fitness-quest-backend" }
-        ],
-        featured: true
-      },
-      {
-        name: "Bookr",
-        emoji: "📆",
-        iconBg: "linear-gradient(135deg,#1a1a0a,#3d3d00)",
-        desc: "Appointment platform for service businesses. Multi-location scheduling, RBAC for business owners, staff and clients, and automated booking confirmation emails.",
-        stack: ["Laravel","Vue.js","TailwindCSS","MySQL"],
-        lang: "PHP", langColor: "#4f5d95",
-        links: [{ label: "View on GitHub", url: "https://github.com/theo-georgewill/booking-app" }],
-        featured: false
-      }
-    ];
+    // ── LANGUAGE COLOURS (extend as needed) ─────────────────────────
+    const LANG_COLORS = {
+      JavaScript: "#f1e05a", TypeScript: "#3178c6", PHP: "#4f5d95",
+      Python: "#3572A5", CSS: "#563d7c", HTML: "#e34c26",
+      Vue: "#41b883", Shell: "#89e051", Go: "#00ADD8", Ruby: "#701516"
+    };
 
     const ARROW_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
 
-    function renderProjects() {
+    // Repos tagged with the "portfolio" topic on GitHub will appear here automatically.
+    // To add a repo: go to its GitHub page → gear icon next to About → add topic "portfolio".
+    async function loadProjects() {
       const grid = document.getElementById('projects-grid');
-      grid.innerHTML = PROJECTS.map(p => {
-        const colSpan = p.featured ? 'md:col-span-2' : '';
-        const chips = p.stack.map(s =>
-          `<span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">${s}</span>`
-        ).join('');
-        const links = p.links.map(l =>
-          `<a href="${l.url}" target="_blank" class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">${l.label} ${ARROW_SVG}</a>`
-        ).join('');
 
-        return `
-        <div class="relative ${colSpan} border rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal"
-             style="background:var(--surface3);border-color:var(--border)">
-          <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5 flex-shrink-0"
-               style="background:${p.iconBg}">${p.emoji}</div>
-          <h3 class="text-[17px] font-semibold mb-2 t-text">${p.name}</h3>
-          <p class="text-[14px] t-text2 leading-relaxed flex-1 mb-6">${p.desc}</p>
-          <div class="flex flex-wrap gap-[6px] mb-6">${chips}</div>
-          <div class="flex items-center justify-between">
-            <div class="flex gap-4">${links}</div>
-            <span class="text-[12px] t-text3 flex items-center gap-[5px]">
-              <span class="w-[10px] h-[10px] rounded-full inline-block" style="background:${p.langColor}"></span>
-              ${p.lang}
-            </span>
-          </div>
-        </div>`;
-      }).join('');
+      // Loading skeleton
+      grid.innerHTML = Array(4).fill(`
+        <div class="border rounded-[18px] p-8 animate-pulse" style="background:var(--surface3);border-color:var(--border)">
+          <div class="w-[52px] h-[52px] rounded-2xl mb-5" style="background:var(--surface2)"></div>
+          <div class="h-4 rounded mb-3 w-2/3" style="background:var(--surface2)"></div>
+          <div class="h-3 rounded mb-2" style="background:var(--surface2)"></div>
+          <div class="h-3 rounded mb-2 w-5/6" style="background:var(--surface2)"></div>
+          <div class="h-3 rounded w-4/6" style="background:var(--surface2)"></div>
+        </div>`).join('');
 
-      // Re-observe new cards for scroll reveal
+      try {
+        const res = await fetch('https://api.github.com/users/theo-georgewill/repos?per_page=100&sort=updated');
+        if (!res.ok) throw new Error('API error');
+        const repos = await res.json();
+
+        // Filter to repos with the "portfolio" topic
+        const portfolio = repos.filter(r => r.topics && r.topics.includes('portfolio'));
+
+        if (!portfolio.length) {
+          grid.innerHTML = `<p class="t-text2 md:col-span-3 text-center py-12">No repos tagged with <code>portfolio</code> topic yet.</p>`;
+          return;
+        }
+
+        grid.innerHTML = portfolio.map((r, i) => {
+          const featured = r.topics.includes('featured');
+          const colSpan  = featured ? 'md:col-span-2' : '';
+          const lang     = r.language || 'Code';
+          const langColor = LANG_COLORS[lang] || '#6e6e73';
+          const desc     = r.description || 'No description provided.';
+          const stars    = r.stargazers_count;
+
+          // Topic chips — exclude meta-tags
+          const exclude = new Set(['portfolio','featured']);
+          const chips = (r.topics || [])
+            .filter(t => !exclude.has(t))
+            .map(t => `<span class="text-[11px] font-medium px-[10px] py-1 rounded-full border t-surface2 t-border t-text3">${t}</span>`)
+            .join('');
+
+          const starsHtml = stars > 0
+            ? `<span class="text-[12px] t-text3 flex items-center gap-1">★ ${stars}</span>`
+            : '';
+
+          // Format name: kebab-case → Title Case
+          const name = r.name.replace(/-/g,' ').replace(/\w/g, c => c.toUpperCase());
+
+          return `
+          <div class="relative ${colSpan} border rounded-[18px] p-8 flex flex-col card-shine overflow-hidden hover:-translate-y-1 transition-transform reveal"
+               style="background:var(--surface3);border-color:var(--border)">
+            <div class="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl mb-5 flex-shrink-0 font-bold t-text"
+                 style="background:var(--surface2);font-size:18px">${name.slice(0,2).toUpperCase()}</div>
+            <h3 class="text-[17px] font-semibold mb-2 t-text">${name}</h3>
+            <p class="text-[14px] t-text2 leading-relaxed flex-1 mb-6">${desc}</p>
+            <div class="flex flex-wrap gap-[6px] mb-6">${chips}</div>
+            <div class="flex items-center justify-between">
+              <a href="${r.html_url}" target="_blank"
+                 class="inline-flex items-center gap-2 text-[13px] font-medium text-accent hover:gap-3 transition-all">
+                View on GitHub ${ARROW_SVG}
+              </a>
+              <div class="flex items-center gap-3">
+                ${starsHtml}
+                <span class="text-[12px] t-text3 flex items-center gap-[5px]">
+                  <span class="w-[10px] h-[10px] rounded-full inline-block" style="background:${langColor}"></span>
+                  ${lang}
+                </span>
+              </div>
+            </div>
+          </div>`;
+        }).join('');
+
+      } catch (e) {
+        // Fallback: show a link to GitHub profile
+        grid.innerHTML = `
+          <div class="md:col-span-3 text-center py-12 border rounded-[18px]" style="background:var(--surface3);border-color:var(--border)">
+            <p class="t-text2 mb-4">Couldn't load projects right now.</p>
+            <a href="https://github.com/theo-georgewill" target="_blank"
+               class="inline-flex items-center gap-2 text-[13px] font-medium text-accent">
+              View all repos on GitHub ${ARROW_SVG}
+            </a>
+          </div>`;
+      }
+
+      // Re-observe cards for scroll reveal
       grid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }
 
-    renderProjects();
+    loadProjects();
 
     document.getElementById("yr").textContent = new Date().getFullYear();
 
