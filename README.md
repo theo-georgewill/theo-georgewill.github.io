@@ -48,7 +48,7 @@ I work with:
 
 ## 📈 Goals
 This portfolio reflects my journey of:
-- Building a collection of **indie products** under [Tedtek Studios](#)
+- Building a collection of **indie products** under [Tedtek](#)
 - Showcasing my **software engineering expertise**
 - Attracting **global remote opportunities** and collaborations
 
@@ -56,7 +56,7 @@ This portfolio reflects my journey of:
 
 ## Connect With Me
 - **Portfolio:** [theo-georgewill.github.io](https://theo-georgewill.github.io)
-- **LinkedIn:** [linkedin.com/in/theo-georgewill](#)
+- **LinkedIn:** [linkedin.com/in/theo-georgewill](https://linkedin.com/in/theo-georgewill-734245132/)
 - **GitHub:** [github.com/theo-georgewill](https://github.com/theo-georgewill)
 
 ---
