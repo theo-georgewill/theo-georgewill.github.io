@@ -40,15 +40,14 @@ An app to calculate potential savings or costs when switching to solar.
 
 ## 🛠 Tech Stack
 I work with:
-- **Backend**: Laravel, PHP, MySQL
-- **Frontend**: Vue.js, React, TailwindCSS, Bootstrap
+- **Backend**: Node.js, Nest.js, Express, Laravel, PHP, MySQL
+- **Frontend**: Next.js, React, Vue.js, TailwindCSS, Bootstrap
 - **Other Tools**: Filament, HubSpot API, REST APIs, Git, Docker
 
 ---
 
 ## 📈 Goals
 This portfolio reflects my journey of:
-- Building a collection of **indie products** under [Tedtek](#)
 - Showcasing my **software engineering expertise**
 - Attracting **global remote opportunities** and collaborations
 
